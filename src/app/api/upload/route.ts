@@ -10,31 +10,63 @@ interface CSVProduct {
   [key: string]: string | undefined;
 }
 
-function parseCSV(csvText: string): CSVProduct[] {
-  // Remove BOM if present
-  const cleanedText = csvText.replace(/^\ufeff/, '').trim();
+interface ParseResult {
+  products: CSVProduct[];
+  debug: {
+    cleanedTextStart: string;
+    lineCount: number;
+    delimiter: string;
+    headers: string[];
+    headerCharCodes: number[][];
+    titleIndex: number;
+    descIndex: number;
+  };
+}
+
+function parseCSVWithDebug(csvText: string): ParseResult {
+  // Remove BOM if present (various BOM types)
+  const cleanedText = csvText
+    .replace(/^\ufeff/, '')  // UTF-8 BOM
+    .replace(/^\xef\xbb\xbf/, '')  // UTF-8 BOM as bytes
+    .replace(/^\ufffe/, '')  // UTF-16 LE BOM
+    .replace(/^\xfe\xff/, '')  // UTF-16 BE BOM
+    .trim();
   
   // Handle both \r\n and \n line endings
-  const lines = cleanedText.split(/\r?\n/);
-  if (lines.length < 2) return [];
-
+  const lines = cleanedText.split(/\r?\n/).filter(line => line.trim());
+  
   // Detect delimiter (comma or semicolon)
-  const firstLine = lines[0];
+  const firstLine = lines[0] || '';
   const delimiter = firstLine.includes(';') ? ';' : ',';
 
   // Parse header (normalize to lowercase, remove quotes and whitespace)
-  const headers = firstLine.split(delimiter).map(h => h.trim().toLowerCase().replace(/"/g, '').replace(/^\s+|\s+$/g, ''));
+  const headers = firstLine.split(delimiter).map(h => h.trim().toLowerCase().replace(/"/g, ''));
   
-  // Find title and description columns
+  // Debug: Get char codes for headers
+  const headerCharCodes = headers.map(h => Array.from(h).map(c => c.charCodeAt(0)));
+  
+  // Find title and description columns - more flexible matching
   const titleIndex = headers.findIndex(h => 
-    h === 'title' || h === 'name' || h === 'titel' || h === 'produktname' || h === 'product_name'
+    h === 'title' || h === 'name' || h === 'titel' || h === 'produktname' || h === 'product_name' ||
+    h.includes('title') || h.includes('titel') || h.includes('name')
   );
   const descIndex = headers.findIndex(h => 
-    h === 'description' || h === 'beschreibung' || h === 'desc' || h === 'body' || h === 'body_html'
+    h === 'description' || h === 'beschreibung' || h === 'desc' || h === 'body' || h === 'body_html' ||
+    h.includes('desc') || h.includes('beschreib')
   );
 
+  const debug = {
+    cleanedTextStart: cleanedText.substring(0, 100),
+    lineCount: lines.length,
+    delimiter,
+    headers,
+    headerCharCodes,
+    titleIndex,
+    descIndex,
+  };
+
   if (titleIndex === -1) {
-    throw new Error('CSV must have a "title" or "name" column');
+    throw new Error(`CSV must have a "title" or "name" column. Found headers: ${JSON.stringify(headers)}`);
   }
 
   // Parse rows
@@ -49,7 +81,7 @@ function parseCSV(csvText: string): CSVProduct[] {
     }
   }
 
-  return products;
+  return { products, debug };
 }
 
 function parseCSVLine(line: string, delimiter: string = ','): string[] {
@@ -121,18 +153,27 @@ export async function POST(request: NextRequest) {
     }
 
     const csvText = await file.text();
+    
+    // Debug: Log first 500 chars of CSV
+    console.log('CSV Content (first 500 chars):', csvText.substring(0, 500));
+    console.log('CSV char codes (first 20):', Array.from(csvText.substring(0, 20)).map(c => c.charCodeAt(0)));
+    
     let products: CSVProduct[];
+    let debugInfo: any = {};
     
     try {
-      products = parseCSV(csvText);
+      const result = parseCSVWithDebug(csvText);
+      products = result.products;
+      debugInfo = result.debug;
     } catch (parseError) {
       return NextResponse.json({ 
-        error: parseError instanceof Error ? parseError.message : 'CSV parsing failed' 
+        error: parseError instanceof Error ? parseError.message : 'CSV parsing failed',
+        debug: debugInfo
       }, { status: 400 });
     }
 
     if (products.length === 0) {
-      return NextResponse.json({ error: 'No valid products found in CSV' }, { status: 400 });
+      return NextResponse.json({ error: 'No valid products found in CSV', debug: debugInfo }, { status: 400 });
     }
 
     // Check limit
