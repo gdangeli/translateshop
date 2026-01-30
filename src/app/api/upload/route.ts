@@ -11,15 +11,19 @@ interface CSVProduct {
 }
 
 function parseCSV(csvText: string): CSVProduct[] {
-  const lines = csvText.trim().split('\n');
+  // Remove BOM if present
+  const cleanedText = csvText.replace(/^\ufeff/, '').trim();
+  
+  // Handle both \r\n and \n line endings
+  const lines = cleanedText.split(/\r?\n/);
   if (lines.length < 2) return [];
 
   // Detect delimiter (comma or semicolon)
   const firstLine = lines[0];
   const delimiter = firstLine.includes(';') ? ';' : ',';
 
-  // Parse header
-  const headers = firstLine.split(delimiter).map(h => h.trim().toLowerCase().replace(/"/g, ''));
+  // Parse header (normalize to lowercase, remove quotes and whitespace)
+  const headers = firstLine.split(delimiter).map(h => h.trim().toLowerCase().replace(/"/g, '').replace(/^\s+|\s+$/g, ''));
   
   // Find title and description columns
   const titleIndex = headers.findIndex(h => 
