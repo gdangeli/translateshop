@@ -14,8 +14,12 @@ function parseCSV(csvText: string): CSVProduct[] {
   const lines = csvText.trim().split('\n');
   if (lines.length < 2) return [];
 
+  // Detect delimiter (comma or semicolon)
+  const firstLine = lines[0];
+  const delimiter = firstLine.includes(';') ? ';' : ',';
+
   // Parse header
-  const headers = lines[0].split(',').map(h => h.trim().toLowerCase().replace(/"/g, ''));
+  const headers = firstLine.split(delimiter).map(h => h.trim().toLowerCase().replace(/"/g, ''));
   
   // Find title and description columns
   const titleIndex = headers.findIndex(h => 
@@ -32,7 +36,7 @@ function parseCSV(csvText: string): CSVProduct[] {
   // Parse rows
   const products: CSVProduct[] = [];
   for (let i = 1; i < lines.length; i++) {
-    const values = parseCSVLine(lines[i]);
+    const values = parseCSVLine(lines[i], delimiter);
     if (values.length > titleIndex && values[titleIndex].trim()) {
       products.push({
         title: values[titleIndex].trim(),
@@ -44,7 +48,7 @@ function parseCSV(csvText: string): CSVProduct[] {
   return products;
 }
 
-function parseCSVLine(line: string): string[] {
+function parseCSVLine(line: string, delimiter: string = ','): string[] {
   const result: string[] = [];
   let current = '';
   let inQuotes = false;
@@ -53,7 +57,7 @@ function parseCSVLine(line: string): string[] {
     const char = line[i];
     if (char === '"') {
       inQuotes = !inQuotes;
-    } else if (char === ',' && !inQuotes) {
+    } else if (char === delimiter && !inQuotes) {
       result.push(current.replace(/^"|"$/g, ''));
       current = '';
     } else {
