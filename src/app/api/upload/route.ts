@@ -73,19 +73,30 @@ export async function POST(request: NextRequest) {
     }
 
     const token = authHeader.replace('Bearer ', '');
-    const supabase = createClient(supabaseUrl, supabaseAnonKey);
+    
+    // Create Supabase client with user's access token
+    const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+      global: {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+    });
     
     const { data: { user }, error: authError } = await supabase.auth.getUser(token);
     if (authError || !user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+      return NextResponse.json({ error: 'Unauthorized', details: authError?.message }, { status: 401 });
     }
 
     // Get user's profile to check limits
-    const { data: profile } = await supabase
+    const { data: profile, error: profileError } = await supabase
       .from('profiles')
       .select('products_limit')
       .eq('id', user.id)
       .single();
+
+    // If no profile exists yet, use default limit
+    const limit = profile?.products_limit || 50;
 
     // Count existing products
     const { count: existingCount } = await supabase
@@ -102,14 +113,21 @@ export async function POST(request: NextRequest) {
     }
 
     const csvText = await file.text();
-    const products = parseCSV(csvText);
+    let products: CSVProduct[];
+    
+    try {
+      products = parseCSV(csvText);
+    } catch (parseError) {
+      return NextResponse.json({ 
+        error: parseError instanceof Error ? parseError.message : 'CSV parsing failed' 
+      }, { status: 400 });
+    }
 
     if (products.length === 0) {
       return NextResponse.json({ error: 'No valid products found in CSV' }, { status: 400 });
     }
 
     // Check limit
-    const limit = profile?.products_limit || 50;
     const totalAfterUpload = (existingCount || 0) + products.length;
     
     if (totalAfterUpload > limit) {
@@ -135,7 +153,11 @@ export async function POST(request: NextRequest) {
       .select();
 
     if (insertError) {
-      throw insertError;
+      console.error('Insert error:', insertError);
+      return NextResponse.json({ 
+        error: 'Failed to save products',
+        details: insertError.message 
+      }, { status: 500 });
     }
 
     return NextResponse.json({
