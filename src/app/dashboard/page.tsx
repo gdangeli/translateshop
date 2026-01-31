@@ -81,7 +81,7 @@ export default function DashboardPage() {
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) return;
 
-      const response = await fetch('/api/translate', {
+      const response = await fetch('/api/translate2', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
