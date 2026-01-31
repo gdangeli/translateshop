@@ -3,7 +3,7 @@ import { createClient } from '@supabase/supabase-js';
 import { translateProduct } from '@/lib/translate';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_KEY!;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
 export async function POST(request: NextRequest) {
   try {
@@ -15,8 +15,14 @@ export async function POST(request: NextRequest) {
 
     const token = authHeader.replace('Bearer ', '');
     
-    // Create Supabase client with user's token
-    const supabase = createClient(supabaseUrl, supabaseServiceKey);
+    // Create Supabase client with anon key, then authenticate with user's token
+    const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+      global: {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+    });
     
     const { data: { user }, error: authError } = await supabase.auth.getUser(token);
     if (authError || !user) {
