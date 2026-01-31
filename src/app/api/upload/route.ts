@@ -1,9 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-
 interface CSVProduct {
   title: string;
   description?: string;
@@ -107,6 +104,15 @@ function parseCSVLine(line: string, delimiter: string = ','): string[] {
 
 export async function POST(request: NextRequest) {
   try {
+    // Read env vars at runtime
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    
+    if (!supabaseUrl || !supabaseAnonKey) {
+      console.error('Missing Supabase env vars');
+      return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
+    }
+
     const authHeader = request.headers.get('authorization');
     if (!authHeader) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
