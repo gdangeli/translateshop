@@ -4,13 +4,26 @@ import { translateProduct } from '@/lib/translate';
 
 export async function POST(request: NextRequest) {
   try {
+    // Debug: Log all SUPABASE env vars
+    const allEnvKeys = Object.keys(process.env).filter(k => k.includes('SUPABASE') || k.includes('NEXT_PUBLIC'));
+    console.log('Available env keys:', allEnvKeys);
+    
     // Read env vars at runtime (not build time)
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
     
+    console.log('Env var check:', { 
+      urlExists: !!supabaseUrl, 
+      urlLength: supabaseUrl?.length,
+      keyExists: !!supabaseAnonKey,
+      keyLength: supabaseAnonKey?.length 
+    });
+    
     if (!supabaseUrl || !supabaseAnonKey) {
-      console.error('Missing env vars:', { supabaseUrl: !!supabaseUrl, supabaseAnonKey: !!supabaseAnonKey });
-      return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
+      return NextResponse.json({ 
+        error: 'Server configuration error',
+        debug: { urlExists: !!supabaseUrl, keyExists: !!supabaseAnonKey, availableKeys: allEnvKeys }
+      }, { status: 500 });
     }
 
     // Get auth token from header
@@ -85,7 +98,8 @@ export async function POST(request: NextRequest) {
     console.error('Translation error:', error);
     return NextResponse.json({ 
       error: 'Translation failed',
-      details: error instanceof Error ? error.message : 'Unknown error'
+      details: error instanceof Error ? error.message : 'Unknown error',
+      stack: error instanceof Error ? error.stack?.split('\n').slice(0, 5) : undefined
     }, { status: 500 });
   }
 }
