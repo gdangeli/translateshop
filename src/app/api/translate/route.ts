@@ -35,13 +35,24 @@ export async function POST(request: NextRequest) {
     const token = authHeader.replace('Bearer ', '');
     
     // Create Supabase client with anon key, then authenticate with user's token
-    const supabase = createClient(supabaseUrl, supabaseAnonKey, {
-      global: {
-        headers: {
-          Authorization: `Bearer ${token}`,
+    let supabase;
+    try {
+      supabase = createClient(supabaseUrl, supabaseAnonKey, {
+        global: {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         },
-      },
-    });
+      });
+      console.log('Supabase client created successfully');
+    } catch (clientError) {
+      console.error('Failed to create Supabase client:', clientError);
+      return NextResponse.json({ 
+        error: 'Failed to create database client',
+        details: clientError instanceof Error ? clientError.message : 'Unknown',
+        envAtError: { urlLen: supabaseUrl.length, keyLen: supabaseAnonKey.length }
+      }, { status: 500 });
+    }
     
     const { data: { user }, error: authError } = await supabase.auth.getUser(token);
     if (authError || !user) {
@@ -96,9 +107,18 @@ export async function POST(request: NextRequest) {
 
   } catch (error) {
     console.error('Translation error:', error);
+    // Debug: Include env var status in error response
+    const debugUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const debugKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
     return NextResponse.json({ 
       error: 'Translation failed',
       details: error instanceof Error ? error.message : 'Unknown error',
+      envDebug: {
+        urlFirst10: debugUrl?.substring(0, 10),
+        urlLength: debugUrl?.length,
+        keyFirst10: debugKey?.substring(0, 10),
+        keyLength: debugKey?.length,
+      },
       stack: error instanceof Error ? error.stack?.split('\n').slice(0, 5) : undefined
     }, { status: 500 });
   }
