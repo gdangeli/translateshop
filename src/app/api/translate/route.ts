@@ -1,72 +1,50 @@
+// FRESH REWRITE - 2026-01-31 12:49
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { translateProduct } from '@/lib/translate';
 
 export async function POST(request: NextRequest) {
+  // Version marker to verify deployment
+  const VERSION = 'v2-fresh-2026-01-31';
+  
   try {
-    // Debug: Log all SUPABASE env vars
-    const allEnvKeys = Object.keys(process.env).filter(k => k.includes('SUPABASE') || k.includes('NEXT_PUBLIC'));
-    console.log('Available env keys:', allEnvKeys);
-    
-    // Read env vars at runtime (not build time)
+    // Get env vars at runtime
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
     
-    console.log('Env var check:', { 
-      urlExists: !!supabaseUrl, 
-      urlLength: supabaseUrl?.length,
-      keyExists: !!supabaseAnonKey,
-      keyLength: supabaseAnonKey?.length 
-    });
-    
     if (!supabaseUrl || !supabaseAnonKey) {
       return NextResponse.json({ 
-        error: 'Server configuration error',
-        debug: { urlExists: !!supabaseUrl, keyExists: !!supabaseAnonKey, availableKeys: allEnvKeys }
+        error: 'Missing environment variables',
+        version: VERSION,
+        debug: { urlExists: !!supabaseUrl, keyExists: !!supabaseAnonKey }
       }, { status: 500 });
     }
 
-    // Get auth token from header
+    // Get auth token
     const authHeader = request.headers.get('authorization');
     if (!authHeader) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+      return NextResponse.json({ error: 'No auth header', version: VERSION }, { status: 401 });
     }
-
     const token = authHeader.replace('Bearer ', '');
-    
-    // Create Supabase client with anon key, then authenticate with user's token
-    let supabase;
-    try {
-      supabase = createClient(supabaseUrl, supabaseAnonKey, {
-        global: {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        },
-      });
-      console.log('Supabase client created successfully');
-    } catch (clientError) {
-      console.error('Failed to create Supabase client:', clientError);
-      return NextResponse.json({ 
-        error: 'Failed to create database client',
-        details: clientError instanceof Error ? clientError.message : 'Unknown',
-        envAtError: { urlLen: supabaseUrl.length, keyLen: supabaseAnonKey.length }
-      }, { status: 500 });
-    }
-    
+
+    // Create Supabase client
+    const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+      global: { headers: { Authorization: `Bearer ${token}` } },
+    });
+
+    // Verify user
     const { data: { user }, error: authError } = await supabase.auth.getUser(token);
     if (authError || !user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+      return NextResponse.json({ error: 'Auth failed', version: VERSION, details: authError?.message }, { status: 401 });
     }
 
-    // Get request body
+    // Parse request
     const { productId, targetLanguages } = await request.json();
-
-    if (!productId || !targetLanguages || targetLanguages.length === 0) {
-      return NextResponse.json({ error: 'Missing productId or targetLanguages' }, { status: 400 });
+    if (!productId || !targetLanguages?.length) {
+      return NextResponse.json({ error: 'Missing productId or targetLanguages', version: VERSION }, { status: 400 });
     }
 
-    // Fetch product
+    // Get product
     const { data: product, error: productError } = await supabase
       .from('products')
       .select('*')
@@ -75,51 +53,33 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (productError || !product) {
-      return NextResponse.json({ error: 'Product not found' }, { status: 404 });
+      return NextResponse.json({ error: 'Product not found', version: VERSION }, { status: 404 });
     }
 
     // Translate
     const translations = await translateProduct(
-      {
-        title: product.original_title,
-        description: product.original_description,
-      },
+      { title: product.original_title, description: product.original_description },
       product.original_language,
       targetLanguages
     );
 
-    // Save translations to database
+    // Save translations
     for (const [lang, translation] of Object.entries(translations)) {
       await supabase.from('translations').upsert({
         product_id: productId,
         language: lang,
         title: translation.title,
         description: translation.description,
-      }, {
-        onConflict: 'product_id,language',
-      });
+      }, { onConflict: 'product_id,language' });
     }
 
-    return NextResponse.json({ 
-      success: true, 
-      translations 
-    });
+    return NextResponse.json({ success: true, version: VERSION, translations });
 
   } catch (error) {
-    console.error('Translation error:', error);
-    // Debug: Include env var status in error response
-    const debugUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const debugKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
     return NextResponse.json({ 
       error: 'Translation failed',
-      details: error instanceof Error ? error.message : 'Unknown error',
-      envDebug: {
-        urlFirst10: debugUrl?.substring(0, 10),
-        urlLength: debugUrl?.length,
-        keyFirst10: debugKey?.substring(0, 10),
-        keyLength: debugKey?.length,
-      },
-      stack: error instanceof Error ? error.stack?.split('\n').slice(0, 5) : undefined
+      version: VERSION,
+      message: error instanceof Error ? error.message : 'Unknown error'
     }, { status: 500 });
   }
 }
