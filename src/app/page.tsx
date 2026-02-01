@@ -232,62 +232,83 @@ export default function Home() {
                   "Endlich erreichen wir auch die Romandie! Umsatz in der 
                   Westschweiz um 40% gestiegen seit wir TranslateShop nutzen."
                 </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-slate-200 rounded-full"></div>
-                  <div>
-                    <div className="font-semibold">Marco S.</div>
-                    <div className="text-sm text-slate-500">Outdoor-Shop, Zürich</div>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <div className="flex items-center gap-1 text-yellow-400 mb-4">★★★★★</div>
-                <p className="text-slate-600 mb-4">
-                  "500 Produkte in 10 Minuten übersetzt. Was früher Wochen 
-                  dauerte, geht jetzt während der Kaffeepause."
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-slate-200 rounded-full"></div>
-                  <div>
-                    <div className="font-semibold">Sandra M.</div>
-                    <div className="text-sm text-slate-500">Mode-Boutique, Basel</div>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <div className="flex items-center gap-1 text-yellow-400 mb-4">★★★★★</div>
-                <p className="text-slate-600 mb-4">
-                  "Die Qualität ist erstaunlich gut. Meine italienischen 
-                  Kunden merken keinen Unterschied zu manuellen Übersetzungen."
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-slate-200 rounded-full"></div>
-                  <div>
-                    <div className="font-semibold">Thomas B.</div>
-                    <div className="text-sm text-slate-500">Elektronik-Shop, Bern</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Pricing */}
           <div className="py-20" id="pricing">
             <h2 className="text-3xl font-bold text-center mb-4">Einfache, transparente Preise</h2>
             <p className="text-slate-600 text-center mb-12">
-              Starten Sie kostenlos. Upgraden Sie wenn Sie wachsen.
+              Kaufen Sie Credits nach Bedarf. 1 Credit = 1 Zeile × 1 Sprache.
             </p>
-            <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-5 gap-6 max-w-6xl mx-auto">
               <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
                 <h3 className="font-semibold text-lg">Free</h3>
                 <div className="text-3xl font-bold my-4">0 <span className="text-lg font-normal text-slate-500">CHF</span></div>
-                <p className="text-slate-600 text-sm mb-4">Zum Testen</p>
+                <p className="text-slate-600 text-sm mb-4">50 Credits</p>
                 <ul className="text-sm space-y-2 mb-6">
-                  <li>✓ 50 Produkte</li>
-                  <li>✓ 4 Sprachen</li>
-                  <li>✓ CSV Export</li>
+                  <li>✓ 50 Übersetzungs-Credits</li>
+                  <li>✓ 4 Sprachen (DE/FR/IT/EN)</li>
+                  <li>✓ CSV Import/Export</li>
                 </ul>
                 <Link href="/register" className="block text-center py-2 border border-slate-200 rounded-lg hover:bg-slate-50">
+                  Kostenlos starten
+                </Link>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <h3 className="font-semibold text-lg">Starter</h3>
+                <div className="text-3xl font-bold my-4">9 <span className="text-lg font-normal text-slate-500">CHF</span></div>
+                <p className="text-slate-600 text-sm mb-4">500 Credits</p>
+                <ul className="text-sm space-y-2 mb-6">
+                  <li>✓ 500 Übersetzungs-Credits</li>
+                  <li>✓ 4 Sprachen (DE/FR/IT/EN)</li>
+                  <li>✓ E-Mail Support</li>
+                </ul>
+                <a href="https://buy.stripe.com/6oU5kFaWJeHJ7CL2Td7Vm01" className="block text-center py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">
+                  Kaufen
+                </a>
+              </div>
+              <div className="bg-red-600 text-white p-6 rounded-xl shadow-lg scale-105">
+                <div className="text-xs font-semibold mb-2 bg-white/20 inline-block px-2 py-0.5 rounded">BELIEBT</div>
+                <h3 className="font-semibold text-lg">Pro</h3>
+                <div className="text-3xl font-bold my-4">29 <span className="text-lg font-normal opacity-80">CHF</span></div>
+                <p className="opacity-80 text-sm mb-4">2000 Credits</p>
+                <ul className="text-sm space-y-2 mb-6 opacity-90">
+                  <li>✓ 2000 Übersetzungs-Credits</li>
+                  <li>✓ 4 Sprachen (DE/FR/IT/EN)</li>
+                  <li>✓ Prioritäts-Support</li>
+                </ul>
+                <a href="https://buy.stripe.com/cNi6oJaWJ1UX9KT1P97Vm02" className="block text-center py-2 bg-white text-red-600 rounded-lg font-semibold hover:bg-red-50">
+                  Kaufen
+                </a>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <h3 className="font-semibold text-lg">Business</h3>
+                <div className="text-3xl font-bold my-4">79 <span className="text-lg font-normal text-slate-500">CHF</span></div>
+                <p className="text-slate-600 text-sm mb-4">6000 Credits</p>
+                <ul className="text-sm space-y-2 mb-6">
+                  <li>✓ 6000 Übersetzungs-Credits</li>
+                  <li>✓ 4 Sprachen (DE/FR/IT/EN)</li>
+                  <li>✓ Prioritäts-Support</li>
+                  <li>✓ API Zugang</li>
+                </ul>
+                <a href="https://buy.stripe.com/aFacN73uhbvx2ir0L57Vm03" className="block text-center py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">
+                  Kaufen
+                </a>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+               <h3 className="font-semibold text-lg">Unlimited</h3>
+                <div className="text-3xl font-bold my-4">49 <span className="text-lg font-normal text-slate-500">CHF/Mt</span></div>
+                <p className="text-slate-600 text-sm mb-4">Unbegrenzt</p>
+                <ul className="text-sm space-y-2 mb-6">
+                  <li>✓ Unbegrenzte Credits</li>
+                  <li>✓ 4 Sprachen (DE/FR/IT/EN)</li>
+                  <li>✓ Prioritäts-Support</li>
+                  <li>✓ API Zugang</li>
+                </ul>
+                <a href="https://buy.stripe.com/fZu00l4yl6bd4qzfFZ7Vm04" className="block text-center py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">
+                  Abonnieren
+                </a>
+              </div>
+            </div>
+          </div>                
                   Kostenlos starten
                 </Link>
               </div>
