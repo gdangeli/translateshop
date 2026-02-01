@@ -11,15 +11,22 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_KEY!
 );
 
-const CREDITS_MAP: Record<string, number> = {
-  starter: 500,
-  pro: 2000,
-  business: 6000,
+// Map Price IDs to credits
+const PRICE_TO_CREDITS: Record<string, number> = {
+  'price_1Svy8XPeTTNkQy4TNHc5UxxB': 500,   // Starter
+  'price_1Svy91PeTTNkQy4TCkO8Pg4x': 2000,  // Pro
+  'price_1Svy9UPeTTNkQy4Tj4rrqjmF': 6000,  // Business
 };
+
+const UNLIMITED_PRICE = 'price_1SvyDhPeTTNkQy4T8ch5PcQW';
 
 export async function POST(req: NextRequest) {
   const body = await req.text();
-  const sig = req.headers.get('stripe-signature')!;
+  const sig = req.headers.get('stripe-signature');
+
+  if (!sig) {
+    return NextResponse.json({ error: 'No signature' }, { status: 400 });
+  }
 
   let event: Stripe.Event;
 
@@ -36,14 +43,17 @@ export async function POST(req: NextRequest) {
 
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object as Stripe.Checkout.Session;
-    const email = session.metadata?.email || session.customer_email;
-    const pkg = session.metadata?.package;
-
-    if (!email || !pkg) {
-      return NextResponse.json({ error: 'Missing data' }, { status: 400 });
+    
+    // Get email from session
+    const email = session.customer_email || session.customer_details?.email;
+    
+    if (!email) {
+      console.error('No email found in session');
+      return NextResponse.json({ error: 'No email' }, { status: 400 });
     }
 
     try {
+      // Check for duplicate
       const { data: existing } = await supabase
         .from('credit_purchases')
         .select('id')
@@ -51,10 +61,21 @@ export async function POST(req: NextRequest) {
         .single();
 
       if (existing) {
+        console.log('Duplicate webhook, skipping');
         return NextResponse.json({ received: true });
       }
 
-      if (pkg === 'unlimited') {
+      // Get line items to find which product was purchased
+      const lineItems = await stripe.checkout.sessions.listLineItems(session.id);
+      const priceId = lineItems.data[0]?.price?.id;
+
+      if (!priceId) {
+        console.error('No price ID found');
+        return NextResponse.json({ error: 'No price ID' }, { status: 400 });
+      }
+
+      // Check if unlimited subscription
+      if (priceId === UNLIMITED_PRICE) {
         await supabase
           .from('user_credits')
           .upsert({
@@ -62,8 +83,18 @@ export async function POST(req: NextRequest) {
             is_unlimited: true,
             updated_at: new Date().toISOString(),
           }, { onConflict: 'user_email' });
+        
+        console.log('Unlimited subscription activated for', email);
       } else {
-        const creditsToAdd = CREDITS_MAP[pkg] || 0;
+        // Credit pack purchase
+        const creditsToAdd = PRICE_TO_CREDITS[priceId] || 0;
+        
+        if (creditsToAdd === 0) {
+          console.error('Unknown price ID:', priceId);
+          return NextResponse.json({ error: 'Unknown price' }, { status: 400 });
+        }
+
+        // Get current credits
         const { data: user } = await supabase
           .from('user_credits')
           .select('credits')
@@ -79,13 +110,16 @@ export async function POST(req: NextRequest) {
             credits: currentCredits + creditsToAdd,
             updated_at: new Date().toISOString(),
           }, { onConflict: 'user_email' });
+
+        console.log('Added', creditsToAdd, 'credits for', email);
       }
 
+      // Log purchase
       await supabase.from('credit_purchases').insert({
         user_email: email,
         stripe_session_id: session.id,
-        package: pkg,
-        credits_added: CREDITS_MAP[pkg] || 0,
+        package: priceId,
+        credits_added: PRICE_TO_CREDITS[priceId] || 0,
         amount_paid: session.amount_total,
       });
 
@@ -94,6 +128,5 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Database error' }, { status: 500 });
     }
   }
-
-  return NextResponse.json({ received: true });
+ return NextResponse.json({ received: true });
 }
