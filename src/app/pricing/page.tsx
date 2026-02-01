@@ -9,77 +9,52 @@ const plans = [
     name: 'Free',
     price: '0',
     id: 'free',
-    products: '50',
-    features: ['50 Produkte', '4 Sprachen (DE/FR/IT/EN)', 'CSV Import/Export', 'Community Support'],
+    credits: '50',
+    features: ['50 Übersetzungs-Credits', '4 Sprachen (DE/FR/IT/EN)', 'CSV Import/Export'],
     cta: 'Aktueller Plan',
     disabled: true,
   },
   {
     name: 'Starter',
-    price: '49',
+    price: '9',
     id: 'starter',
-    products: '200',
-    features: ['200 Produkte', '4 Sprachen (DE/FR/IT/EN)', 'CSV Import/Export', 'E-Mail Support', 'Prioritäts-Übersetzungen'],
-    cta: 'Upgrade',
-    popular: true,
-  },
-  {
-    name: 'Business',
-    price: '99',
-    id: 'business',
-    products: '1\'000',
-    features: ['1\'000 Produkte', '4 Sprachen (DE/FR/IT/EN)', 'CSV Import/Export', 'Prioritäts-Support', 'API Zugang', 'Bulk-Übersetzungen'],
-    cta: 'Upgrade',
+    credits: '500',
+    features: ['500 Übersetzungs-Credits', '4 Sprachen (DE/FR/IT/EN)', 'CSV Import/Export', 'E-Mail Support'],
+    cta: 'Kaufen',
+    paymentLink: 'https://buy.stripe.com/6oU5kFaWJeHJ7CL2Td7Vm01',
   },
   {
     name: 'Pro',
-    price: '199',
+    price: '29',
     id: 'pro',
-    products: '10\'000',
-    features: ['10\'000 Produkte', '4 Sprachen (DE/FR/IT/EN)', 'CSV Import/Export', 'Dedicated Support', 'API Zugang', 'Bulk-Übersetzungen', 'Custom Integrationen'],
-    cta: 'Upgrade',
+    credits: '2\'000',
+    features: ['2\'000 Übersetzungs-Credits', '4 Sprachen (DE/FR/IT/EN)', 'CSV Import/Export', 'Prioritäts-Support'],
+    cta: 'Kaufen',
+    popular: true,
+    paymentLink: 'https://buy.stripe.com/cNi6oJaWJ1UX9KT1P97Vm02',
+  },
+  {
+    name: 'Business',
+    price: '79',
+    id: 'business',
+    credits: '6\'000',
+    features: ['6\'000 Übersetzungs-Credits', '4 Sprachen (DE/FR/IT/EN)', 'CSV Import/Export', 'Prioritäts-Support', 'API Zugang'],
+    cta: 'Kaufen',
+    paymentLink: 'https://buy.stripe.com/aFacN73uhbvx2ir0L57Vm03',
+  },
+  {
+    name: 'Unlimited',
+    price: '49',
+    id: 'unlimited',
+    credits: 'Unbegrenzt',
+    isSubscription: true,
+    features: ['Unbegrenzte Übersetzungen', '4 Sprachen (DE/FR/IT/EN)', 'CSV Import/Export', 'Prioritäts-Support', 'API Zugang'],
+    cta: 'Abonnieren',
+    paymentLink: 'https://buy.stripe.com/fZu00l4yl6bd4qzfFZ7Vm04',
   },
 ];
 
 export default function PricingPage() {
-  const [loading, setLoading] = useState<string | null>(null);
-
-  const handleUpgrade = async (planId: string) => {
-    if (planId === 'free') return;
-    
-    setLoading(planId);
-    try {
-      const { data: { session } } = await supabase.auth.getSession();
-      
-      if (!session) {
-        window.location.href = '/login?redirect=/pricing';
-        return;
-      }
-
-      const response = await fetch('/api/stripe/checkout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${session.access_token}`,
-        },
-        body: JSON.stringify({ plan: planId }),
-      });
-
-      const data = await response.json();
-      
-      if (data.url) {
-        window.location.href = data.url;
-      } else {
-        alert('Fehler beim Erstellen der Checkout-Session');
-      }
-    } catch (error) {
-      console.error('Upgrade error:', error);
-      alert('Ein Fehler ist aufgetreten');
-    } finally {
-      setLoading(null);
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Header */}
@@ -101,11 +76,11 @@ export default function PricingPage() {
             Einfache, transparente Preise
           </h1>
           <p className="text-xl text-slate-600">
-            Wählen Sie den Plan, der zu Ihrem Shop passt
+            Kaufen Sie Credits nach Bedarf. 1 Credit = 1 Zeile × 1 Sprache.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-5 gap-6">
           {plans.map((plan) => (
             <div
               key={plan.id}
@@ -127,32 +102,44 @@ export default function PricingPage() {
                 <span className={`text-4xl font-bold ${plan.popular ? 'text-white' : 'text-slate-800'}`}>
                   CHF {plan.price}
                 </span>
-                <span className={plan.popular ? 'text-red-100' : 'text-slate-500'}>/Monat</span>
+                {plan.isSubscription && (
+                  <span className={`text-sm ${plan.popular ? 'text-red-100' : 'text-slate-500'}`}>/Monat</span>
+                )}
               </div>
               <p className={`text-sm mb-6 ${plan.popular ? 'text-red-100' : 'text-slate-600'}`}>
-                Bis zu {plan.products} Produkte
+                {plan.credits} Credits
               </p>
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className={`flex items-center text-sm ${plan.popular ? 'text-white' : 'text-slate-600'}`}>
+ ⁠                 <li key={i} className={`flex items-center text-sm ${plan.popular ? 'text-white' : 'text-slate-600'}`}>
                     <span className="mr-2">✓</span>
                     {feature}
                   </li>
                 ))}
               </ul>
-              <button
-                onClick={() => handleUpgrade(plan.id)}
-                disabled={plan.disabled || loading === plan.id}
-                className={`w-full py-3 rounded-lg font-semibold transition ${
-                  plan.disabled
-                    ? 'bg-slate-100 text-slate-400 cursor-not-allowed'
-                    : plan.popular
-                    ? 'bg-white text-red-600 hover:bg-red-50'
-                    : 'bg-red-600 text-white hover:bg-red-700'
-                }`}
-              >
-                {loading === plan.id ? 'Laden...' : plan.cta}
-              </button>
+              {plan.paymentLink ? (
+                <a
+                  href={plan.paymentLink}
+                  className={`block w-full py-3 rounded-lg font-semibold text-center transition ${
+                    plan.popular
+                      ? 'bg-white text-red-600 hover:bg-red-50'
+                      : 'bg-red-600 text-white hover:bg-red-700'
+                  }`}
+                >
+                  {plan.cta}
+                </a>
+              ) : (
+                <button
+                  disabled={plan.disabled}
+                  className={`w-full py-3 rounded-lg font-semibold transition ${
+                    plan.disabled
+                      ? 'bg-slate-100 text-slate-400 cursor-not-allowed'
+                      : 'bg-red-600 text-white hover:bg-red-700'
+                  }`}
+                >
+                  {plan.cta}
+                </button>
+              )}
             </div>
           ))}
         </div>
