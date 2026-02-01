@@ -111,7 +111,7 @@ export default function PricingPage() {
               </p>
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature, i) => (
- ⁠                 <li key={i} className={`flex items-center text-sm ${plan.popular ? 'text-white' : 'text-slate-600'}`}>
+ ⁠                 <li key={i} className={"flex items-center text-sm " + (plan.popular ? "text-white" : "text-slate-600")}>
                     <span className="mr-2">✓</span>
                     {feature}
                   </li>
