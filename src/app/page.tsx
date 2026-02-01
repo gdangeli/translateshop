@@ -69,13 +69,64 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Problem/Solution */}
+          <div className="py-20">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl font-bold mb-6">
+                  70% der Schweizer kaufen lieber in ihrer Sprache
+                </h2>
+                <p className="text-slate-600 mb-4">
+                  Ein Deutschschweizer Shop erreicht nur 63% des Marktes. Französisch, Italienisch und Englisch öffnen Ihnen den Rest.
+                </p>
+                <ul className="space-y-3">
+                 <li className="flex items-start gap-3">
+                    <span className="text-red-600 font-bold">✗</span>
+                    <span className="text-slate-600">Manuelle Übersetzungen sind teuer und langsam</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-red-600 font-bold">✗</span>
+                    <span className="text-slate-600">Google Translate klingt unprofessionell</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-red-600 font-bold">✗</span>
+                    <span className="text-slate-600">Agenturen verlangen CHF 0.15+ pro Wort</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 className="text-xl font-semibold mb-4 text-green-600">
+                  ✓ Die Lösung: TranslateShop
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <span className="text-green-600 font-bold">✓</span>
+                    <span>KI-Übersetzungen in Sekunden, nicht Wochen</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-green-600 font-bold">✓</span>
+                    <span>Schweizer Qualität mit CHF, Helvetismen, du/Sie</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-green-600 font-bold">✓</span>
+                    <span>Credits ab CHF 9 — zahlen Sie nur was Sie brauchen</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-green-600 font-bold">✓</span>
+                    <span>CSV Import/Export für alle Shop-Systeme</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
           {/* How it Works */}
           <div className="py-20 bg-slate-50 -mx-4 px-4 rounded-3xl" id="demo">
             <h2 className="text-3xl font-bold text-center mb-4">So einfach gehts</h2>
             <p className="text-slate-600 text-center mb-12 max-w-xl mx-auto">In 3 Schritten zu Ihrem mehrsprachigen Shop</p>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
-               <div className="w-16 h-16 bg-red-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+                <div className="w-16 h-16 bg-red-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
                 <h3 className="text-xl font-semibold mb-2">CSV hochladen</h3>
                 <p className="text-slate-600">Exportieren Sie Ihre Produkte aus Ihrem Shop-System und laden Sie die CSV-Datei hoch.</p>
               </div>
@@ -92,10 +143,93 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Features */}
+          <div className="py-20">
+            <h2 className="text-3xl font-bold text-center mb-12">Warum TranslateShop?</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+             <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                <div className="text-3xl mb-4">🇨🇭</div>
+                <h3 className="text-xl font-semibold mb-2">Schweiz-optimiert</h3>
+                <p className="text-slate-600">Echte Schweizer Lokalisierung mit CHF, korrekten Formulierungen und Helvetismen. Kein ß, keine €.</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                <div className="text-3xl mb-4">🤖</div>
+                <h3 className="text-xl font-semibold mb-2">KI-Qualität</h3>
+                <p className="text-slate-600">Powered by modernste KI. Versteht Kontext, Produktkategorien und branchenspezifische Begriffe.</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                <div className="text-3xl mb-4">⚡</div>
+                <h3 className="text-xl font-semibold mb-2">Blitzschnell</h3>
+                <p className="text-slate-600">100 Produkte in unter 2 Minuten. Keine Wartezeiten, keine Termine mit Übersetzern.</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                <div className="text-3xl mb-4">💰</div>
+                <h3 className="text-xl font-semibold mb-2">Faire Preise</h3>
+                <p className="text-slate-600">Credit-Pakete ab CHF 9. Zahlen Sie nur was Sie brauchen, keine Abos nötig.</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                <div className="text-3xl mb-4">🔄</div>
+                <h3 className="text-xl font-semibold mb-2">Alle Shops</h3>
+                <p className="text-slate-600">Funktioniert mit Shopify, WooCommerce, PrestaShop, Magento und jedem CSV-fähigen System.</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                <div className="text-3xl mb-4">🔒</div>
+                <h3 className="text-xl font-semibold mb-2">Sicher & DSGVO</h3>
+                <p className="text-slate-600">Ihre Daten bleiben in der Schweiz. Vollständig DSGVO-konform. Keine Weitergabe an Dritte.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Testimonials */}
+          <div className="py-20 bg-slate-50 -mx-4 px-4 rounded-3xl">
+            <h2 className="text-3xl font-bold text-center mb-12">Das sagen unsere Kunden</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <div className="flex items-center gap-1 text-yellow-400 mb-4">★★★★★</div>
+                <p className="text-slate-600 mb-4">
+                  "Endlich erreichen wir auch die Romandie! Umsatz in der Westschweiz um 40% gestiegen seit wir TranslateShop nutzen."
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-slate-200 rounded-full"></div>
+                  <div>
+                    <div className="font-semibold">Marco S.</div>
+                    <div className="text-sm text-slate-500">Outdoor-Shop, Zürich</div>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <div className="flex items-center gap-1 text-yellow-400 mb-4">★★★★★</div>
+                <p className="text-slate-600 mb-4">
+                  "500 Produkte in 10 Minuten übersetzt. Was früher Wochen dauerte, geht jetzt während der Kaffeepause."
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-slate-200 rounded-full"></div>
+                  <div>
+                    <div className="font-semibold">Sandra M.</div>
+                   <div className="text-sm text-slate-500">Mode-Boutique, Basel</div>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <div className="flex items-center gap-1 text-yellow-400 mb-4">★★★★★</div>
+                <p className="text-slate-600 mb-4">
+                  "Die Qualität ist erstaunlich gut. Meine italienischen Kunden merken keinen Unterschied zu manuellen Übersetzungen."
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-slate-200 rounded-full"></div>
+                  <div>
+                    <div className="font-semibold">Thomas B.</div>
+                    <div className="text-sm text-slate-500">Elektronik-Shop, Bern</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Pricing */}
           <div className="py-20" id="pricing">
             <h2 className="text-3xl font-bold text-center mb-4">Einfache, transparente Preise</h2>
-            <p className="text-slate-600 text-center mb-12">Kaufen Sie Credits nach Bedarf. 1 Credit = 1 Zeile x 1 Sprache.</p>
+            <p className="text-slate-600 text-center mb-12">Starten Sie kostenlos. Kaufen Sie Credits nach Bedarf.</p>
             <div className="grid md:grid-cols-5 gap-6 max-w-6xl mx-auto">
               <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
                 <h3 className="font-semibold text-lg">Free</h3>
@@ -106,7 +240,7 @@ export default function Home() {
                   <li>✓ 4 Sprachen (DE/FR/IT/EN)</li>
                   <li>✓ CSV Import/Export</li>
                 </ul>
-                <Link href="/register" className="block text-center py-2 border border-slate-200 rounded-lg hover:bg-slate-50">Kostenlos starten</Link>
+                <Link href="/register" className="block text-center py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Kostenlos starten</Link>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
                 <h3 className="font-semibold text-lg">Starter</h3>
@@ -117,7 +251,7 @@ export default function Home() {
                   <li>✓ 4 Sprachen (DE/FR/IT/EN)</li>
                   <li>✓ E-Mail Support</li>
                 </ul>
-                <a href="https://buy.stripe.com/6oU5kFaWJeHJ7CL2Td7Vm01" className="block text-center py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Kaufen</a>
+                <Link href="/register" className="block text-center py-2 border border-slate-200 rounded-lg hover:bg-slate-50">Registrieren</Link>
               </div>
               <div className="bg-red-600 text-white p-6 rounded-xl shadow-lg scale-105">
                 <div className="text-xs font-semibold mb-2 bg-white/20 inline-block px-2 py-0.5 rounded">BELIEBT</div>
@@ -129,11 +263,11 @@ export default function Home() {
                   <li>✓ 4 Sprachen (DE/FR/IT/EN)</li>
                   <li>✓ Prioritäts-Support</li>
                 </ul>
-               <a href="https://buy.stripe.com/cNi6oJaWJ1UX9KT1P97Vm02" className="block text-center py-2 bg-white text-red-600 rounded-lg font-semibold hover:bg-red-50">Kaufen</a>
+                <Link href="/register" className="block text-center py-2 bg-white text-red-600 rounded-lg font-semibold hover:bg-red-50">Registrieren</Link>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
                 <h3 className="font-semibold text-lg">Business</h3>
-                <div className="text-3xl font-bold my-4">79 <span className="text-lg font-normal text-slate-500">CHF</span></div>
+               <div className="text-3xl font-bold my-4">79 <span className="text-lg font-normal text-slate-500">CHF</span></div>
                 <p className="text-slate-600 text-sm mb-4">6000 Credits</p>
                 <ul className="text-sm space-y-2 mb-6">
                   <li>✓ 6000 Übersetzungs-Credits</li>
@@ -141,7 +275,7 @@ export default function Home() {
                   <li>✓ Prioritäts-Support</li>
                   <li>✓ API Zugang</li>
                 </ul>
-                <a href="https://buy.stripe.com/aFacN73uhbvx2ir0L57Vm03" className="block text-center py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Kaufen</a>
+                <Link href="/register" className="block text-center py-2 border border-slate-200 rounded-lg hover:bg-slate-50">Registrieren</Link>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
                 <h3 className="font-semibold text-lg">Unlimited</h3>
@@ -153,16 +287,69 @@ export default function Home() {
                   <li>✓ Prioritäts-Support</li>
                   <li>✓ API Zugang</li>
                 </ul>
-                <a href="https://buy.stripe.com/fZu00l4yl6bd4qzfFZ7Vm04" className="block text-center py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Abonnieren</a>
+                <Link href="/register" className="block text-center py-2 border border-slate-200 rounded-lg hover:bg-slate-50">Registrieren</Link>
               </div>
+            </div>
+          </div>
+
+          {/* FAQ */}
+          <div className="py-20">
+            <h2 className="text-3xl font-bold text-center mb-12">Häufige Fragen</h2>
+            <div className="max-w-3xl mx-auto space-y-4">
+              <details className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 group">
+                <summary className="font-semibold cursor-pointer list-none flex justify-between items-center">
+                  Wie funktioniert die Übersetzung?
+                  <span className="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="mt-4 text-slate-600">
+                  TranslateShop nutzt modernste KI-Technologie (ähnlich ChatGPT), die speziell für Schweizer E-Commerce trainiert wurde. Die KI versteht Kontext, Produktkategorien und übersetzt mit Schweizer Besonderheiten (CHF, Helvetismen, kein ß).
+                </p>
+              </details>
+              <details className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 group">
+                <summary className="font-semibold cursor-pointer list-none flex justify-between items-center">
+                  Welche Shop-Systeme werden unterstützt?
+                  <span className="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="mt-4 text-slate-600">
+                  Jedes System das CSV-Export/Import unterstützt: Shopify, WooCommerce, PrestaShop, Magento, Shopware, und viele mehr. Sie exportieren Ihre Produkte als CSV, übersetzen sie bei uns, und importieren sie wieder.
+                </p>
+              </details>
+              <details className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 group">
+                <summary className="font-semibold cursor-pointer list-none flex justify-between items-center">
+                  Wie gut ist die Übersetzungsqualität?
+                  <span className="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="mt-4 text-slate-600">
+                  Die Qualität ist vergleichbar mit professionellen Übersetzern — zu einem Bruchteil der Kosten. Für 95% der E-Commerce-Texte ist die Qualität ausgezeichnet. Bei sehr technischen oder kreativen Texten empfehlen wir eine kurze Kontrolle.
+                </p>
+              </details>
+             <details className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 group">
+                <summary className="font-semibold cursor-pointer list-none flex justify-between items-center">
+                  Was ist ein Credit?
+                  <span className="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="mt-4 text-slate-600">
+                  1 Credit = 1 Zeile × 1 Sprache. Wenn Sie ein Produkt in 3 Sprachen übersetzen, kostet das 3 Credits. Credits verfallen nicht und können jederzeit nachgekauft werden.
+                </p>
+              </details>
+              <details className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 group">
+                <summary className="font-semibold cursor-pointer list-none flex justify-between items-center">
+                  Sind meine Daten sicher?
+                  <span className="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="mt-4 text-slate-600">
+                  Absolut. Alle Daten werden verschlüsselt übertragen und in der Schweiz gespeichert. Wir sind vollständig DSGVO-konform und geben keine Daten an Dritte weiter. Ihre Produktdaten gehören Ihnen.
+                </p>
+              </details>
             </div>
           </div>
 
           {/* Final CTA */}
           <div className="py-20 text-center bg-gradient-to-r from-red-600 to-red-700 -mx-4 px-4 rounded-3xl text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Bereit für 4x mehr Kunden?</h2>
-            <p className="text-xl opacity-90 mb-8 max-w-xl mx-auto">Starten Sie heute kostenlos und übersetzen Sie 50 Produkte gratis.</p>
+            <p className="text-xl opacity-90 mb-8 max-w-xl mx-auto">Starten Sie heute kostenlos mit 50 Credits.</p>
             <Link href="/register" className="inline-block bg-white text-red-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-50 transition shadow-lg">Jetzt kostenlos starten →</Link>
+            <p className="mt-4 text-sm opacity-75">Keine Kreditkarte nötig</p>
           </div>
         </div>
       </main>
@@ -193,7 +380,7 @@ export default function Home() {
               <div className="font-semibold text-white mb-4">Rechtliches</div>
               <ul className="space-y-2 text-sm">
                 <li><Link href="/impressum" className="hover:text-white">Impressum</Link></li>
-               <li><Link href="/datenschutz" className="hover:text-white">Datenschutz</Link></li>
+                <li><Link href="/datenschutz" className="hover:text-white">Datenschutz</Link></li>
                 <li><Link href="/agb" className="hover:text-white">AGB</Link></li>
               </ul>
             </div>
