@@ -134,8 +134,6 @@ Der Schweizer E-Commerce wächst, aber die meisten Shops sind immer noch einspra
 *Haben Sie Fragen zur mehrsprachigen Shop-Optimierung? Kontaktieren Sie uns unter support@translateshop.ch*
     `,
   },
-];
-
   {
     slug: 'shopify-shop-uebersetzen-anleitung',
     title: 'Shopify Shop übersetzen: Schritt-für-Schritt Anleitung für die Schweiz',
@@ -199,14 +197,14 @@ Die effiziente Alternative:
 
 ### Schritt 2: Massenübersetzung mit TranslateShop
 
-1. Gehen Sie zu [translateshop.ch](/)
+1. Gehen Sie zu translateshop.ch
 2. Laden Sie Ihre CSV hoch
 3. Wählen Sie Quellsprache (Deutsch) und Zielsprachen (FR, IT)
 4. Klicken Sie auf "Übersetzen"
 
 **In 2-5 Minuten** erhalten Sie:
-- \`produkte_FR.csv\` — Französische Version
-- \`produkte_IT.csv\` — Italienische Version
+- produkte_FR.csv — Französische Version
+- produkte_IT.csv — Italienische Version
 
 ### Schritt 3: Übersetzungen importieren
 
@@ -218,7 +216,7 @@ Für Shopify Markets:
 ### Alternative: Matrixify App
 
 Für mehr Kontrolle:
-1. Installieren Sie die [Matrixify App](https://apps.shopify.com/excel-export-import)
+1. Installieren Sie die Matrixify App
 2. Importieren Sie die übersetzten CSVs
 3. Matrixify mappt die Übersetzungen automatisch
 
@@ -265,20 +263,14 @@ TranslateShop ist speziell für den Schweizer Markt trainiert und berücksichtig
 
 ### hreflang-Tags
 
-Shopify Markets setzt diese automatisch — prüfen Sie aber:
-
-\`\`\`html
-<link rel="alternate" hreflang="de-CH" href="https://shop.ch/de/produkt" />
-<link rel="alternate" hreflang="fr-CH" href="https://shop.ch/fr/produit" />
-<link rel="alternate" hreflang="it-CH" href="https://shop.ch/it/prodotto" />
-\`\`\`
+Shopify Markets setzt diese automatisch — prüfen Sie aber im Quellcode.
 
 ### URL-Struktur
 
 Shopify erstellt automatisch:
-- \`/de/\` — Deutsche Version
-- \`/fr/\` — Französische Version  
-- \`/it/\` — Italienische Version
+- /de/ — Deutsche Version
+- /fr/ — Französische Version  
+- /it/ — Italienische Version
 
 ### Meta-Descriptions übersetzen
 
@@ -294,16 +286,16 @@ Vergessen Sie nicht die SEO-Texte! Google zeigt diese in den Suchergebnissen.
 
 ## Checkliste: Shopify-Shop übersetzen
 
-- [ ] Shopify Markets aktivieren
-- [ ] Translate & Adapt App installieren
-- [ ] Produkte als CSV exportieren
-- [ ] Mit TranslateShop übersetzen (DE→FR, DE→IT)
-- [ ] Übersetzungen importieren
-- [ ] Statische Seiten übersetzen
-- [ ] Navigation übersetzen
-- [ ] E-Mail-Vorlagen übersetzen
-- [ ] Checkout-Texte prüfen
-- [ ] hreflang-Tags verifizieren
+- Shopify Markets aktivieren
+- Translate & Adapt App installieren
+- Produkte als CSV exportieren
+- Mit TranslateShop übersetzen (DE→FR, DE→IT)
+- Übersetzungen importieren
+- Statische Seiten übersetzen
+- Navigation übersetzen
+- E-Mail-Vorlagen übersetzen
+- Checkout-Texte prüfen
+- hreflang-Tags verifizieren
 
 ## Fazit
 
@@ -331,7 +323,7 @@ Einen Shopify-Shop für die Schweiz zu übersetzen muss nicht kompliziert sein. 
     publishedAt: '2026-02-02',
     author: 'TranslateShop Team',
     keywords: ['ki übersetzung', 'maschinelle übersetzung', 'deepl', 'google translate', 'professionelle übersetzer', 'e-commerce übersetzung'],
-    content: \`
+    content: `
 ## Die grosse Frage: Mensch oder Maschine?
 
 Sie wollen Ihren Online-Shop übersetzen und stehen vor der Entscheidung: Beauftragen Sie einen professionellen Übersetzer oder nutzen Sie KI-Tools wie DeepL, Google Translate oder TranslateShop?
@@ -458,7 +450,7 @@ So sparen Sie 80% der Kosten und erhalten trotzdem professionelle Qualität wo e
 ---
 
 *Haben Sie Fragen zur richtigen Übersetzungsstrategie? Schreiben Sie uns: support@translateshop.ch*
-    \`,
+    `,
   },
 ];
 
