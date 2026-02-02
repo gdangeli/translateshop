@@ -5,6 +5,84 @@ import { useParams } from 'next/navigation';
 import { getBlogPost, blogPosts } from '@/content/blog';
 import { notFound } from 'next/navigation';
 
+function parseMarkdown(content: string): string {
+  let html = content;
+  
+  // Tables
+  html = html.replace(/\|(.+)\|\n\|[-|: ]+\|\n((?:\|.+\|\n?)+)/g, (match, header, rows) => {
+    const headerCells = header.split('|').filter((c: string) => c.trim()).map((c: string) => 
+      `<th class="px-4 py-3 text-left font-semibold bg-slate-100 border-b">${c.trim()}</th>`
+    ).join('');
+    const bodyRows = rows.trim().split('\n').map((row: string) => {
+      const cells = row.split('|').filter((c: string) => c.trim()).map((c: string) => 
+        `<td class="px-4 py-3 border-b border-slate-200">${c.trim()}</td>`
+      ).join('');
+      return `<tr class="hover:bg-slate-50">${cells}</tr>`;
+    }).join('');
+    return `<div class="overflow-x-auto my-8"><table class="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm"><thead><tr>${headerCells}</tr></thead><tbody>${bodyRows}</tbody></table></div>`;
+  });
+
+  // Code blocks
+  html = html.replace(/```(\w+)?\n([\s\S]*?)```/g, (match, lang, code) => 
+    `<pre class="bg-slate-900 text-slate-100 p-4 rounded-lg overflow-x-auto my-6"><code>${code.trim().replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
+  );
+
+  // Blockquotes
+  html = html.replace(/^> (.+)$/gm, '<blockquote class="border-l-4 border-red-500 bg-red-50 pl-4 py-3 my-6 italic text-slate-700">$1</blockquote>');
+
+  // Headers
+  html = html.replace(/^## (.+)$/gm, '<h2 class="text-3xl font-bold text-slate-800 mt-12 mb-6">$1</h2>');
+  html = html.replace(/^### (.+)$/gm, '<h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">$1</h3>');
+
+  // Bold and italic
+  html = html.replace(/\*\*([^*]+)\*\*/g, '<strong class="font-semibold text-slate-800">$1</strong>');
+  html = html.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+
+  // Links
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-red-600 hover:underline">$1</a>');
+
+  // Unordered lists with checkboxes
+  html = html.replace(/^- \[ \] (.+)$/gm, '<li class="flex items-start gap-2 my-2"><span class="text-slate-400">☐</span><span>$1</span></li>');
+  html = html.replace(/^- \[x\] (.+)$/gm, '<li class="flex items-start gap-2 my-2"><span class="text-green-600">☑</span><span>$1</span></li>');
+  
+  // Unordered lists with emojis (✅, ⚠️, ⏳, etc.)
+  html = html.replace(/^- (✅|⚠️|⏳|✗|🚩) (.+)$/gm, '<li class="flex items-start gap-2 my-2"><span>$1</span><span>$2</span></li>');
+  
+  // Regular unordered lists
+  html = html.replace(/^- (.+)$/gm, '<li class="my-2 ml-4 list-disc text-slate-600">$1</li>');
+
+  // Ordered lists
+  html = html.replace(/^\d+\. (.+)$/gm, '<li class="my-2 ml-4 list-decimal text-slate-600">$1</li>');
+
+  // Wrap consecutive li elements in ul/ol
+  html = html.replace(/(<li[^>]*>.*<\/li>\n?)+/g, (match) => {
+    if (match.includes('list-decimal')) {
+      return `<ol class="my-6">${match}</ol>`;
+    }
+    return `<ul class="my-6">${match}</ul>`;
+  });
+
+  // Inline code
+  html = html.replace(/`([^`]+)`/g, '<code class="bg-slate-100 px-2 py-1 rounded text-sm font-mono text-red-600">$1</code>');
+
+  // Paragraphs
+  html = html.split('\n\n').map(block => {
+    block = block.trim();
+    if (!block) return '';
+    if (block.startsWith('<h') || block.startsWith('<ul') || block.startsWith('<ol') || 
+        block.startsWith('<pre') || block.startsWith('<block') || block.startsWith('<div') ||
+        block.startsWith('<table')) {
+      return block;
+    }
+    return `<p class="text-slate-600 leading-relaxed my-4">${block}</p>`;
+  }).join('\n');
+
+  // Horizontal rules
+  html = html.replace(/^---$/gm, '<hr class="my-12 border-slate-200" />');
+
+  return html;
+}
+
 export default function BlogPostPage() {
   const params = useParams();
   const slug = params.slug as string;
@@ -32,65 +110,39 @@ export default function BlogPostPage() {
       </header>
 
       <main className="max-w-4xl mx-auto px-4 py-12">
-        {/* Article Header */}
         <article>
-          <div className="mb-8">
-            <div className="flex items-center gap-2 text-sm text-slate-500 mb-4">
-              <span className="bg-red-100 text-red-700 px-2 py-1 rounded">{post.category}</span>
+          {/* Article Header */}
+          <header className="mb-10">
+            <div className="flex items-center gap-3 text-sm text-slate-500 mb-4">
+              <span className="bg-red-100 text-red-700 px-3 py-1 rounded-full font-medium">{post.category}</span>
               <span>•</span>
               <span>{post.readTime} Min. Lesezeit</span>
               <span>•</span>
-              <span>{new Date(post.publishedAt).toLocaleDateString('de-CH')}</span>
+              <time>{new Date(post.publishedAt).toLocaleDateString('de-CH', { 
+                year: 'numeric', month: 'long', day: 'numeric' 
+              })}</time>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
               {post.title}
             </h1>
-            <p className="text-xl text-slate-600">
+            <p className="text-xl text-slate-600 leading-relaxed">
               {post.excerpt}
             </p>
-          </div>
+          </header>
 
-          {/* Featured Image Placeholder */}
-          <div className="h-64 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center text-8xl mb-12">
+          {/* Featured Image */}
+          <div className="h-72 bg-gradient-to-br from-red-500 via-red-600 to-red-700 rounded-2xl flex items-center justify-center text-9xl mb-12 shadow-lg">
             {post.emoji}
           </div>
 
           {/* Article Content */}
           <div 
-            className="prose prose-lg prose-slate max-w-none
-              prose-headings:text-slate-800 
-              prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
-              prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-              prose-p:text-slate-600 prose-p:leading-relaxed
-              prose-a:text-red-600 prose-a:no-underline hover:prose-a:underline
-              prose-strong:text-slate-800
-              prose-ul:text-slate-600
-              prose-ol:text-slate-600
-              prose-li:my-2
-              prose-table:text-sm
-              prose-th:bg-slate-100 prose-th:p-3
-              prose-td:p-3 prose-td:border-b
-              prose-code:bg-slate-100 prose-code:px-1 prose-code:rounded
-              prose-pre:bg-slate-900 prose-pre:text-slate-100
-              prose-blockquote:border-red-500 prose-blockquote:bg-red-50 prose-blockquote:py-1"
-            dangerouslySetInnerHTML={{ 
-              __html: post.content
-                .replace(/^## /gm, '<h2>')
-                .replace(/^### /gm, '<h3>')
-                .replace(/\n\n/g, '</p><p>')
-                .replace(/<h2>/g, '</p><h2>')
-                .replace(/<h3>/g, '</p><h3>')
-                .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-                .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
-                .replace(/^- /gm, '<li>')
-                .replace(/^\d+\. /gm, '<li>')
-                .replace(/<li>/g, '</li><li>')
-                .replace(/^> /gm, '<blockquote>')
-            }}
+            className="article-content"
+            dangerouslySetInnerHTML={{ __html: parseMarkdown(post.content) }}
           />
 
-          {/* CTA */}
-          <div className="mt-16 bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-8 md:p-12 text-white text-center">
+          {/* CTA Box */}
+          <div className="mt-16 bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-8 md:p-12 text-white text-center shadow-xl">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
               Bereit, Ihren Shop mehrsprachig zu machen?
             </h2>
@@ -99,24 +151,22 @@ export default function BlogPostPage() {
             </p>
             <Link 
               href="/register"
-              className="inline-block bg-white text-red-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-red-50 transition"
+              className="inline-block bg-white text-red-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-red-50 transition shadow-md"
             >
               Jetzt kostenlos starten →
             </Link>
           </div>
 
-          {/* Author */}
+          {/* Author Box */}
           <div className="mt-12 pt-8 border-t flex items-center gap-4">
-            <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center text-2xl">
+            <div className="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center text-2xl">
               ✍️
             </div>
             <div>
               <div className="font-semibold text-slate-800">{post.author}</div>
               <div className="text-sm text-slate-500">
                 Veröffentlicht am {new Date(post.publishedAt).toLocaleDateString('de-CH', { 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
+                  year: 'numeric', month: 'long', day: 'numeric' 
                 })}
               </div>
             </div>
@@ -124,25 +174,28 @@ export default function BlogPostPage() {
         </article>
 
         {/* Related Posts */}
-        <div className="mt-16 pt-12 border-t">
-          <h3 className="text-2xl font-bold text-slate-800 mb-8">Weitere Artikel</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            {blogPosts
-              .filter(p => p.slug !== post.slug)
-              .slice(0, 2)
-              .map((relatedPost) => (
-                <Link 
-                  key={relatedPost.slug}
-                  href={`/blog/${relatedPost.slug}`}
-                  className="block bg-slate-50 rounded-xl p-6 hover:bg-slate-100 transition"
-                >
-                  <div className="text-3xl mb-3">{relatedPost.emoji}</div>
-                  <h4 className="font-semibold text-slate-800 mb-2">{relatedPost.title}</h4>
-                  <p className="text-sm text-slate-600">{relatedPost.excerpt}</p>
-                </Link>
-              ))}
-          </div>
-        </div>
+        {blogPosts.filter(p => p.slug !== post.slug).length > 0 && (
+          <section className="mt-16 pt-12 border-t">
+            <h3 className="text-2xl font-bold text-slate-800 mb-8">Weitere Artikel</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              {blogPosts
+                .filter(p => p.slug !== post.slug)
+                .slice(0, 2)
+                .map((relatedPost) => (
+                  <Link 
+                    key={relatedPost.slug}
+                    href={`/blog/${relatedPost.slug}`}
+                    className="group block bg-slate-50 rounded-xl p-6 hover:bg-slate-100 transition hover:shadow-md"
+                  >
+                    <div className="text-4xl mb-4">{relatedPost.emoji}</div>
+                    <h4 className="font-semibold text-slate-800 mb-2 group-hover:text-red-600 transition">{relatedPost.title}</h4>
+                    <p className="text-sm text-slate-600 line-clamp-2">{relatedPost.excerpt}</p>
+                    <span className="inline-block mt-4 text-red-600 text-sm font-medium">Weiterlesen →</span>
+                  </Link>
+                ))}
+            </div>
+          </section>
+        )}
       </main>
 
       {/* Footer */}
