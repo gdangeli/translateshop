@@ -1,18 +1,14 @@
 'use client';
 
-// test3
-// Force rebuild
-
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import { useRouter } from 'next/navigation';
 import CSVUpload from '@/components/CSVUpload';
+import CreditsDisplay from '@/components/CreditsDisplay';
 
 interface Profile {
   email: string;
   company_name: string | null;
-  plan: string;
-  products_limit: number;
 }
 
 interface Product {
@@ -30,17 +26,24 @@ interface Translation {
   description: string | null;
 }
 
+interface Credits {
+  credits: number;
+  is_unlimited: boolean;
+}
+
 export default function DashboardPage() {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [products, setProducts] = useState<Product[]>([]);
+  const [credits, setCredits] = useState<Credits>({ credits: 0, is_unlimited: false });
   const [loading, setLoading] = useState(true);
   const [showUpload, setShowUpload] = useState(false);
   const [translating, setTranslating] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
   const loadData = async () => {
     const { data: { session } } = await supabase.auth.getSession();
-    
+
     if (!session) {
       router.push('/login');
       return;
@@ -49,7 +52,7 @@ export default function DashboardPage() {
     // Get profile
     const { data: profileData } = await supabase
       .from('profiles')
-      .select('*')
+      .select('email, company_name')
       .eq('id', session.user.id)
       .single();
 
@@ -63,6 +66,19 @@ export default function DashboardPage() {
       .eq('user_id', session.user.id)
       .order('created_at', { ascending: false });
 
+    // Get credits
+    try {
+      const creditsRes = await fetch('/api/credits', {
+        headers: { Authorization: `Bearer ${session.access_token}` },
+      });
+      if (creditsRes.ok) {
+        const creditsData = await creditsRes.json();
+        setCredits(creditsData);
+      }
+    } catch (e) {
+      console.error('Failed to fetch credits:', e);
+    }
+
     setProfile(profileData);
     setProducts(productsData || []);
     setLoading(false);
@@ -70,6 +86,13 @@ export default function DashboardPage() {
 
   useEffect(() => {
     loadData();
+
+    // Refresh credits when window gets focus (after payment)
+    const handleFocus = () => {
+      loadData();
+    };
+    window.addEventListener('focus', handleFocus);
+    return () => window.removeEventListener('focus', handleFocus);
   }, [router]);
 
   const handleLogout = async () => {
@@ -79,7 +102,8 @@ export default function DashboardPage() {
 
   const handleTranslate = async (productId: string) => {
     setTranslating(productId);
-    
+    setError(null);
+
     try {
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) return;
@@ -96,24 +120,62 @@ export default function DashboardPage() {
         }),
       });
 
-      if (response.ok) {
-        await loadData(); // Reload to show translations
+      const result = await response.json();
+
+      if (!response.ok) {
+        if (result.error === 'Not enough credits') {
+          setError(`Nicht genug Credits. Du hast ${result.current} Credits, brauchst aber ${result.required}.`);
+        } else {
+          setError(result.error || 'Übersetzung fehlgeschlagen');
+        }
+        return;
       }
+
+      await loadData(); // Reload to show translations + updated credits
     } catch (error) {
       console.error('Translation failed:', error);
+      setError('Übersetzung fehlgeschlagen');
     } finally {
       setTranslating(null);
     }
   };
 
+  const handleTranslateAll = async () => {
+    // Get products that need translation
+    const needsTranslation = products.filter(p => {
+      const hasAll = ['de', 'fr', 'it', 'en'].every(
+        lang => p.original_language === lang || p.translations?.some(t => t.language === lang)
+      );
+      return !hasAll;
+    });
+
+    if (needsTranslation.length === 0) {
+      setError('Alle Produkte sind bereits übersetzt');
+      return;
+    }
+
+    // Calculate required credits (3 languages per product typically)
+    const requiredCredits = needsTranslation.length * 3;
+    if (!credits.is_unlimited && credits.credits < requiredCredits) {
+      setError(`Nicht genug Credits. Du hast ${credits.credits}, brauchst aber ca. ${requiredCredits} für ${needsTranslation.length} Produkte.`);
+      return;
+    }
+
+    setError(null);
+
+    // Translate each product sequentially
+    for (const product of needsTranslation) {
+      await handleTranslate(product.id);
+    }
+  };
+
   const handleExportCSV = () => {
-    // Create CSV content
     let csv = 'original_title,original_description,de_title,de_description,fr_title,fr_description,it_title,it_description,en_title,en_description\n';
-    
+
     for (const product of products) {
-      const getTranslation = (lang: string) => 
+      const getTranslation = (lang: string) =>
         product.translations?.find(t => t.language === lang);
-      
+
       const de = getTranslation('de');
       const fr = getTranslation('fr');
       const it = getTranslation('it');
@@ -133,7 +195,6 @@ export default function DashboardPage() {
       ].join(',') + '\n';
     }
 
-    // Download
     const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -169,33 +230,55 @@ export default function DashboardPage() {
 
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-4 py-8">
-        {/* Welcome & Stats */}
-        <div className="flex justify-between items-start mb-8">
+        {/* Welcome & Credits */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
           <div>
             <h1 className="text-3xl font-bold text-slate-800">
               Willkommen{profile?.company_name ? `, ${profile.company_name}` : ''}! 👋
             </h1>
             <p className="text-slate-600 mt-2">
-              Plan: <span className="font-semibold capitalize">{profile?.plan || 'Free'}</span> — 
-              {products.length} / {profile?.products_limit || 50} Produkte
+              {products.length} Produkte hochgeladen
             </p>
           </div>
-          <div className="flex gap-3">
-            <button
-              onClick={() => setShowUpload(true)}
-              className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition"
-            >
-              + CSV hochladen
-            </button>
-            {products.length > 0 && (
+          <CreditsDisplay
+            credits={credits.credits}
+            isUnlimited={credits.is_unlimited}
+            userEmail={profile?.email || ''}
+          />
+        </div>
+
+        {/* Error Message */}
+        {error && (
+          <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6">
+            {error}
+            <button onClick={() => setError(null)} className="float-right font-bold">✕</button>
+          </div>
+        )}
+
+        {/* Action Buttons */}
+        <div className="flex gap-3 mb-6">
+          <button
+            onClick={() => setShowUpload(true)}
+            className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition"
+          >
+            + CSV hochladen
+          </button>
+          {products.length > 0 && (
+            <>
+              <button
+                onClick={handleTranslateAll}
+                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+              >
+                🌍 Alle übersetzen
+              </button>
               <button
                 onClick={handleExportCSV}
                 className="bg-slate-600 text-white px-4 py-2 rounded-lg hover:bg-slate-700 transition"
               >
                 📥 Export
               </button>
-            )}
-          </div>
+            </>
+          )}
         </div>
 
         {/* Upload Modal */}
@@ -221,7 +304,7 @@ export default function DashboardPage() {
             <p className="text-slate-600 mb-6">
               Laden Sie Ihre erste CSV-Datei hoch, um zu starten.
             </p>
-            <button 
+            <button
               onClick={() => setShowUpload(true)}
               className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition"
             >
@@ -243,8 +326,8 @@ export default function DashboardPage() {
               </thead>
               <tbody>
                 {products.map((product) => {
-                  const hasLang = (lang: string) => 
-                    product.original_language === lang || 
+                  const hasLang = (lang: string) =>
+                    product.original_language === lang ||
                     product.translations?.some(t => t.language === lang);
 
                   return (
