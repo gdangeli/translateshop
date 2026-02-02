@@ -14,6 +14,7 @@ export default function Home() {
           <nav className="hidden md:flex items-center space-x-6">
             <Link href="#demo" className="text-slate-600 hover:text-slate-800">So funktionierts</Link>
             <Link href="#pricing" className="text-slate-600 hover:text-slate-800">Preise</Link>
+            <Link href="/blog" className="text-slate-600 hover:text-slate-800">Blog</Link>
             <Link href="#faq" className="text-slate-600 hover:text-slate-800">FAQ</Link>
           </nav>
           <div className="space-x-4">
