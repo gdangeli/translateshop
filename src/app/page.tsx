@@ -35,7 +35,7 @@ export default function Home() {
               🚀 Neu: KI-gestützte Übersetzungen für Schweizer Shops
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-slate-800 mb-6 leading-tight">
-              Erreichen Sie <span className="text-red-600">4x mehr Kunden</span>
+              Erreichen Sie <span className="text-red-600">60% mehr Kunden</span>
               <br />in der Schweiz
             </h1>
             <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
@@ -536,7 +536,7 @@ export default function Home() {
           {/* Final CTA */}
           <div className="py-20 text-center bg-gradient-to-r from-red-600 to-red-700 -mx-4 px-4 rounded-3xl text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Bereit, 4x mehr Kunden zu erreichen?
+              Bereit, die ganze Schweiz zu erreichen?
             </h2>
             <p className="text-xl opacity-90 mb-8 max-w-xl mx-auto">
               Starten Sie heute kostenlos. 50 Credits geschenkt — keine Kreditkarte nötig.
