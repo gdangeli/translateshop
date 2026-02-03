@@ -4,7 +4,9 @@ import Stripe from 'stripe';
 import { createClient } from '@supabase/supabase-js';
 import { addCredits, setUnlimited } from '@/lib/credits';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+function getStripe() {
+  return new Stripe(process.env.STRIPE_SECRET_KEY!);
+}
 
 // Credit packages - map Stripe price IDs to credits
 // Update these with your actual Stripe price IDs!
@@ -27,6 +29,7 @@ function getCreditsFromAmount(amountInCents: number): { credits: number; name: s
 }
 
 export async function POST(request: NextRequest) {
+  const stripe = getStripe();
   const body = await request.text();
   const signature = request.headers.get('stripe-signature');
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;

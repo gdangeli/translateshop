@@ -2,7 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { createClient } from '@supabase/supabase-js';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+function getStripe() {
+  return new Stripe(process.env.STRIPE_SECRET_KEY!);
+}
 
 const PRICE_IDS: Record<string, string> = {
   starter: 'price_1SveeOBR8ftWrsq8cfPVxeyd',
@@ -52,6 +54,8 @@ export async function POST(request: NextRequest) {
 
     let customerId = profile?.stripe_customer_id;
 
+    const stripe = getStripe();
+    
     // Create customer if doesn't exist
     if (!customerId) {
       const customer = await stripe.customers.create({

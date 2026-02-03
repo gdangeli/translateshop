@@ -22,16 +22,24 @@ export async function validateApiKey(
   try {
     const keyHash = hashApiKey(apiKey);
     
-    const { data, error } = await supabase
+    // First get the API key
+    const { data: keyData, error: keyError } = await supabase
       .from('api_keys')
-      .select('user_id, is_active, profiles!inner(email)')
+      .select('user_id, is_active')
       .eq('key_hash', keyHash)
       .eq('is_active', true)
       .single();
 
-    if (error || !data) {
+    if (keyError || !keyData) {
       return { valid: false, error: 'Invalid API key' };
     }
+
+    // Then get the profile (separate query since FK is on auth.users, not profiles)
+    const { data: profileData } = await supabase
+      .from('profiles')
+      .select('email')
+      .eq('id', keyData.user_id)
+      .single();
 
     // Update last_used_at
     await supabase
@@ -41,8 +49,8 @@ export async function validateApiKey(
 
     return {
       valid: true,
-      userId: data.user_id,
-      email: (data.profiles as any)?.email,
+      userId: keyData.user_id,
+      email: profileData?.email,
     };
   } catch (error) {
     return { valid: false, error: 'Validation failed' };

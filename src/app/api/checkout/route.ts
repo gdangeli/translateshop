@@ -1,20 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2026-01-28.clover',
-});
+// Lazy initialization to avoid build-time errors
+function getStripe() {
+  return new Stripe(process.env.STRIPE_SECRET_KEY!, {
+    apiVersion: '2026-01-28.clover',
+  });
+}
 
-const PRICES: Record<string, { priceId: string; credits: number }> = {
-  starter: { priceId: process.env.STRIPE_PRICE_STARTER!, credits: 500 },
-  pro: { priceId: process.env.STRIPE_PRICE_PRO!, credits: 2000 },
-  business: { priceId: process.env.STRIPE_PRICE_BUSINESS!, credits: 6000 },
-  unlimited: { priceId: process.env.STRIPE_PRICE_UNLIMITED!, credits: 0 },
-};
+function getPrices(): Record<string, { priceId: string; credits: number }> {
+  return {
+    starter: { priceId: process.env.STRIPE_PRICE_STARTER!, credits: 500 },
+    pro: { priceId: process.env.STRIPE_PRICE_PRO!, credits: 2000 },
+    business: { priceId: process.env.STRIPE_PRICE_BUSINESS!, credits: 6000 },
+    unlimited: { priceId: process.env.STRIPE_PRICE_UNLIMITED!, credits: 0 },
+  };
+}
 
 export async function POST(req: NextRequest) {
   try {
     const { package: pkg, email } = await req.json();
+    const PRICES = getPrices();
 
     if (!pkg || !PRICES[pkg]) {
       return NextResponse.json({ error: 'Invalid package' }, { status: 400 });
@@ -24,6 +30,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Email required' }, { status: 400 });
     }
 
+    const stripe = getStripe();
     const priceConfig = PRICES[pkg];
     const isSubscription = pkg === 'unlimited';
     const origin = req.headers.get('origin') || 'https://translateshop.vercel.app';
