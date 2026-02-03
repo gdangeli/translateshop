@@ -66,7 +66,17 @@ export default function DashboardPage() {
   const [industry, setIndustry] = useState('general');
   const [tone, setTone] = useState('neutral');
   const [showSettings, setShowSettings] = useState(false);
+  const [editingProduct, setEditingProduct] = useState<Product | null>(null);
+  const [editedTranslations, setEditedTranslations] = useState<Record<string, { title: string; description: string }>>({});
+  const [saving, setSaving] = useState(false);
   const router = useRouter();
+
+  const LANGUAGES = [
+    { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
+    { code: 'fr', label: 'Français', flag: '🇫🇷' },
+    { code: 'it', label: 'Italiano', flag: '🇮🇹' },
+    { code: 'en', label: 'English', flag: '🇬🇧' },
+  ];
 
   const loadData = async () => {
     const { data: { session } } = await supabase.auth.getSession();
@@ -180,6 +190,77 @@ export default function DashboardPage() {
       setError('Übersetzung fehlgeschlagen');
     } finally {
       setTranslating(null);
+    }
+  };
+
+  const handleEditProduct = (product: Product) => {
+    // Initialize edited translations with current values
+    const initial: Record<string, { title: string; description: string }> = {};
+    
+    for (const lang of LANGUAGES) {
+      if (lang.code === product.original_language) {
+        initial[lang.code] = {
+          title: product.original_title,
+          description: product.original_description || '',
+        };
+      } else {
+        const translation = product.translations?.find(t => t.language === lang.code);
+        initial[lang.code] = {
+          title: translation?.title || '',
+          description: translation?.description || '',
+        };
+      }
+    }
+    
+    setEditedTranslations(initial);
+    setEditingProduct(product);
+  };
+
+  const handleSaveTranslations = async () => {
+    if (!editingProduct) return;
+    
+    setSaving(true);
+    setError(null);
+
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) return;
+
+      // Filter out the original language and empty translations
+      const translationsToSave: Record<string, { title: string; description?: string }> = {};
+      
+      for (const [lang, data] of Object.entries(editedTranslations)) {
+        if (lang !== editingProduct.original_language && data.title.trim()) {
+          translationsToSave[lang] = {
+            title: data.title.trim(),
+            description: data.description.trim() || undefined,
+          };
+        }
+      }
+
+      const response = await fetch('/api/translations', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${session.access_token}`,
+        },
+        body: JSON.stringify({
+          productId: editingProduct.id,
+          translations: translationsToSave,
+        }),
+      });
+
+      if (!response.ok) {
+        const result = await response.json();
+        throw new Error(result.error || 'Failed to save');
+      }
+
+      await loadData();
+      setEditingProduct(null);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Speichern fehlgeschlagen');
+    } finally {
+      setSaving(false);
     }
   };
 
@@ -395,6 +476,109 @@ export default function DashboardPage() {
           </div>
         )}
 
+        {/* Edit Translations Modal */}
+        {editingProduct && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
+              <div className="flex justify-between items-center p-6 border-b">
+                <div>
+                  <h2 className="text-xl font-semibold">Übersetzungen bearbeiten</h2>
+                  <p className="text-sm text-slate-500 mt-1">{editingProduct.original_title}</p>
+                </div>
+                <button 
+                  onClick={() => setEditingProduct(null)} 
+                  className="text-slate-400 hover:text-slate-600 text-2xl"
+                >
+                  ✕
+                </button>
+              </div>
+              
+              <div className="overflow-y-auto p-6 flex-1">
+                <div className="space-y-6">
+                  {LANGUAGES.map((lang) => {
+                    const isOriginal = lang.code === editingProduct.original_language;
+                    return (
+                      <div key={lang.code} className={`p-4 rounded-lg ${isOriginal ? 'bg-blue-50 border border-blue-200' : 'bg-slate-50'}`}>
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className="text-xl">{lang.flag}</span>
+                          <span className="font-semibold">{lang.label}</span>
+                          {isOriginal && (
+                            <span className="text-xs bg-blue-200 text-blue-800 px-2 py-0.5 rounded-full">
+                              Original
+                            </span>
+                          )}
+                        </div>
+                        
+                        <div className="space-y-3">
+                          <div>
+                            <label className="block text-sm font-medium text-slate-700 mb-1">
+                              Titel
+                            </label>
+                            <input
+                              type="text"
+                              value={editedTranslations[lang.code]?.title || ''}
+                              onChange={(e) => setEditedTranslations(prev => ({
+                                ...prev,
+                                [lang.code]: { ...prev[lang.code], title: e.target.value }
+                              }))}
+                              disabled={isOriginal}
+                              className={`w-full px-3 py-2 border rounded-lg outline-none transition ${
+                                isOriginal 
+                                  ? 'bg-white/50 border-blue-200 text-slate-600' 
+                                  : 'border-slate-200 focus:ring-2 focus:ring-red-500'
+                              }`}
+                              placeholder={isOriginal ? '' : 'Übersetzung eingeben...'}
+                            />
+                          </div>
+                          
+                          {(editingProduct.original_description || editedTranslations[lang.code]?.description) && (
+                            <div>
+                              <label className="block text-sm font-medium text-slate-700 mb-1">
+                                Beschreibung
+                              </label>
+                              <textarea
+                                value={editedTranslations[lang.code]?.description || ''}
+                                onChange={(e) => setEditedTranslations(prev => ({
+                                  ...prev,
+                                  [lang.code]: { ...prev[lang.code], description: e.target.value }
+                                }))}
+                                disabled={isOriginal}
+                                rows={3}
+                                className={`w-full px-3 py-2 border rounded-lg outline-none transition resize-none ${
+                                  isOriginal 
+                                    ? 'bg-white/50 border-blue-200 text-slate-600' 
+                                    : 'border-slate-200 focus:ring-2 focus:ring-red-500'
+                                }`}
+                                placeholder={isOriginal ? '' : 'Übersetzung eingeben...'}
+                              />
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+              
+              <div className="flex justify-end gap-3 p-6 border-t bg-slate-50">
+                <button
+                  onClick={() => setEditingProduct(null)}
+                  className="px-4 py-2 text-slate-600 hover:text-slate-800"
+                >
+                  Abbrechen
+                </button>
+                <button
+                  onClick={handleSaveTranslations}
+                  disabled={saving}
+                  className="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition disabled:opacity-50"
+                >
+                  {saving ? 'Speichern...' : 'Änderungen speichern'}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Products List */}
         {products.length === 0 ? (
           <div className="bg-white rounded-xl shadow-sm p-8 text-center">
@@ -452,13 +636,23 @@ export default function DashboardPage() {
                         {hasLang('en') ? '✅' : '—'}
                       </td>
                       <td className="text-right p-4">
-                        <button
-                          onClick={() => handleTranslate(product.id)}
-                          disabled={translating === product.id}
-                          className="text-red-600 hover:text-red-700 font-medium disabled:opacity-50"
-                        >
-                          {translating === product.id ? 'Übersetze...' : 'Übersetzen'}
-                        </button>
+                        <div className="flex justify-end gap-2">
+                          {product.translations?.length > 0 && (
+                            <button
+                              onClick={() => handleEditProduct(product)}
+                              className="text-slate-600 hover:text-slate-800 font-medium"
+                            >
+                              ✏️ Bearbeiten
+                            </button>
+                          )}
+                          <button
+                            onClick={() => handleTranslate(product.id)}
+                            disabled={translating === product.id}
+                            className="text-red-600 hover:text-red-700 font-medium disabled:opacity-50"
+                          >
+                            {translating === product.id ? 'Übersetze...' : 'Übersetzen'}
+                          </button>
+                        </div>
                       </td>
                     </tr>
                   );
