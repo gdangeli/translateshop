@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b91c1c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#grad)"/>
+  <!-- Globe lines -->
+  <ellipse cx="256" cy="256" rx="160" ry="160" fill="none" stroke="white" stroke-width="16" opacity="0.9"/>
+  <ellipse cx="256" cy="256" rx="80" ry="160" fill="none" stroke="white" stroke-width="12" opacity="0.7"/>
+  <line x1="96" y1="256" x2="416" y2="256" stroke="white" stroke-width="12" opacity="0.7"/>
+  <ellipse cx="256" cy="180" rx="130" ry="40" fill="none" stroke="white" stroke-width="10" opacity="0.5"/>
+  <ellipse cx="256" cy="332" rx="130" ry="40" fill="none" stroke="white" stroke-width="10" opacity="0.5"/>
+  <!-- T letter overlay -->
+  <text x="256" y="300" font-family="Arial, sans-serif" font-size="200" font-weight="bold" fill="white" text-anchor="middle" opacity="0.95">T</text>
+</svg>
