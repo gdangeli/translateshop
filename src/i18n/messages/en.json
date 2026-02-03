@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "howItWorks": "How it works",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "login": "Log in",
+    "register": "Start for free",
+    "dashboard": "Dashboard"
+  },
+  "hero": {
+    "badge": "🚀 New: AI-powered translations for Swiss shops",
+    "title": "Reach",
+    "titleHighlight": "60% more customers",
+    "titleEnd": "in Switzerland",
+    "subtitle": "Translate your online shop in minutes into German, French, Italian and English. AI quality, Swiss precision.",
+    "cta": "Try for free →",
+    "demo": "Watch demo",
+    "benefits": "✓ 50 free credits   ✓ No credit card   ✓ Start immediately"
+  },
+  "trust": {
+    "shops": "Swiss shops",
+    "products": "Translated products",
+    "rating": "Customer rating",
+    "madeIn": "Made in Switzerland"
+  },
+  "problem": {
+    "title": "70% of Swiss prefer to buy in their language",
+    "subtitle": "A German-speaking Swiss shop only reaches 63% of the market. French-speaking Switzerland, Ticino and international customers are left out.",
+    "manual": "Manual translations",
+    "manualDesc": "Expensive (CHF 0.15+/word) and take weeks",
+    "google": "Google Translate",
+    "googleDesc": "Sounds unprofessional, ignores Swiss specifics",
+    "self": "Translate yourself",
+    "selfDesc": "Time-consuming and error-prone"
+  },
+  "solution": {
+    "title": "✓ The solution: TranslateShop",
+    "fast": "AI translations in seconds",
+    "fastDesc": "100 products in under 2 minutes",
+    "quality": "Swiss quality",
+    "qualityDesc": "CHF, local expressions, correct forms of address",
+    "fair": "Fair credit packages",
+    "fairDesc": "From CHF 9 — pay only what you use",
+    "systems": "All e-commerce systems",
+    "systemsDesc": "CSV import/export for Shopify, WooCommerce, etc.",
+    "cta": "Try for free →"
+  },
+  "steps": {
+    "title": "It's that simple",
+    "subtitle": "Your multilingual shop in 3 steps — no technical knowledge required",
+    "step1": "Upload CSV",
+    "step1Desc": "Export your products from your e-commerce system as a CSV file and upload it.",
+    "step2": "Start translation",
+    "step2Desc": "Choose the target languages and click \"Translate\". The AI does the rest in seconds.",
+    "step3": "Export & done",
+    "step3Desc": "Download the translated products and import them into your shop. Done!",
+    "cta": "Try for free →"
+  },
+  "features": {
+    "title": "Why 500+ Swiss shops trust us",
+    "subtitle": "TranslateShop was developed specifically for Swiss e-commerce",
+    "swiss": "Optimised for Switzerland",
+    "swissDesc": "Real Swiss localisation: CHF instead of €, local expressions, correct forms of address.",
+    "ai": "State-of-the-art AI",
+    "aiDesc": "Powered by GPT-4 technology. Understands context, product categories and industry-specific terms.",
+    "fast": "Lightning fast",
+    "fastDesc": "100 products in under 2 minutes. No waiting, no appointments, no delays.",
+    "fair": "Fair prices",
+    "fairDesc": "Credit packages from CHF 9. No subscriptions, no hidden costs. Pay only what you need.",
+    "systems": "All e-commerce systems",
+    "systemsDesc": "Shopify, WooCommerce, PrestaShop, Magento, Shopware — works with any CSV-compatible system.",
+    "secure": "Secure & GDPR",
+    "secureDesc": "Data hosted in Switzerland. Fully GDPR compliant. No sharing with third parties."
+  },
+  "testimonials": {
+    "title": "What our customers say",
+    "subtitle": "Over 500 Swiss shops use TranslateShop"
+  },
+  "pricing": {
+    "title": "Simple, transparent pricing",
+    "subtitle": "Start for free. Buy credits when you need more.",
+    "creditInfo": "💡 1 credit = 1 row × 1 language",
+    "noExpiry": "Credits never expire. Top up anytime.",
+    "free": "Free",
+    "freeDesc": "50 credits to test",
+    "starter": "Starter",
+    "starterDesc": "500 credits",
+    "pro": "Pro",
+    "proDesc": "2000 credits",
+    "business": "Business",
+    "businessDesc": "6000 credits",
+    "unlimited": "Unlimited",
+    "unlimitedDesc": "Unlimited credits",
+    "popular": "POPULAR",
+    "register": "Register",
+    "startFree": "Start for free",
+    "perMonth": "/month"
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "subtitle": "Everything you need to know"
+  },
+  "cta": {
+    "title": "Ready to reach all of Switzerland?",
+    "subtitle": "Start for free today. 50 credits as a gift — no credit card required.",
+    "button": "Start for free →",
+    "trust": "Already trusted by over 500 Swiss shops"
+  },
+  "footer": {
+    "description": "AI-powered translations for Swiss online shops. Reach all 4 language regions of Switzerland.",
+    "product": "Product",
+    "support": "Support",
+    "legal": "Legal",
+    "howItWorks": "How it works",
+    "help": "Help & FAQ",
+    "imprint": "Imprint",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "copyright": "© 2026 TranslateShop.ch — Made with ❤️ in Switzerland 🇨🇭",
+    "ssl": "🔒 SSL encrypted",
+    "hosting": "🇨🇭 Hosted in Switzerland"
+  }
+}

@@ -4,13 +4,19 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "TranslateShop.ch | Online-Shop Übersetzung für die Schweiz",
   description: "Übersetzen Sie Ihren Schweizer Online-Shop automatisch auf Deutsch, Französisch, Italienisch und Englisch. KI-gestützt, Schweizer Qualität. Ab CHF 49/Monat.",
-  keywords: "Shop Übersetzung, E-Commerce Übersetzung, Schweiz, mehrsprachig, Shopify übersetzen, WooCommerce übersetzen, Online-Shop Deutsch Französisch, Produktbeschreibungen übersetzen",
+  keywords: "Shop Übersetzung, E-Commerce Übersetzung, Schweiz, mehrsprachig, Shopify übersetzen, WooCommerce übersetzen",
   authors: [{ name: "TranslateShop.ch" }],
   creator: "TranslateShop.ch",
   publisher: "TranslateShop.ch",
   robots: "index, follow",
   alternates: {
     canonical: "https://translateshop.ch",
+    languages: {
+      'de': 'https://translateshop.ch',
+      'fr': 'https://translateshop.ch/fr',
+      'it': 'https://translateshop.ch/it',
+      'en': 'https://translateshop.ch/en',
+    },
   },
   openGraph: {
     type: "website",
@@ -34,17 +40,8 @@ export const metadata: Metadata = {
     description: "Übersetzen Sie Ihren Schweizer Online-Shop automatisch in alle 4 Landessprachen.",
     images: ["https://translateshop.ch/og-image.png"],
   },
-  verification: {
-    // Add these later when you have them:
-    // google: "your-google-verification-code",
-  },
-  other: {
-    "geo.region": "CH",
-    "geo.placename": "Switzerland",
-  },
 };
 
-// JSON-LD Structured Data
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -59,11 +56,6 @@ const jsonLd = {
     lowPrice: "0",
     highPrice: "199",
     offerCount: "4",
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    ratingCount: "127",
   },
   provider: {
     "@type": "Organization",

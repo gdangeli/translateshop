@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "howItWorks": "So funktionierts",
+    "pricing": "Preise",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "login": "Anmelden",
+    "register": "Kostenlos starten",
+    "dashboard": "Dashboard"
+  },
+  "hero": {
+    "badge": "🚀 Neu: KI-gestützte Übersetzungen für Schweizer Shops",
+    "title": "Erreichen Sie",
+    "titleHighlight": "60% mehr Kunden",
+    "titleEnd": "in der Schweiz",
+    "subtitle": "Übersetzen Sie Ihren Online-Shop in Minuten auf Deutsch, Französisch, Italienisch und Englisch. KI-Qualität, Schweizer Präzision.",
+    "cta": "Jetzt kostenlos testen →",
+    "demo": "Demo ansehen",
+    "benefits": "✓ 50 Credits gratis   ✓ Keine Kreditkarte   ✓ Sofort starten"
+  },
+  "trust": {
+    "shops": "Schweizer Shops",
+    "products": "Übersetzte Produkte",
+    "rating": "Kundenbewertung",
+    "madeIn": "Made in Switzerland"
+  },
+  "problem": {
+    "title": "70% der Schweizer kaufen lieber in ihrer Sprache",
+    "subtitle": "Ein Deutschschweizer Shop erreicht nur 63% des Marktes. Die Romandie, das Tessin und internationale Kunden bleiben aussen vor.",
+    "manual": "Manuelle Übersetzungen",
+    "manualDesc": "Teuer (CHF 0.15+/Wort) und dauern Wochen",
+    "google": "Google Translate",
+    "googleDesc": "Klingt unprofessionell, kennt keine CH-Besonderheiten",
+    "self": "Selbst übersetzen",
+    "selfDesc": "Zeitaufwändig und fehleranfällig"
+  },
+  "solution": {
+    "title": "✓ Die Lösung: TranslateShop",
+    "fast": "KI-Übersetzungen in Sekunden",
+    "fastDesc": "100 Produkte in unter 2 Minuten",
+    "quality": "Schweizer Qualität",
+    "qualityDesc": "CHF, Helvetismen, korrekte Anrede (du/Sie)",
+    "fair": "Faire Credit-Pakete",
+    "fairDesc": "Ab CHF 9 — zahlen Sie nur was Sie brauchen",
+    "systems": "Alle Shop-Systeme",
+    "systemsDesc": "CSV Import/Export für Shopify, WooCommerce, etc.",
+    "cta": "Jetzt kostenlos testen →"
+  },
+  "steps": {
+    "title": "So einfach geht's",
+    "subtitle": "In 3 Schritten zu Ihrem mehrsprachigen Shop — ohne technische Kenntnisse",
+    "step1": "CSV hochladen",
+    "step1Desc": "Exportieren Sie Ihre Produkte aus Ihrem Shop-System als CSV-Datei und laden Sie sie hoch.",
+    "step2": "Übersetzen lassen",
+    "step2Desc": "Wählen Sie die Zielsprachen und klicken Sie auf \"Übersetzen\". Die KI erledigt den Rest in Sekunden.",
+    "step3": "Exportieren & fertig",
+    "step3Desc": "Laden Sie die übersetzten Produkte herunter und importieren Sie sie in Ihren Shop. Done!",
+    "cta": "Kostenlos ausprobieren →"
+  },
+  "features": {
+    "title": "Warum 500+ Schweizer Shops uns vertrauen",
+    "subtitle": "TranslateShop wurde speziell für den Schweizer E-Commerce entwickelt",
+    "swiss": "Schweiz-optimiert",
+    "swissDesc": "Echte Schweizer Lokalisierung: CHF statt €, Helvetismen, korrekte Anrede. Kein \"ß\", keine deutschen Begriffe.",
+    "ai": "Modernste KI",
+    "aiDesc": "Powered by GPT-4 Technologie. Versteht Kontext, Produktkategorien und branchenspezifische Begriffe.",
+    "fast": "Blitzschnell",
+    "fastDesc": "100 Produkte in unter 2 Minuten. Keine Wartezeiten, keine Termine, keine Verzögerungen.",
+    "fair": "Faire Preise",
+    "fairDesc": "Credit-Pakete ab CHF 9. Keine Abos, keine versteckten Kosten. Zahlen Sie nur was Sie brauchen.",
+    "systems": "Alle Shop-Systeme",
+    "systemsDesc": "Shopify, WooCommerce, PrestaShop, Magento, Shopware — funktioniert mit jedem CSV-fähigen System.",
+    "secure": "Sicher & DSGVO",
+    "secureDesc": "Daten in der Schweiz gehostet. Vollständig DSGVO-konform. Keine Weitergabe an Dritte."
+  },
+  "testimonials": {
+    "title": "Das sagen unsere Kunden",
+    "subtitle": "Über 500 Schweizer Shops nutzen TranslateShop"
+  },
+  "pricing": {
+    "title": "Einfache, transparente Preise",
+    "subtitle": "Starten Sie kostenlos. Kaufen Sie Credits wenn Sie mehr brauchen.",
+    "creditInfo": "💡 1 Credit = 1 Zeile × 1 Sprache",
+    "noExpiry": "Credits verfallen nicht. Jederzeit nachkaufen möglich.",
+    "free": "Free",
+    "freeDesc": "50 Credits zum Testen",
+    "starter": "Starter",
+    "starterDesc": "500 Credits",
+    "pro": "Pro",
+    "proDesc": "2000 Credits",
+    "business": "Business",
+    "businessDesc": "6000 Credits",
+    "unlimited": "Unlimited",
+    "unlimitedDesc": "Unbegrenzte Credits",
+    "popular": "BELIEBT",
+    "register": "Registrieren",
+    "startFree": "Kostenlos starten",
+    "perMonth": "/Mt"
+  },
+  "faq": {
+    "title": "Häufige Fragen",
+    "subtitle": "Alles was Sie wissen müssen"
+  },
+  "cta": {
+    "title": "Bereit, die ganze Schweiz zu erreichen?",
+    "subtitle": "Starten Sie heute kostenlos. 50 Credits geschenkt — keine Kreditkarte nötig.",
+    "button": "Jetzt kostenlos starten →",
+    "trust": "Schon über 500 Schweizer Shops vertrauen uns"
+  },
+  "footer": {
+    "description": "KI-gestützte Übersetzungen für Schweizer Online-Shops. Erreichen Sie alle 4 Sprachregionen der Schweiz.",
+    "product": "Produkt",
+    "support": "Support",
+    "legal": "Rechtliches",
+    "howItWorks": "So funktioniert's",
+    "help": "Hilfe & FAQ",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "terms": "AGB",
+    "copyright": "© 2026 TranslateShop.ch — Made with ❤️ in Switzerland 🇨🇭",
+    "ssl": "🔒 SSL verschlüsselt",
+    "hosting": "🇨🇭 Hosting in der Schweiz"
+  }
+}
