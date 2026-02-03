@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import CSVUpload from '@/components/CSVUpload';
 import CreditsDisplay from '@/components/CreditsDisplay';
 import GlossaryManager from '@/components/GlossaryManager';
+import IntegrationsManager from '@/components/IntegrationsManager';
 
 // Translation settings options
 const INDUSTRIES = [
@@ -71,6 +72,7 @@ export default function DashboardPage() {
   const [editedTranslations, setEditedTranslations] = useState<Record<string, { title: string; description: string }>>({});
   const [saving, setSaving] = useState(false);
   const [showGlossary, setShowGlossary] = useState(false);
+  const [showIntegrations, setShowIntegrations] = useState(false);
   const router = useRouter();
 
   const LANGUAGES = [
@@ -467,6 +469,12 @@ export default function DashboardPage() {
           >
             📖 Glossar
           </button>
+          <button
+            onClick={() => setShowIntegrations(true)}
+            className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition"
+          >
+            🔗 Shop verbinden
+          </button>
         </div>
 
         {/* Upload Modal */}
@@ -487,6 +495,14 @@ export default function DashboardPage() {
         {/* Glossary Modal */}
         {showGlossary && (
           <GlossaryManager onClose={() => setShowGlossary(false)} />
+        )}
+
+        {/* Integrations Modal */}
+        {showIntegrations && (
+          <IntegrationsManager 
+            onClose={() => setShowIntegrations(false)} 
+            onImportComplete={() => { setShowIntegrations(false); loadData(); }}
+          />
         )}
 
         {/* Edit Translations Modal */}
