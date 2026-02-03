@@ -71,7 +71,15 @@
     "systems": "Tous les systèmes e-commerce",
     "systemsDesc": "Shopify, WooCommerce, PrestaShop, Magento, Shopware — fonctionne avec tout système compatible CSV.",
     "secure": "Sécurisé & RGPD",
-    "secureDesc": "Données hébergées en Suisse. Entièrement conforme au RGPD. Aucune transmission à des tiers."
+    "secureDesc": "Données hébergées en Suisse. Entièrement conforme au RGPD. Aucune transmission à des tiers.",
+    "glossary": "Glossaire personnalisé",
+    "glossaryDesc": "Définissez les termes qui doivent toujours être traduits de la même manière. Idéal pour les marques et termes techniques.",
+    "edit": "Modifier les traductions",
+    "editDesc": "Ajustez chaque traduction manuellement. Contrôle total sur le résultat final.",
+    "integration": "Connexion directe boutique",
+    "integrationDesc": "Connectez Shopify et WooCommerce directement. Importez les produits sans export CSV.",
+    "api": "API Développeur",
+    "apiDesc": "API REST pour développeurs. Intégrez les traductions directement dans votre workflow."
   },
   "testimonials": {
     "title": "Ce que disent nos clients",

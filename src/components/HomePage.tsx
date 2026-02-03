@@ -263,6 +263,33 @@ export default function HomePage() {
                 <p className="text-slate-600 text-sm md:text-base">{t('features.secureDesc')}</p>
               </div>
             </div>
+
+            {/* New Features Row */}
+            <div className="mt-6 md:mt-8">
+              <p className="text-center text-sm text-red-600 font-medium mb-4 md:mb-6">🆕 Neue Power-Features</p>
+              <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-5 md:p-6 rounded-xl shadow-sm border border-purple-200 hover:shadow-md transition">
+                  <div className="text-3xl md:text-4xl mb-3 md:mb-4">📖</div>
+                  <h3 className="text-lg md:text-xl font-semibold mb-2">{t('features.glossary')}</h3>
+                  <p className="text-slate-600 text-sm md:text-base">{t('features.glossaryDesc')}</p>
+                </div>
+                <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-5 md:p-6 rounded-xl shadow-sm border border-blue-200 hover:shadow-md transition">
+                  <div className="text-3xl md:text-4xl mb-3 md:mb-4">✏️</div>
+                  <h3 className="text-lg md:text-xl font-semibold mb-2">{t('features.edit')}</h3>
+                  <p className="text-slate-600 text-sm md:text-base">{t('features.editDesc')}</p>
+                </div>
+                <div className="bg-gradient-to-br from-green-50 to-green-100 p-5 md:p-6 rounded-xl shadow-sm border border-green-200 hover:shadow-md transition">
+                  <div className="text-3xl md:text-4xl mb-3 md:mb-4">🔗</div>
+                  <h3 className="text-lg md:text-xl font-semibold mb-2">{t('features.integration')}</h3>
+                  <p className="text-slate-600 text-sm md:text-base">{t('features.integrationDesc')}</p>
+                </div>
+                <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-5 md:p-6 rounded-xl shadow-sm border border-orange-200 hover:shadow-md transition">
+                  <div className="text-3xl md:text-4xl mb-3 md:mb-4">🔑</div>
+                  <h3 className="text-lg md:text-xl font-semibold mb-2">{t('features.api')}</h3>
+                  <p className="text-slate-600 text-sm md:text-base">{t('features.apiDesc')}</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Pricing */}

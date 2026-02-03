@@ -9,7 +9,7 @@
     "dashboard": "Dashboard"
   },
   "hero": {
-    "badge": "🚀 Neu: KI-gestützte Übersetzungen für Schweizer Shops",
+    "badge": "🚀 Neu: Shopify & WooCommerce Integration + Glossar",
     "title": "Erreichen Sie",
     "titleHighlight": "60% mehr Kunden",
     "titleEnd": "in der Schweiz",
@@ -71,7 +71,15 @@
     "systems": "Alle Shop-Systeme",
     "systemsDesc": "Shopify, WooCommerce, PrestaShop, Magento, Shopware — funktioniert mit jedem CSV-fähigen System.",
     "secure": "Sicher & DSGVO",
-    "secureDesc": "Daten in der Schweiz gehostet. Vollständig DSGVO-konform. Keine Weitergabe an Dritte."
+    "secureDesc": "Daten in der Schweiz gehostet. Vollständig DSGVO-konform. Keine Weitergabe an Dritte.",
+    "glossary": "Eigenes Glossar",
+    "glossaryDesc": "Definieren Sie Begriffe, die immer gleich übersetzt werden sollen. Perfekt für Markennamen und Fachbegriffe.",
+    "edit": "Übersetzungen bearbeiten",
+    "editDesc": "Passen Sie jede Übersetzung manuell an. Volle Kontrolle über das Endergebnis.",
+    "integration": "Direkte Shop-Anbindung",
+    "integrationDesc": "Shopify und WooCommerce direkt verbinden. Produkte importieren ohne CSV-Export.",
+    "api": "Developer API",
+    "apiDesc": "REST API für Entwickler. Integrieren Sie Übersetzungen direkt in Ihren Workflow."
   },
   "testimonials": {
     "title": "Das sagen unsere Kunden",
