@@ -7,12 +7,19 @@ interface TranslationRequest {
   fromLang: string;
   toLang: string;
   context?: string; // e.g., "product title" or "product description"
+  industry?: string;
+  tone?: string;
 }
 
 interface TranslationResult {
   translatedText: string;
   fromLang: string;
   toLang: string;
+}
+
+interface TranslateProductOptions {
+  industry?: string;
+  tone?: string;
 }
 
 const LANGUAGE_NAMES: Record<string, string> = {
@@ -22,26 +29,59 @@ const LANGUAGE_NAMES: Record<string, string> = {
   en: 'English',
 };
 
+const INDUSTRY_CONTEXT: Record<string, string> = {
+  fashion: 'fashion and clothing (e.g., Tank = tank top, not military vehicle)',
+  electronics: 'consumer electronics and technology',
+  food: 'food and beverages',
+  furniture: 'furniture and home decor',
+  beauty: 'beauty and cosmetics',
+  sports: 'sports and outdoor equipment',
+  toys: 'toys and games',
+  jewelry: 'jewelry and watches',
+  automotive: 'automotive parts and accessories',
+  health: 'health and wellness products',
+  garden: 'garden and outdoor living',
+  pet: 'pet supplies and accessories',
+  office: 'office supplies and stationery',
+  general: 'general retail products',
+};
+
+const TONE_INSTRUCTIONS: Record<string, string> = {
+  formal: 'Use formal language (Sie/vous/Lei). Professional and respectful tone.',
+  informal: 'Use informal language (du/tu/tu). Friendly and casual tone.',
+  neutral: 'Use neutral language that works in both formal and informal contexts where possible.',
+};
+
 export async function translateText({
   text,
   fromLang,
   toLang,
   context = 'e-commerce product text',
+  industry = 'general',
+  tone = 'neutral',
 }: TranslationRequest): Promise<TranslationResult> {
   if (!CLAUDE_API_KEY) {
     throw new Error('CLAUDE_API_KEY not configured');
   }
 
-  const systemPrompt = `You are a professional translator specializing in Swiss e-commerce. 
+  const industryContext = INDUSTRY_CONTEXT[industry] || INDUSTRY_CONTEXT.general;
+  const toneInstruction = TONE_INSTRUCTIONS[tone] || TONE_INSTRUCTIONS.neutral;
+
+  const systemPrompt = `You are a professional translator specializing in Swiss e-commerce.
 Translate the following ${context} from ${LANGUAGE_NAMES[fromLang]} to ${LANGUAGE_NAMES[toLang]}.
 
+INDUSTRY CONTEXT: This is a ${industryContext} shop. Use appropriate terminology for this industry.
+
+TONE: ${toneInstruction}
+
 Important guidelines:
-- Use Swiss German conventions if translating to German (e.g., "ss" instead of "ß")
+- Use Swiss German conventions if translating to German (e.g., "ss" instead of "ß", Swiss terminology)
 - Use appropriate Swiss French/Italian formulations
-- Keep product-specific terms accurate
-- Maintain the same tone and style
+- Keep product-specific terms accurate for the ${industry} industry
+- Maintain the same tone and style as the original
 - If there are prices, keep CHF as the currency
-- Do not add any explanations, just provide the translation`;
+- Do not add any explanations, just provide the translation
+- Keep formatting (line breaks, bullet points) if present`;
 
   const response = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
@@ -81,9 +121,11 @@ Important guidelines:
 export async function translateProduct(
   product: { title: string; description?: string },
   fromLang: string,
-  targetLangs: string[]
+  targetLangs: string[],
+  options: TranslateProductOptions = {}
 ): Promise<Record<string, { title: string; description?: string }>> {
   const translations: Record<string, { title: string; description?: string }> = {};
+  const { industry = 'general', tone = 'neutral' } = options;
 
   for (const toLang of targetLangs) {
     if (toLang === fromLang) continue;
@@ -93,6 +135,8 @@ export async function translateProduct(
       fromLang,
       toLang,
       context: 'product title',
+      industry,
+      tone,
     });
 
     let descriptionResult;
@@ -102,6 +146,8 @@ export async function translateProduct(
         fromLang,
         toLang,
         context: 'product description',
+        industry,
+        tone,
       });
     }
 
@@ -113,3 +159,27 @@ export async function translateProduct(
 
   return translations;
 }
+
+// Export available options for frontend
+export const INDUSTRIES = [
+  { value: 'fashion', label: 'Mode & Bekleidung' },
+  { value: 'electronics', label: 'Elektronik & Technik' },
+  { value: 'food', label: 'Lebensmittel & Getränke' },
+  { value: 'furniture', label: 'Möbel & Einrichtung' },
+  { value: 'beauty', label: 'Beauty & Kosmetik' },
+  { value: 'sports', label: 'Sport & Outdoor' },
+  { value: 'toys', label: 'Spielzeug & Spiele' },
+  { value: 'jewelry', label: 'Schmuck & Uhren' },
+  { value: 'automotive', label: 'Auto & Zubehör' },
+  { value: 'health', label: 'Gesundheit & Wellness' },
+  { value: 'garden', label: 'Garten & Outdoor' },
+  { value: 'pet', label: 'Tierbedarf' },
+  { value: 'office', label: 'Büro & Schreibwaren' },
+  { value: 'general', label: 'Allgemein / Andere' },
+];
+
+export const TONES = [
+  { value: 'formal', label: 'Formell (Sie/vous/Lei)' },
+  { value: 'informal', label: 'Informell (du/tu/tu)' },
+  { value: 'neutral', label: 'Neutral' },
+];

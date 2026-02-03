@@ -6,6 +6,30 @@ import { useRouter } from 'next/navigation';
 import CSVUpload from '@/components/CSVUpload';
 import CreditsDisplay from '@/components/CreditsDisplay';
 
+// Translation settings options
+const INDUSTRIES = [
+  { value: 'fashion', label: 'Mode & Bekleidung' },
+  { value: 'electronics', label: 'Elektronik & Technik' },
+  { value: 'food', label: 'Lebensmittel & Getränke' },
+  { value: 'furniture', label: 'Möbel & Einrichtung' },
+  { value: 'beauty', label: 'Beauty & Kosmetik' },
+  { value: 'sports', label: 'Sport & Outdoor' },
+  { value: 'toys', label: 'Spielzeug & Spiele' },
+  { value: 'jewelry', label: 'Schmuck & Uhren' },
+  { value: 'automotive', label: 'Auto & Zubehör' },
+  { value: 'health', label: 'Gesundheit & Wellness' },
+  { value: 'garden', label: 'Garten & Outdoor' },
+  { value: 'pet', label: 'Tierbedarf' },
+  { value: 'office', label: 'Büro & Schreibwaren' },
+  { value: 'general', label: 'Allgemein / Andere' },
+];
+
+const TONES = [
+  { value: 'formal', label: 'Formell (Sie/vous/Lei)' },
+  { value: 'informal', label: 'Informell (du/tu/tu)' },
+  { value: 'neutral', label: 'Neutral' },
+];
+
 interface Profile {
   email: string;
   company_name: string | null;
@@ -39,6 +63,9 @@ export default function DashboardPage() {
   const [showUpload, setShowUpload] = useState(false);
   const [translating, setTranslating] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [industry, setIndustry] = useState('general');
+  const [tone, setTone] = useState('neutral');
+  const [showSettings, setShowSettings] = useState(false);
   const router = useRouter();
 
   const loadData = async () => {
@@ -84,6 +111,20 @@ export default function DashboardPage() {
     setLoading(false);
   };
 
+  // Load settings from localStorage
+  useEffect(() => {
+    const savedIndustry = localStorage.getItem('translateshop_industry');
+    const savedTone = localStorage.getItem('translateshop_tone');
+    if (savedIndustry) setIndustry(savedIndustry);
+    if (savedTone) setTone(savedTone);
+  }, []);
+
+  // Save settings to localStorage
+  useEffect(() => {
+    localStorage.setItem('translateshop_industry', industry);
+    localStorage.setItem('translateshop_tone', tone);
+  }, [industry, tone]);
+
   useEffect(() => {
     loadData();
 
@@ -117,6 +158,8 @@ export default function DashboardPage() {
         body: JSON.stringify({
           productId,
           targetLanguages: ['de', 'fr', 'it', 'en'],
+          industry,
+          tone,
         }),
       });
 
@@ -255,8 +298,64 @@ export default function DashboardPage() {
           </div>
         )}
 
+        {/* Translation Settings */}
+        <div className="bg-white rounded-xl shadow-sm p-4 mb-6">
+          <button
+            onClick={() => setShowSettings(!showSettings)}
+            className="flex items-center justify-between w-full text-left"
+          >
+            <div className="flex items-center gap-2">
+              <span className="text-lg">⚙️</span>
+              <span className="font-semibold text-slate-800">Übersetzungs-Einstellungen</span>
+              <span className="text-sm text-slate-500">
+                ({INDUSTRIES.find(i => i.value === industry)?.label}, {TONES.find(t => t.value === tone)?.label})
+              </span>
+            </div>
+            <span className="text-slate-400">{showSettings ? '▲' : '▼'}</span>
+          </button>
+          
+          {showSettings && (
+            <div className="mt-4 pt-4 border-t grid md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                  Branche / Shop-Kategorie
+                </label>
+                <select
+                  value={industry}
+                  onChange={(e) => setIndustry(e.target.value)}
+                  className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
+                >
+                  {INDUSTRIES.map(ind => (
+                    <option key={ind.value} value={ind.value}>{ind.label}</option>
+                  ))}
+                </select>
+                <p className="text-xs text-slate-500 mt-1">
+                  Hilft bei mehrdeutigen Begriffen (z.B. &quot;Tank&quot; = Top in Mode)
+                </p>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                  Ansprache / Tonalität
+                </label>
+                <select
+                  value={tone}
+                  onChange={(e) => setTone(e.target.value)}
+                  className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
+                >
+                  {TONES.map(t => (
+                    <option key={t.value} value={t.value}>{t.label}</option>
+                  ))}
+                </select>
+                <p className="text-xs text-slate-500 mt-1">
+                  Bestimmt ob &quot;Sie&quot; oder &quot;du&quot; verwendet wird
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+
         {/* Action Buttons */}
-        <div className="flex gap-3 mb-6">
+        <div className="flex flex-wrap gap-3 mb-6">
           <button
             onClick={() => setShowUpload(true)}
             className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition"

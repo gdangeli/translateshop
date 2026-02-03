@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Parse request
-    const { productId, targetLanguages } = await request.json();
+    const { productId, targetLanguages, industry, tone } = await request.json();
     if (!productId || !targetLanguages?.length) {
       return NextResponse.json({ error: 'Missing params', version: VERSION }, { status: 400 });
     }
@@ -95,11 +95,12 @@ export async function POST(request: NextRequest) {
       }, { status: 402 }); // 402 Payment Required
     }
 
-    // Perform translation
+    // Perform translation with industry and tone context
     const translations = await translateProduct(
       { title: product.original_title, description: product.original_description },
       product.original_language,
-      langsToTranslate
+      langsToTranslate,
+      { industry: industry || 'general', tone: tone || 'neutral' }
     );
 
     // Save translations
