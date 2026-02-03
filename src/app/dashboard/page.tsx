@@ -7,6 +7,7 @@ import CSVUpload from '@/components/CSVUpload';
 import CreditsDisplay from '@/components/CreditsDisplay';
 import GlossaryManager from '@/components/GlossaryManager';
 import IntegrationsManager from '@/components/IntegrationsManager';
+import DeveloperApiManager from '@/components/DeveloperApiManager';
 
 // Translation settings options
 const INDUSTRIES = [
@@ -73,6 +74,7 @@ export default function DashboardPage() {
   const [saving, setSaving] = useState(false);
   const [showGlossary, setShowGlossary] = useState(false);
   const [showIntegrations, setShowIntegrations] = useState(false);
+  const [showDeveloperApi, setShowDeveloperApi] = useState(false);
   const router = useRouter();
 
   const LANGUAGES = [
@@ -475,6 +477,12 @@ export default function DashboardPage() {
           >
             🔗 Shop verbinden
           </button>
+          <button
+            onClick={() => setShowDeveloperApi(true)}
+            className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition"
+          >
+            🔑 API
+          </button>
         </div>
 
         {/* Upload Modal */}
@@ -503,6 +511,11 @@ export default function DashboardPage() {
             onClose={() => setShowIntegrations(false)} 
             onImportComplete={() => { setShowIntegrations(false); loadData(); }}
           />
+        )}
+
+        {/* Developer API Modal */}
+        {showDeveloperApi && (
+          <DeveloperApiManager onClose={() => setShowDeveloperApi(false)} />
         )}
 
         {/* Edit Translations Modal */}
