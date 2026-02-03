@@ -2,6 +2,13 @@
 
 const CLAUDE_API_KEY = process.env.CLAUDE_API_KEY;
 
+interface GlossaryEntry {
+  source_term: string;
+  target_term: string;
+  source_language: string | null;
+  target_language: string | null;
+}
+
 interface TranslationRequest {
   text: string;
   fromLang: string;
@@ -9,6 +16,7 @@ interface TranslationRequest {
   context?: string; // e.g., "product title" or "product description"
   industry?: string;
   tone?: string;
+  glossary?: GlossaryEntry[];
 }
 
 interface TranslationResult {
@@ -20,6 +28,7 @@ interface TranslationResult {
 interface TranslateProductOptions {
   industry?: string;
   tone?: string;
+  glossary?: GlossaryEntry[];
 }
 
 const LANGUAGE_NAMES: Record<string, string> = {
@@ -59,6 +68,7 @@ export async function translateText({
   context = 'e-commerce product text',
   industry = 'general',
   tone = 'neutral',
+  glossary = [],
 }: TranslationRequest): Promise<TranslationResult> {
   if (!CLAUDE_API_KEY) {
     throw new Error('CLAUDE_API_KEY not configured');
@@ -67,12 +77,29 @@ export async function translateText({
   const industryContext = INDUSTRY_CONTEXT[industry] || INDUSTRY_CONTEXT.general;
   const toneInstruction = TONE_INSTRUCTIONS[tone] || TONE_INSTRUCTIONS.neutral;
 
+  // Build glossary section if entries exist
+  let glossarySection = '';
+  if (glossary && glossary.length > 0) {
+    // Filter glossary entries relevant to this translation
+    const relevantEntries = glossary.filter(entry => {
+      const matchesSource = !entry.source_language || entry.source_language === fromLang;
+      const matchesTarget = !entry.target_language || entry.target_language === toLang;
+      return matchesSource && matchesTarget;
+    });
+
+    if (relevantEntries.length > 0) {
+      glossarySection = `\n\nGLOSSARY - Use these exact translations for the following terms:\n${
+        relevantEntries.map(e => `- "${e.source_term}" → "${e.target_term}"`).join('\n')
+      }\n`;
+    }
+  }
+
   const systemPrompt = `You are a professional translator specializing in Swiss e-commerce.
 Translate the following ${context} from ${LANGUAGE_NAMES[fromLang]} to ${LANGUAGE_NAMES[toLang]}.
 
 INDUSTRY CONTEXT: This is a ${industryContext} shop. Use appropriate terminology for this industry.
 
-TONE: ${toneInstruction}
+TONE: ${toneInstruction}${glossarySection}
 
 Important guidelines:
 - Use Swiss German conventions if translating to German (e.g., "ss" instead of "ß", Swiss terminology)
@@ -81,7 +108,8 @@ Important guidelines:
 - Maintain the same tone and style as the original
 - If there are prices, keep CHF as the currency
 - Do not add any explanations, just provide the translation
-- Keep formatting (line breaks, bullet points) if present`;
+- Keep formatting (line breaks, bullet points) if present
+${glossary.length > 0 ? '- IMPORTANT: Always use the glossary translations for specified terms!' : ''}`;
 
   const response = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
@@ -125,7 +153,7 @@ export async function translateProduct(
   options: TranslateProductOptions = {}
 ): Promise<Record<string, { title: string; description?: string }>> {
   const translations: Record<string, { title: string; description?: string }> = {};
-  const { industry = 'general', tone = 'neutral' } = options;
+  const { industry = 'general', tone = 'neutral', glossary = [] } = options;
 
   for (const toLang of targetLangs) {
     if (toLang === fromLang) continue;
@@ -137,6 +165,7 @@ export async function translateProduct(
       context: 'product title',
       industry,
       tone,
+      glossary,
     });
 
     let descriptionResult;
@@ -148,6 +177,7 @@ export async function translateProduct(
         context: 'product description',
         industry,
         tone,
+        glossary,
       });
     }
 

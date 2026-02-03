@@ -95,12 +95,28 @@ export async function POST(request: NextRequest) {
       }, { status: 402 }); // 402 Payment Required
     }
 
-    // Perform translation with industry and tone context
+    // Load user's glossary (silently fail if table doesn't exist)
+    let glossary: any[] = [];
+    try {
+      const { data: glossaryData } = await supabase
+        .from('glossary')
+        .select('source_term, target_term, source_language, target_language')
+        .eq('user_id', user.id);
+      
+      if (glossaryData) {
+        glossary = glossaryData;
+      }
+    } catch (e) {
+      // Glossary table might not exist yet - continue without it
+      console.log('Glossary not available:', e);
+    }
+
+    // Perform translation with industry, tone, and glossary context
     const translations = await translateProduct(
       { title: product.original_title, description: product.original_description },
       product.original_language,
       langsToTranslate,
-      { industry: industry || 'general', tone: tone || 'neutral' }
+      { industry: industry || 'general', tone: tone || 'neutral', glossary }
     );
 
     // Save translations

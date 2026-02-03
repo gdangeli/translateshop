@@ -5,6 +5,7 @@ import { supabase } from '@/lib/supabase';
 import { useRouter } from 'next/navigation';
 import CSVUpload from '@/components/CSVUpload';
 import CreditsDisplay from '@/components/CreditsDisplay';
+import GlossaryManager from '@/components/GlossaryManager';
 
 // Translation settings options
 const INDUSTRIES = [
@@ -69,6 +70,7 @@ export default function DashboardPage() {
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
   const [editedTranslations, setEditedTranslations] = useState<Record<string, { title: string; description: string }>>({});
   const [saving, setSaving] = useState(false);
+  const [showGlossary, setShowGlossary] = useState(false);
   const router = useRouter();
 
   const LANGUAGES = [
@@ -459,6 +461,12 @@ export default function DashboardPage() {
               </button>
             </>
           )}
+          <button
+            onClick={() => setShowGlossary(true)}
+            className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition"
+          >
+            📖 Glossar
+          </button>
         </div>
 
         {/* Upload Modal */}
@@ -474,6 +482,11 @@ export default function DashboardPage() {
               <CSVUpload onUploadComplete={() => { setShowUpload(false); loadData(); }} />
             </div>
           </div>
+        )}
+
+        {/* Glossary Modal */}
+        {showGlossary && (
+          <GlossaryManager onClose={() => setShowGlossary(false)} />
         )}
 
         {/* Edit Translations Modal */}
