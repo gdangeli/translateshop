@@ -33,6 +33,17 @@ export default function RegisterPage() {
       setError(error.message);
       setLoading(false);
     } else {
+      // Send notification emails (admin + welcome)
+      try {
+        await fetch('/api/notify/registration', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, companyName }),
+        });
+      } catch (e) {
+        // Don't block registration if email fails
+        console.error('Failed to send notification:', e);
+      }
       setSuccess(true);
     }
   };
