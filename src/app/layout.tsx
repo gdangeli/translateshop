@@ -9,6 +9,14 @@ export const metadata: Metadata = {
   creator: "TranslateShop.ch",
   publisher: "TranslateShop.ch",
   robots: "index, follow",
+  icons: {
+    icon: [
+      { url: '/favicon.ico?v=2', sizes: 'any' },
+      { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   alternates: {
     canonical: "https://translateshop.ch",
     languages: {
@@ -76,8 +84,7 @@ export default function RootLayout({
   return (
     <html lang="de-CH">
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        {/* Icons managed via metadata.icons */}
         <meta name="theme-color" content="#dc2626" />
         <script
           type="application/ld+json"
