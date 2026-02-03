@@ -87,7 +87,12 @@ export async function fetchWooCommerceProducts(config: WooCommerceConfig, perPag
 export async function updateWooCommerceProduct(
   config: WooCommerceConfig,
   productId: string,
-  data: { name?: string; description?: string; short_description?: string }
+  data: { 
+    name?: string; 
+    description?: string; 
+    short_description?: string;
+    meta_data?: Array<{ key: string; value: string }>;
+  }
 ): Promise<{ success: boolean; error?: string }> {
   try {
     const baseUrl = config.siteUrl.replace(/\/$/, '');

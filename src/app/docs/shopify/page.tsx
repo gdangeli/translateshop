@@ -128,6 +128,24 @@ export default function ShopifyDocsPage() {
               <li>4. Ihre Produkte erscheinen im Dashboard und können übersetzt werden</li>
             </ol>
           </section>
+
+          {/* Step 6 */}
+          <section className="bg-white rounded-xl border border-slate-200 p-6">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold">6</span>
+              <h2 className="text-xl font-semibold">Übersetzungen übersetzen & synchronisieren</h2>
+            </div>
+            <ol className="space-y-3 text-slate-600 ml-11">
+              <li>1. Klicken Sie bei einem Produkt auf <strong>Übersetzen</strong></li>
+              <li>2. Die KI übersetzt Titel und Beschreibung in alle Sprachen</li>
+              <li>3. Optional: Mit <strong>✏️ Bearbeiten</strong> können Sie Übersetzungen anpassen</li>
+              <li>4. Klicken Sie auf <strong>🔄 Sync</strong> um die Übersetzungen zurück zu Shopify zu senden</li>
+            </ol>
+            <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg ml-11">
+              <p className="text-green-800 font-medium">💡 Tipp</p>
+              <p className="text-green-700 text-sm">Die Übersetzungen werden als Metafields in Shopify gespeichert. Mit Shopify Markets oder Translation Apps wie Langify können diese direkt verwendet werden.</p>
+            </div>
+          </section>
         </div>
 
         <div className="mt-12 p-6 bg-slate-100 rounded-xl">
@@ -135,11 +153,11 @@ export default function ShopifyDocsPage() {
           <div className="space-y-4 text-slate-600">
             <div>
               <p className="font-medium">Werden meine Produkte in Shopify verändert?</p>
-              <p className="text-sm">Nein, der Import kopiert nur die Produktdaten. Ihre Shopify-Produkte bleiben unverändert.</p>
+              <p className="text-sm">Beim Import: Nein. Beim Sync werden Metafields hinzugefügt, die Hauptdaten bleiben unverändert.</p>
             </div>
             <div>
               <p className="font-medium">Kann ich die Übersetzungen zurück nach Shopify exportieren?</p>
-              <p className="text-sm">Aktuell per CSV-Export. Direkter Rück-Export wird in einer zukünftigen Version verfügbar sein.</p>
+              <p className="text-sm">Ja! Mit dem 🔄 Sync Button werden die Übersetzungen direkt als Metafields in Shopify gespeichert.</p>
             </div>
           </div>
         </div>

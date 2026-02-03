@@ -45,6 +45,9 @@ interface Product {
   original_language: string;
   created_at: string;
   translations: Translation[];
+  external_id?: string;
+  external_platform?: 'shopify' | 'woocommerce';
+  integration_id?: string;
 }
 
 interface Translation {
@@ -75,6 +78,7 @@ export default function DashboardPage() {
   const [showGlossary, setShowGlossary] = useState(false);
   const [showIntegrations, setShowIntegrations] = useState(false);
   const [showDeveloperApi, setShowDeveloperApi] = useState(false);
+  const [syncing, setSyncing] = useState<string | null>(null);
   const router = useRouter();
 
   const LANGUAGES = [
@@ -296,6 +300,52 @@ export default function DashboardPage() {
     // Translate each product sequentially
     for (const product of needsTranslation) {
       await handleTranslate(product.id);
+    }
+  };
+
+  // Sync translations back to connected shop (WooCommerce/Shopify)
+  const handleSync = async (productId: string) => {
+    const product = products.find(p => p.id === productId);
+    if (!product?.external_id || !product?.integration_id) {
+      setError('Dieses Produkt ist nicht mit einem Shop verbunden');
+      return;
+    }
+
+    if (!product.translations || product.translations.length === 0) {
+      setError('Keine Übersetzungen zum Synchronisieren vorhanden');
+      return;
+    }
+
+    setSyncing(productId);
+    setError(null);
+
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) return;
+
+      // Sync all translations for this product
+      const response = await fetch('/api/integrations/sync', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${session.access_token}`,
+        },
+        body: JSON.stringify({ productId }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.details || data.error || 'Sync fehlgeschlagen');
+      }
+
+      // Show success message
+      alert(`✅ ${data.message}\n\nÜbersetzungen wurden zu ${product.external_platform === 'woocommerce' ? 'WooCommerce' : 'Shopify'} synchronisiert!`);
+      
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Sync fehlgeschlagen');
+    } finally {
+      setSyncing(null);
     }
   };
 
@@ -678,13 +728,23 @@ export default function DashboardPage() {
                         {hasLang('en') ? '✅' : '—'}
                       </td>
                       <td className="text-right p-4">
-                        <div className="flex justify-end gap-2">
+                        <div className="flex justify-end gap-2 flex-wrap">
                           {product.translations?.length > 0 && (
                             <button
                               onClick={() => handleEditProduct(product)}
                               className="text-slate-600 hover:text-slate-800 font-medium"
                             >
                               ✏️ Bearbeiten
+                            </button>
+                          )}
+                          {product.external_id && product.translations?.length > 0 && (
+                            <button
+                              onClick={() => handleSync(product.id)}
+                              disabled={syncing === product.id}
+                              className="text-green-600 hover:text-green-700 font-medium disabled:opacity-50"
+                              title={`Zu ${product.external_platform === 'woocommerce' ? 'WooCommerce' : 'Shopify'} synchronisieren`}
+                            >
+                              {syncing === product.id ? '🔄 Sync...' : '🔄 Sync'}
                             </button>
                           )}
                           <button

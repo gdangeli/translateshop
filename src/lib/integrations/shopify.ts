@@ -74,28 +74,35 @@ export async function fetchShopifyProducts(config: ShopifyConfig, limit = 250): 
 export async function updateShopifyProduct(
   config: ShopifyConfig,
   productId: string,
-  translations: Record<string, { title: string; description?: string }>
+  data: { 
+    metafields?: Array<{ namespace: string; key: string; value: string; type: string }>;
+    translations?: Record<string, { title: string; description?: string }>;
+  }
 ): Promise<{ success: boolean; error?: string }> {
-  // Note: Shopify doesn't have native multi-language support in Storefront
-  // This would need Shopify Markets or a translation app
-  // For now, we'll provide the metafields approach
-  
   try {
-    // Update product metafields with translations
-    const metafields = Object.entries(translations).flatMap(([lang, trans]) => [
-      {
-        namespace: 'translations',
-        key: `title_${lang}`,
-        value: trans.title,
-        type: 'single_line_text_field',
-      },
-      ...(trans.description ? [{
-        namespace: 'translations',
-        key: `description_${lang}`,
-        value: trans.description,
-        type: 'multi_line_text_field',
-      }] : []),
-    ]);
+    let metafields: Array<{ namespace: string; key: string; value: string; type: string }> = [];
+
+    // Use provided metafields directly if given
+    if (data.metafields) {
+      metafields = data.metafields;
+    }
+    // Or build from translations object (legacy format)
+    else if (data.translations) {
+      metafields = Object.entries(data.translations).flatMap(([lang, trans]) => [
+        {
+          namespace: 'translateshop',
+          key: `title_${lang}`,
+          value: trans.title,
+          type: 'single_line_text_field',
+        },
+        ...(trans.description ? [{
+          namespace: 'translateshop',
+          key: `description_${lang}`,
+          value: trans.description,
+          type: 'multi_line_text_field',
+        }] : []),
+      ]);
+    }
 
     const response = await fetch(
       `https://${config.shopUrl}/admin/api/2024-01/products/${productId}.json`,
