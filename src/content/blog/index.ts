@@ -626,6 +626,279 @@ Die Chancen stehen gut, dass Sie überrascht sein werden.
 *Fragen zum Markteinstieg Westschweiz? Kontaktieren Sie uns: support@translateshop.ch*
     `,
   },
+  {
+    slug: 'woocommerce-shop-mehrsprachig-schweiz',
+    title: 'WooCommerce Shop mehrsprachig machen: Der Schweiz-Guide 2026',
+    excerpt: 'Ihr WooCommerce-Shop soll Französisch und Italienisch sprechen? So geht\'s — mit WPML, Polylang oder dem cleveren CSV-Workaround.',
+    category: 'Tutorial',
+    readTime: 8,
+    emoji: '🔌',
+    publishedAt: '2026-02-04',
+    author: 'TranslateShop Team',
+    keywords: ['woocommerce mehrsprachig', 'woocommerce übersetzen', 'wpml', 'polylang', 'woocommerce schweiz', 'wordpress mehrsprachig'],
+    content: \`
+## WooCommerce + Mehrsprachigkeit = Es ist kompliziert
+
+WooCommerce ist das beliebteste E-Commerce-Plugin für WordPress — aber wenn es um Mehrsprachigkeit geht, wird es schnell kompliziert. Anders als Shopify hat WooCommerce keine eingebaute Lösung.
+
+Die gute Nachricht: Mit dem richtigen Setup erreichen Sie die Romandie und das Tessin ohne Kopfschmerzen.
+
+## Die 3 Wege zum mehrsprachigen WooCommerce-Shop
+
+### Option 1: WPML (Premium)
+
+**WPML** (WordPress Multilingual Plugin) ist der Industriestandard.
+
+**Vorteile:**
+- ✅ Vollständige WooCommerce-Integration
+- ✅ Professioneller Support
+- ✅ Übersetzt alles: Produkte, Kategorien, Checkout, E-Mails
+- ✅ Mehrere Währungen möglich
+
+**Nachteile:**
+- ❌ Kostet CHF 99-199/Jahr
+- ❌ Kann Website verlangsamen
+- ❌ Komplexe Einrichtung
+- ❌ Jedes Produkt muss einzeln übersetzt werden
+
+**Empfohlen für:** Shops mit Budget, die volle Kontrolle wollen.
+
+### Option 2: Polylang + WooCommerce Add-on
+
+**Polylang** ist die kostenlose Alternative — mit kostenpflichtigem WooCommerce-Add-on.
+
+**Vorteile:**
+- ✅ Grundversion kostenlos
+- ✅ Leichtgewichtiger als WPML
+- ✅ Gute Community
+
+**Nachteile:**
+- ❌ WooCommerce-Add-on kostet CHF 99/Jahr
+- ❌ Weniger Features als WPML
+- ❌ Auch hier: manuelles Übersetzen
+
+**Empfohlen für:** Budget-bewusste Shops mit technischem Know-how.
+
+### Option 3: CSV-Export + Massenübersetzung (clever)
+
+Der **Geheimtipp** für Shops mit vielen Produkten:
+
+**So funktioniert's:**
+1. Produkte als CSV exportieren
+2. Mit TranslateShop automatisch übersetzen
+3. Übersetzungen als Meta-Daten reimportieren
+4. Frontend mit einfachem Sprach-Switcher
+
+**Vorteile:**
+- ✅ Schnell: 1000 Produkte in Minuten
+- ✅ Günstig: Keine teuren Plugins
+- ✅ Flexibel: Funktioniert mit jedem Theme
+
+**Nachteile:**
+- ❌ Braucht etwas Setup
+- ❌ Nicht so elegant wie native Lösungen
+
+**Empfohlen für:** Shops mit 100+ Produkten, die schnell live sein wollen.
+
+## Schritt-für-Schritt: Der CSV-Weg
+
+### Schritt 1: WooCommerce-Export
+
+1. Gehen Sie zu **WooCommerce → Produkte → Exportieren**
+2. Wählen Sie alle Produkte
+3. Klicken Sie auf "CSV generieren"
+
+Sie erhalten eine Datei mit Spalten wie:
+- \`post_title\` — Produktname
+- \`post_excerpt\` — Kurzbeschreibung
+- \`post_content\` — Lange Beschreibung
+
+### Schritt 2: Mit TranslateShop übersetzen
+
+1. Gehen Sie zu **translateshop.ch**
+2. Registrieren Sie sich (50 Credits gratis)
+3. Laden Sie die CSV hoch
+4. Wählen Sie:
+   - Quellsprache: Deutsch
+   - Zielsprachen: Französisch, Italienisch
+5. Klicken Sie auf "Alle übersetzen"
+
+**Ergebnis:** Ihre Übersetzungen sind bereit.
+
+### Schritt 3: Übersetzungen als Meta-Daten speichern
+
+TranslateShop speichert die Übersetzungen in WooCommerce-Meta-Feldern:
+
+- \`_title_fr\` — Französischer Titel
+- \`_description_fr\` — Französische Beschreibung
+- \`_title_it\` — Italienischer Titel
+- \`_description_it\` — Italienische Beschreibung
+
+Das bedeutet: Ihre Original-Produkte bleiben unverändert, die Übersetzungen werden als zusätzliche Daten gespeichert.
+
+### Schritt 4: Frontend-Anzeige
+
+Für die Anzeige haben Sie zwei Optionen:
+
+**Option A: Einfacher Sprach-Switcher**
+
+Fügen Sie diesen Code in Ihr Theme ein (\`functions.php\`):
+
+\\\`\\\`\\\`php
+function show_translated_title(\$title, \$id) {
+    \$lang = isset(\$_GET['lang']) ? \$_GET['lang'] : 'de';
+    if (\$lang !== 'de') {
+        \$translated = get_post_meta(\$id, '_title_' . \$lang, true);
+        if (\$translated) return \$translated;
+    }
+    return \$title;
+}
+add_filter('the_title', 'show_translated_title', 10, 2);
+\\\`\\\`\\\`
+
+**Option B: WPML/Polylang für Frontend, Meta-Daten für Übersetzungen**
+
+Nutzen Sie WPML/Polylang nur für die Sprach-Umschaltung und importieren Sie die TranslateShop-Übersetzungen.
+
+## Welchen Weg soll ich wählen?
+
+### Entscheidungshilfe
+
+| Situation | Empfehlung |
+|-----------|------------|
+| < 50 Produkte, Budget vorhanden | WPML |
+| 50-200 Produkte, technisch versiert | Polylang |
+| 200+ Produkte, schnell live | TranslateShop CSV |
+| Enterprise, volle Features | WPML + TranslateShop Import |
+
+### Die Hybrid-Strategie (unser Favorit)
+
+Für die beste Balance aus Speed und Features:
+
+1. **TranslateShop** für die Massenübersetzung der Produkte
+2. **Polylang Free** für statische Seiten (Über uns, FAQ)
+3. **Simple Language Switcher** im Header
+
+Kosten: ~CHF 50 statt CHF 5'000+
+
+## Schweizer Besonderheiten bei WooCommerce
+
+### Währung richtig einrichten
+
+\\\`\\\`\\\`
+WooCommerce → Einstellungen → Allgemein
+- Währung: Schweizer Franken (CHF)
+- Währungsposition: Links
+- Tausendertrennzeichen: '
+- Dezimaltrennzeichen: .
+\\\`\\\`\\\`
+
+Ergebnis: **CHF 1'299.00** (nicht 1.299,00 €)
+
+### Versandzonen für die Schweiz
+
+Erstellen Sie separate Zonen:
+- Deutschschweiz
+- Romandie  
+- Tessin
+
+So können Sie später regionsspezifische Versandoptionen anbieten.
+
+### MwSt./TVA korrekt
+
+Die Schweiz hat 8.1% MwSt. (Stand 2026). In WooCommerce:
+
+\\\`\\\`\\\`
+WooCommerce → Einstellungen → MwSt.
+- Preise inkl. MwSt. eingeben: Ja
+- MwSt.-Satz: 8.1%
+\\\`\\\`\\\`
+
+## Performance-Tipps für mehrsprachige WooCommerce-Shops
+
+### Problem: WPML macht den Shop langsam
+
+Wenn Sie WPML nutzen, optimieren Sie:
+- Caching aktivieren (WP Rocket, LiteSpeed)
+- Nur benötigte WPML-Module laden
+- Datenbank regelmässig optimieren
+
+### Der CSV/Meta-Weg ist schneller
+
+Da keine zusätzlichen Datenbank-Abfragen nötig sind (die Übersetzung ist direkt am Produkt gespeichert), bleibt Ihr Shop schnell.
+
+## SEO für mehrsprachige WooCommerce-Shops
+
+### hreflang-Tags
+
+Mit WPML werden diese automatisch gesetzt. Bei der CSV-Methode fügen Sie manuell hinzu:
+
+\\\`\\\`\\\`html
+<link rel="alternate" hreflang="de-CH" href="https://shop.ch/produkt/" />
+<link rel="alternate" hreflang="fr-CH" href="https://shop.ch/produkt/?lang=fr" />
+<link rel="alternate" hreflang="it-CH" href="https://shop.ch/produkt/?lang=it" />
+\\\`\\\`\\\`
+
+### URL-Struktur
+
+**Ideal:** Subdirectories
+- /de/produkt/
+- /fr/produit/
+- /it/prodotto/
+
+**Einfacher:** Parameter
+- /produkt/?lang=de
+- /produkt/?lang=fr
+
+Beides funktioniert, Subdirectories sind SEO-technisch leicht besser.
+
+## Checkliste: WooCommerce mehrsprachig
+
+### Grundlagen
+- [ ] Mehrsprachigkeits-Strategie gewählt (WPML/Polylang/CSV)
+- [ ] Währung auf CHF eingestellt
+- [ ] MwSt. korrekt konfiguriert
+
+### Übersetzung
+- [ ] Produkte exportiert
+- [ ] Mit TranslateShop übersetzt
+- [ ] Übersetzungen importiert/synchronisiert
+
+### Frontend
+- [ ] Sprach-Switcher im Header
+- [ ] Navigation übersetzt
+- [ ] Footer übersetzt
+- [ ] Checkout-Texte geprüft
+
+### SEO
+- [ ] hreflang-Tags implementiert
+- [ ] Meta-Descriptions übersetzt
+- [ ] Sitemap für alle Sprachen
+
+### Testing
+- [ ] Kaufprozess auf FR getestet
+- [ ] Kaufprozess auf IT getestet
+- [ ] E-Mail-Vorlagen geprüft
+- [ ] Mobile Ansicht geprüft
+
+## Fazit: WooCommerce mehrsprachig ist machbar
+
+Ja, WooCommerce macht es einem nicht leicht mit Mehrsprachigkeit. Aber mit der richtigen Strategie — und Tools wie TranslateShop — haben Sie Ihren Shop in Stunden statt Wochen übersetzt.
+
+**Der schnellste Weg:**
+1. Produkte als CSV exportieren
+2. Mit TranslateShop in FR/IT übersetzen
+3. Direkte Integration oder Re-Import
+4. Sprach-Switcher hinzufügen
+5. Fertig!
+
+[→ Jetzt WooCommerce-Shop übersetzen](/register)
+
+---
+
+*Technische Fragen zur WooCommerce-Integration? Kontaktieren Sie uns: support@translateshop.ch*
+    \`,
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
