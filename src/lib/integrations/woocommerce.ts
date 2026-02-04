@@ -16,7 +16,10 @@ interface WooProduct {
 }
 
 function getAuthHeader(config: WooCommerceConfig): string {
-  const credentials = Buffer.from(`${config.consumerKey}:${config.consumerSecret}`).toString('base64');
+  // Use btoa for browser/edge compatibility (Buffer not available in Edge Runtime)
+  const credentials = typeof Buffer !== 'undefined' 
+    ? Buffer.from(`${config.consumerKey}:${config.consumerSecret}`).toString('base64')
+    : btoa(`${config.consumerKey}:${config.consumerSecret}`);
   return `Basic ${credentials}`;
 }
 

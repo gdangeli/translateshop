@@ -1,4 +1,7 @@
 // API routes for managing shop integrations
+// Force Node.js runtime for Buffer support
+export const runtime = 'nodejs';
+
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { testShopifyConnection, fetchShopifyProducts } from '@/lib/integrations/shopify';

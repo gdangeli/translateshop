@@ -1,3 +1,6 @@
+// Force Node.js runtime for Buffer support
+export const runtime = 'nodejs';
+
 // API route to sync translations back to connected shops
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
