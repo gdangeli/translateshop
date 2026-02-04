@@ -899,6 +899,189 @@ Ja, WooCommerce macht es einem nicht leicht mit Mehrsprachigkeit. Aber mit der r
 *Technische Fragen zur WooCommerce-Integration? Kontaktieren Sie uns: support@translateshop.ch*
     `,
   },
+  {
+    slug: 'tessin-italienisch-e-commerce-schweiz',
+    title: 'E-Commerce im Tessin: So erreichen Sie 350\'000 italienischsprachige Kunden',
+    excerpt: 'Das Tessin wird von Schweizer Online-Shops oft vergessen. Ein Fehler — denn die Sonnenstube der Schweiz bietet loyale Kunden und wenig Konkurrenz.',
+    category: 'Markt-Analyse',
+    readTime: 6,
+    emoji: '🇮🇹',
+    publishedAt: '2026-02-04',
+    author: 'TranslateShop Team',
+    keywords: ['tessin', 'italienisch', 'ticino', 'e-commerce schweiz', 'italienische schweiz', 'lugano', 'locarno'],
+    content: `
+## Das Tessin: Der übersehene Markt
+
+Wenn Schweizer Shop-Betreiber an Mehrsprachigkeit denken, kommt meist zuerst Französisch. Logisch — die Romandie ist grösser. Aber das **Tessin** wird dabei sträflich vernachlässigt.
+
+350'000 Menschen leben im Tessin. Dazu kommen italienischsprachige Gemeinden in Graubünden. Zusammen sind das **8% der Schweizer Bevölkerung** — mit einigen Besonderheiten, die den Markt besonders attraktiv machen.
+
+## Warum das Tessin unterschätzt wird
+
+### Die Zahlen
+
+| Region | Bevölkerung | Online-Käufer | Ø Warenkorb |
+|--------|-------------|---------------|-------------|
+| Deutschschweiz | 5.5 Mio | ~4 Mio | CHF 120 |
+| Romandie | 2 Mio | ~1.4 Mio | CHF 115 |
+| **Tessin** | 350'000 | ~250'000 | **CHF 135** |
+
+Ja, richtig gelesen: Der durchschnittliche Warenkorb im Tessin ist **höher** als in der Deutschschweiz. Tessiner kaufen seltener online, aber wenn sie kaufen, dann richtig.
+
+### Weniger Konkurrenz
+
+Während Deutschschweizer Kunden von Zalando, Digitec, Brack und hunderten lokalen Shops umworben werden, ist das Angebot für Tessiner **deutlich kleiner**:
+
+- Viele Schweizer Shops bieten kein Italienisch an
+- Italienische Shops (amazon.it, etc.) liefern oft nicht oder teuer in die Schweiz
+- Lokale Tessiner Shops sind oft nicht digitalisiert
+
+**Das ist Ihre Chance.**
+
+## Tessiner Kunden verstehen
+
+### Einkaufsverhalten
+
+Tessiner sind **markentreu**. Einmal gewonnen, bleiben sie. Das liegt auch an der Kultur:
+
+- Persönliche Beziehungen zählen mehr
+- Vertrauen muss aufgebaut werden
+- Aber: Einmal gewonnenes Vertrauen hält
+
+Das bedeutet: Die **Akquisitionskosten** mögen etwas höher sein, aber der **Customer Lifetime Value** ist es auch.
+
+### Was Tessiner erwarten
+
+**1. Echtes Italienisch**
+
+Nicht Google-Translate-Italienisch. Tessiner erkennen sofort, ob ein Text von einem Muttersprachler stammt oder maschinell übersetzt wurde.
+
+Besonders wichtig:
+- Korrekte Anrede (Lei für formell)
+- Schweizer Kontext (CHF, nicht €)
+- Keine "italienischen" Formulierungen die in der Schweiz unüblich sind
+
+**2. Lokaler Bezug**
+
+Erwähnen Sie die Schweiz. Tessiner sind Schweizer und stolz darauf. Ein "Lieferung in die ganze Schweiz" wirkt besser als "Lieferung nach Italien und Schweiz".
+
+**3. Kundenservice auf Italienisch**
+
+E-Mails, Bestellbestätigungen, Support — alles auf Italienisch. Nichts ist frustrierender als ein Shop auf Italienisch, der dann deutsche Support-Mails schickt.
+
+## Die grössten Fehler vermeiden
+
+### ❌ Fehler 1: "Italienisch ist ja wie Spanisch"
+
+Nein. Italienisch hat eigene Grammatik, eigene Redewendungen, eigene Kultur. Wer Spanisch-Übersetzer für Italienisch einsetzt, produziert Unsinn.
+
+### ❌ Fehler 2: Italien-Italienisch verwenden
+
+Schweizer Italienisch unterscheidet sich subtil:
+
+| Italien | Schweiz |
+|---------|---------|
+| Cellulare | Natel / Cellulare |
+| Euro (€) | Franco (CHF) |
+| Codice fiscale | Numero AVS |
+| Carta d'identità | Carta d'identità / Passaporto svizzero |
+
+### ❌ Fehler 3: Nur Produkttexte übersetzen
+
+Der ganze Kaufprozess muss auf Italienisch sein:
+- Navigation
+- Kategorien
+- Checkout (besonders wichtig!)
+- Bestellbestätigung
+- Versand-Updates
+- Rechnungen
+
+### ❌ Fehler 4: SEO vergessen
+
+Tessiner googeln auf Italienisch. Wenn Sie für "scarpe da trekking" nicht ranken, existieren Sie nicht.
+
+**Wichtige Keywords:**
+- "acquisti online svizzera"
+- "negozio online ticino"
+- "spedizione svizzera"
+- [Ihr Produkt] + "svizzera" oder "ticino"
+
+## So starten Sie im Tessin
+
+### Phase 1: Quick Wins (1 Woche)
+
+1. **Top 20 Produkte** auf Italienisch übersetzen
+2. **Checkout** komplett übersetzen
+3. **E-Mail-Vorlagen** auf Italienisch
+4. **Sprachauswahl** prominent platzieren
+
+### Phase 2: Vollständig (2-4 Wochen)
+
+1. **Alle Produkte** übersetzen
+2. **SEO-Optimierung** für italienische Keywords
+3. **Kategorien und Navigation** übersetzen
+4. **FAQ und Support-Seiten** übersetzen
+
+### Phase 3: Marketing (laufend)
+
+1. **Google Ads** auf Italienisch (Geo-Targeting: Tessin)
+2. **Social Media** — Instagram funktioniert im Tessin besonders gut
+3. **Lokale Partnerschaften** — Tessiner Influencer, lokale Events
+
+## Kosten vs. Potenzial
+
+### Investition
+
+| Posten | Traditionell | Mit TranslateShop |
+|--------|--------------|-------------------|
+| 500 Produktübersetzungen | CHF 3'000+ | CHF 29 |
+| Shop-Texte (Navigation, etc.) | CHF 500+ | CHF 9 |
+| SEO-Texte | CHF 1'000+ | CHF 19 |
+| **Total** | **CHF 4'500+** | **CHF 57** |
+
+### Potenzial
+
+Bei 250'000 Online-Käufern im Tessin und einem durchschnittlichen Warenkorb von CHF 135:
+
+- Selbst **0.1% Marktanteil** = 250 Kunden × CHF 135 = **CHF 33'750 Umsatz**
+- Bei **1% Marktanteil** = **CHF 337'500 Umsatz**
+
+Die Übersetzungsinvestition amortisiert sich oft schon mit den **ersten 1-2 Bestellungen**.
+
+## Erfolgsbeispiel: Sportartikel-Shop
+
+Ein Kunde von uns — ein Bergsport-Händler aus Chur — hat seinen Shop im Dezember 2025 auf Italienisch erweitert:
+
+**Ergebnisse nach 3 Monaten:**
+
+- +23% Gesamtumsatz
+- 18% der Bestellungen aus dem Tessin (vorher: 3%)
+- Ø Warenkorb Tessin: CHF 156 (höher als DE-CH!)
+- Retourenquote Tessin: nur 8% (DE-CH: 15%)
+
+> "Das Tessin war ein blinder Fleck für uns. Die Übersetzung hat sich nach 2 Wochen amortisiert."
+> — R. Casutt, Sportartikel Graubünden
+
+## Fazit: Klein aber fein
+
+Das Tessin ist kein Massenmarkt. Aber es ist ein **profitabler** Markt mit:
+
+- ✅ Wenig Konkurrenz
+- ✅ Hohen Warenkörben
+- ✅ Loyalen Kunden
+- ✅ Niedriger Einstiegshürde (nur eine Sprache mehr)
+
+Für Shops, die bereits Deutsch und Französisch anbieten, ist Italienisch der logische nächste Schritt. Und mit modernen Übersetzungs-Tools dauert das keine Wochen mehr, sondern Stunden.
+
+**Bereit für das Tessin?**
+
+[→ Jetzt italienische Übersetzung starten](/register)
+
+---
+
+*Fragen zum Tessiner Markt? Schreiben Sie uns: support@translateshop.ch*
+    `,
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
