@@ -636,7 +636,7 @@ Die Chancen stehen gut, dass Sie überrascht sein werden.
     publishedAt: '2026-02-04',
     author: 'TranslateShop Team',
     keywords: ['woocommerce mehrsprachig', 'woocommerce übersetzen', 'wpml', 'polylang', 'woocommerce schweiz', 'wordpress mehrsprachig'],
-    content: \`
+    content: `
 ## WooCommerce + Mehrsprachigkeit = Es ist kompliziert
 
 WooCommerce ist das beliebteste E-Commerce-Plugin für WordPress — aber wenn es um Mehrsprachigkeit geht, wird es schnell kompliziert. Anders als Shopify hat WooCommerce keine eingebaute Lösung.
@@ -897,7 +897,7 @@ Ja, WooCommerce macht es einem nicht leicht mit Mehrsprachigkeit. Aber mit der r
 ---
 
 *Technische Fragen zur WooCommerce-Integration? Kontaktieren Sie uns: support@translateshop.ch*
-    \`,
+    `,
   },
 ];
 
