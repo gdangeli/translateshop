@@ -6,8 +6,14 @@ import { blogPosts } from '@/content/blog';
 
 export default function BlogPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const featuredPost = blogPosts[0];
-  const otherPosts = blogPosts.slice(1);
+  
+  // Sort posts by publishedAt (newest first)
+  const sortedPosts = [...blogPosts].sort((a, b) => 
+    new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
+  
+  const featuredPost = sortedPosts[0];
+  const otherPosts = sortedPosts.slice(1);
 
   return (
     <div className="min-h-screen bg-slate-50">
