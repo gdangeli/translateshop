@@ -5,6 +5,15 @@ interface ShopifyConfig {
   accessToken: string; // Admin API access token
 }
 
+function normalizeShopifyUrl(url: string): string {
+  let normalized = url.trim();
+  // Remove protocol if present
+  normalized = normalized.replace(/^https?:\/\//, '');
+  // Remove trailing slash
+  normalized = normalized.replace(/\/$/, '');
+  return normalized;
+}
+
 interface ShopifyProduct {
   id: number;
   title: string;
@@ -19,7 +28,8 @@ interface ShopifyProduct {
 
 export async function testShopifyConnection(config: ShopifyConfig): Promise<{ success: boolean; shopName?: string; error?: string }> {
   try {
-    const response = await fetch(`https://${config.shopUrl}/admin/api/2024-01/shop.json`, {
+    const shopUrl = normalizeShopifyUrl(config.shopUrl);
+    const response = await fetch(`https://${shopUrl}/admin/api/2024-01/shop.json`, {
       headers: {
         'X-Shopify-Access-Token': config.accessToken,
         'Content-Type': 'application/json',
@@ -40,8 +50,9 @@ export async function testShopifyConnection(config: ShopifyConfig): Promise<{ su
 
 export async function fetchShopifyProducts(config: ShopifyConfig, limit = 250): Promise<{ products: any[]; error?: string }> {
   try {
+    const shopUrl = normalizeShopifyUrl(config.shopUrl);
     const response = await fetch(
-      `https://${config.shopUrl}/admin/api/2024-01/products.json?limit=${limit}`,
+      `https://${shopUrl}/admin/api/2024-01/products.json?limit=${limit}`,
       {
         headers: {
           'X-Shopify-Access-Token': config.accessToken,
@@ -104,8 +115,9 @@ export async function updateShopifyProduct(
       ]);
     }
 
+    const shopUrl = normalizeShopifyUrl(config.shopUrl);
     const response = await fetch(
-      `https://${config.shopUrl}/admin/api/2024-01/products/${productId}.json`,
+      `https://${shopUrl}/admin/api/2024-01/products/${productId}.json`,
       {
         method: 'PUT',
         headers: {

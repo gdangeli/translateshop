@@ -20,10 +20,19 @@ function getAuthHeader(config: WooCommerceConfig): string {
   return `Basic ${credentials}`;
 }
 
+function normalizeUrl(url: string): string {
+  let normalized = url.trim().replace(/\/$/, '');
+  // Add https:// if no protocol
+  if (!normalized.startsWith('http://') && !normalized.startsWith('https://')) {
+    normalized = `https://${normalized}`;
+  }
+  return normalized;
+}
+
 export async function testWooCommerceConnection(config: WooCommerceConfig): Promise<{ success: boolean; siteName?: string; error?: string }> {
   try {
-    // Clean up URL
-    const baseUrl = config.siteUrl.replace(/\/$/, '');
+    // Clean up and normalize URL
+    const baseUrl = normalizeUrl(config.siteUrl);
     
     const response = await fetch(`${baseUrl}/wp-json/wc/v3/system_status`, {
       headers: {
@@ -49,7 +58,7 @@ export async function testWooCommerceConnection(config: WooCommerceConfig): Prom
 
 export async function fetchWooCommerceProducts(config: WooCommerceConfig, perPage = 100): Promise<{ products: any[]; error?: string }> {
   try {
-    const baseUrl = config.siteUrl.replace(/\/$/, '');
+    const baseUrl = normalizeUrl(config.siteUrl);
     
     const response = await fetch(
       `${baseUrl}/wp-json/wc/v3/products?per_page=${perPage}`,
@@ -95,7 +104,7 @@ export async function updateWooCommerceProduct(
   }
 ): Promise<{ success: boolean; error?: string }> {
   try {
-    const baseUrl = config.siteUrl.replace(/\/$/, '');
+    const baseUrl = normalizeUrl(config.siteUrl);
     
     const response = await fetch(
       `${baseUrl}/wp-json/wc/v3/products/${productId}`,
@@ -126,7 +135,7 @@ export async function fetchWooCommerceProductTranslations(
   productId: string
 ): Promise<{ translations: Record<string, any>; error?: string }> {
   try {
-    const baseUrl = config.siteUrl.replace(/\/$/, '');
+    const baseUrl = normalizeUrl(config.siteUrl);
     
     // Try WPML endpoint first
     const response = await fetch(
