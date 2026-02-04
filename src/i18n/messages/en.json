@@ -103,7 +103,18 @@
     "popular": "POPULAR",
     "register": "Register",
     "startFree": "Start for free",
-    "perMonth": "/month"
+    "perMonth": "/month",
+    "features": {
+      "languages": "4 languages (DE/FR/IT/EN)",
+      "csvExport": "CSV Export",
+      "editTranslations": "Edit translations",
+      "glossary": "Glossary",
+      "shopIntegration": "Shopify & WooCommerce",
+      "apiAccess": "API Access",
+      "emailSupport": "Email Support",
+      "prioritySupport": "Priority Support",
+      "unlimited": "Unlimited Credits"
+    }
   },
   "faq": {
     "title": "Frequently asked questions",

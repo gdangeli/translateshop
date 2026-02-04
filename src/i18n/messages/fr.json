@@ -103,7 +103,18 @@
     "popular": "POPULAIRE",
     "register": "S'inscrire",
     "startFree": "Commencer gratuitement",
-    "perMonth": "/mois"
+    "perMonth": "/mois",
+    "features": {
+      "languages": "4 langues (DE/FR/IT/EN)",
+      "csvExport": "Export CSV",
+      "editTranslations": "Modifier les traductions",
+      "glossary": "Glossaire",
+      "shopIntegration": "Shopify & WooCommerce",
+      "apiAccess": "Accès API",
+      "emailSupport": "Support par e-mail",
+      "prioritySupport": "Support prioritaire",
+      "unlimited": "Crédits illimités"
+    }
   },
   "faq": {
     "title": "Questions fréquentes",

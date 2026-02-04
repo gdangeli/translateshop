@@ -306,49 +306,78 @@ export default function HomePage() {
             <div className="overflow-x-auto -mx-4 px-4 md:overflow-visible md:mx-0 md:px-0">
               <div className="flex md:grid md:grid-cols-5 gap-3 md:gap-4 max-w-6xl mx-auto min-w-max md:min-w-0 pb-4 md:pb-0">
                 {/* Free */}
-                <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-slate-200 w-44 md:w-auto flex-shrink-0 md:flex-shrink">
+                <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-slate-200 w-48 md:w-auto flex-shrink-0 md:flex-shrink">
                   <h3 className="font-semibold text-base md:text-lg">{t('pricing.free')}</h3>
-                  <div className="text-2xl md:text-3xl font-bold my-3 md:my-4">0 <span className="text-sm md:text-lg font-normal text-slate-500">CHF</span></div>
-                  <p className="text-slate-600 text-xs md:text-sm mb-3 md:mb-4">{t('pricing.freeDesc')}</p>
+                  <div className="text-2xl md:text-3xl font-bold my-2 md:my-3">0 <span className="text-sm md:text-lg font-normal text-slate-500">CHF</span></div>
+                  <p className="text-slate-600 text-xs md:text-sm mb-2 md:mb-3">{t('pricing.freeDesc')}</p>
+                  <ul className="text-xs md:text-sm space-y-1 mb-3 md:mb-4 text-slate-600">
+                    <li>✓ {t('pricing.features.languages')}</li>
+                    <li>✓ {t('pricing.features.csvExport')}</li>
+                    <li>✓ {t('pricing.features.editTranslations')}</li>
+                  </ul>
                   <Link href="/register" className="block text-center py-2 md:py-3 bg-red-600 text-white rounded-lg font-semibold text-sm md:text-base hover:bg-red-700 transition">
                     {t('pricing.startFree')}
                   </Link>
                 </div>
                 {/* Starter */}
-                <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-slate-200 w-44 md:w-auto flex-shrink-0 md:flex-shrink">
+                <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-slate-200 w-48 md:w-auto flex-shrink-0 md:flex-shrink">
                   <h3 className="font-semibold text-base md:text-lg">{t('pricing.starter')}</h3>
-                  <div className="text-2xl md:text-3xl font-bold my-3 md:my-4">9 <span className="text-sm md:text-lg font-normal text-slate-500">CHF</span></div>
-                  <p className="text-slate-600 text-xs md:text-sm mb-3 md:mb-4">{t('pricing.starterDesc')}</p>
+                  <div className="text-2xl md:text-3xl font-bold my-2 md:my-3">9 <span className="text-sm md:text-lg font-normal text-slate-500">CHF</span></div>
+                  <p className="text-slate-600 text-xs md:text-sm mb-2 md:mb-3">{t('pricing.starterDesc')}</p>
+                  <ul className="text-xs md:text-sm space-y-1 mb-3 md:mb-4 text-slate-600">
+                    <li>✓ {t('pricing.features.languages')}</li>
+                    <li>✓ {t('pricing.features.csvExport')}</li>
+                    <li>✓ {t('pricing.features.editTranslations')}</li>
+                    <li>✓ {t('pricing.features.glossary')}</li>
+                  </ul>
                   <Link href="/register" className="block text-center py-2 md:py-3 border border-slate-300 rounded-lg font-semibold text-sm md:text-base hover:bg-slate-50 transition">
                     {t('pricing.register')}
                   </Link>
                 </div>
                 {/* Pro (Popular) */}
-                <div className="bg-red-600 text-white p-4 md:p-6 rounded-xl shadow-xl md:scale-105 relative w-44 md:w-auto flex-shrink-0 md:flex-shrink">
+                <div className="bg-red-600 text-white p-4 md:p-6 rounded-xl shadow-xl md:scale-105 relative w-48 md:w-auto flex-shrink-0 md:flex-shrink">
                   <div className="absolute -top-2 md:-top-3 left-1/2 transform -translate-x-1/2">
                     <span className="bg-yellow-400 text-yellow-900 text-[10px] md:text-xs font-bold px-2 md:px-3 py-0.5 md:py-1 rounded-full whitespace-nowrap">{t('pricing.popular')}</span>
                   </div>
                   <h3 className="font-semibold text-base md:text-lg mt-1 md:mt-2">{t('pricing.pro')}</h3>
-                  <div className="text-2xl md:text-3xl font-bold my-3 md:my-4">29 <span className="text-sm md:text-lg font-normal opacity-80">CHF</span></div>
-                  <p className="opacity-80 text-xs md:text-sm mb-3 md:mb-4">{t('pricing.proDesc')}</p>
+                  <div className="text-2xl md:text-3xl font-bold my-2 md:my-3">29 <span className="text-sm md:text-lg font-normal opacity-80">CHF</span></div>
+                  <p className="opacity-80 text-xs md:text-sm mb-2 md:mb-3">{t('pricing.proDesc')}</p>
+                  <ul className="text-xs md:text-sm space-y-1 mb-3 md:mb-4 opacity-90">
+                    <li>✓ {t('pricing.features.languages')}</li>
+                    <li>✓ {t('pricing.features.shopIntegration')}</li>
+                    <li>✓ {t('pricing.features.glossary')}</li>
+                    <li>✓ {t('pricing.features.emailSupport')}</li>
+                  </ul>
                   <Link href="/register" className="block text-center py-2 md:py-3 bg-white text-red-600 rounded-lg font-semibold text-sm md:text-base hover:bg-red-50 transition">
                     {t('pricing.register')}
                   </Link>
                 </div>
                 {/* Business */}
-                <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-slate-200 w-44 md:w-auto flex-shrink-0 md:flex-shrink">
+                <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-slate-200 w-48 md:w-auto flex-shrink-0 md:flex-shrink">
                   <h3 className="font-semibold text-base md:text-lg">{t('pricing.business')}</h3>
-                  <div className="text-2xl md:text-3xl font-bold my-3 md:my-4">79 <span className="text-sm md:text-lg font-normal text-slate-500">CHF</span></div>
-                  <p className="text-slate-600 text-xs md:text-sm mb-3 md:mb-4">{t('pricing.businessDesc')}</p>
+                  <div className="text-2xl md:text-3xl font-bold my-2 md:my-3">79 <span className="text-sm md:text-lg font-normal text-slate-500">CHF</span></div>
+                  <p className="text-slate-600 text-xs md:text-sm mb-2 md:mb-3">{t('pricing.businessDesc')}</p>
+                  <ul className="text-xs md:text-sm space-y-1 mb-3 md:mb-4 text-slate-600">
+                    <li>✓ {t('pricing.features.shopIntegration')}</li>
+                    <li>✓ {t('pricing.features.apiAccess')}</li>
+                    <li>✓ {t('pricing.features.prioritySupport')}</li>
+                    <li>✓ {t('pricing.features.glossary')}</li>
+                  </ul>
                   <Link href="/register" className="block text-center py-2 md:py-3 border border-slate-300 rounded-lg font-semibold text-sm md:text-base hover:bg-slate-50 transition">
                     {t('pricing.register')}
                   </Link>
                 </div>
                 {/* Unlimited */}
-                <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-slate-200 w-44 md:w-auto flex-shrink-0 md:flex-shrink">
+                <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-slate-200 w-48 md:w-auto flex-shrink-0 md:flex-shrink">
                   <h3 className="font-semibold text-base md:text-lg">{t('pricing.unlimited')}</h3>
-                  <div className="text-2xl md:text-3xl font-bold my-3 md:my-4">49 <span className="text-sm md:text-lg font-normal text-slate-500">CHF{t('pricing.perMonth')}</span></div>
-                  <p className="text-slate-600 text-xs md:text-sm mb-3 md:mb-4">{t('pricing.unlimitedDesc')}</p>
+                  <div className="text-2xl md:text-3xl font-bold my-2 md:my-3">49 <span className="text-sm md:text-lg font-normal text-slate-500">CHF{t('pricing.perMonth')}</span></div>
+                  <p className="text-slate-600 text-xs md:text-sm mb-2 md:mb-3">{t('pricing.unlimitedDesc')}</p>
+                  <ul className="text-xs md:text-sm space-y-1 mb-3 md:mb-4 text-slate-600">
+                    <li>✓ {t('pricing.features.unlimited')}</li>
+                    <li>✓ {t('pricing.features.shopIntegration')}</li>
+                    <li>✓ {t('pricing.features.apiAccess')}</li>
+                    <li>✓ {t('pricing.features.prioritySupport')}</li>
+                  </ul>
                   <Link href="/register" className="block text-center py-2 md:py-3 border border-slate-300 rounded-lg font-semibold text-sm md:text-base hover:bg-slate-50 transition">
                     {t('pricing.register')}
                   </Link>
