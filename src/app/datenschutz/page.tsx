@@ -277,7 +277,7 @@ function DatenschutzContent() {
               translateshop.ch<br />
               Lochwisstrasse 3<br />
               CH-8185 Winkel<br />
-              E-Mail: <a href="mailto:kontakt@translateshop.ch" className="text-red-600 hover:underline">kontakt@translateshop.ch</a>
+              E-Mail: <a href="mailto:support@translateshop.ch" className="text-red-600 hover:underline">support@translateshop.ch</a>
             </p>
           </section>
 
@@ -335,7 +335,7 @@ function DatenschutzContent() {
             </ul>
             <p className="text-slate-600 mt-4">
               {t.s8contact}{' '}
-              <a href="mailto:kontakt@translateshop.ch" className="text-red-600 hover:underline">kontakt@translateshop.ch</a>
+              <a href="mailto:support@translateshop.ch" className="text-red-600 hover:underline">support@translateshop.ch</a>
             </p>
           </section>
 

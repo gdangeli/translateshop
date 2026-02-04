@@ -106,7 +106,7 @@ function ImpressumContent() {
           <section>
             <h2 className="text-xl font-semibold text-slate-800 mb-3">{t.contact}</h2>
             <p className="text-slate-600">
-              E-Mail: <a href="mailto:kontakt@translateshop.ch" className="text-red-600 hover:underline">kontakt@translateshop.ch</a>
+              E-Mail: <a href="mailto:support@translateshop.ch" className="text-red-600 hover:underline">support@translateshop.ch</a>
             </p>
           </section>
 

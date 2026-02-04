@@ -489,7 +489,7 @@ function AGBContent() {
             translateshop.ch<br />
             Lochwisstrasse 3<br />
             CH-8185 Winkel<br />
-            E-Mail: <a href="mailto:kontakt@translateshop.ch" className="text-red-600 hover:underline">kontakt@translateshop.ch</a>
+            E-Mail: <a href="mailto:support@translateshop.ch" className="text-red-600 hover:underline">support@translateshop.ch</a>
           </p>
 
           <div className="space-y-8">
