@@ -23,7 +23,7 @@ export default function HomePage() {
             <Link href="#demo" className="text-slate-600 hover:text-slate-800">{t('nav.howItWorks')}</Link>
             <Link href="#pricing" className="text-slate-600 hover:text-slate-800">{t('nav.pricing')}</Link>
             <Link href="/blog" className="text-slate-600 hover:text-slate-800">{t('nav.blog')}</Link>
-            <Link href="#faq" className="text-slate-600 hover:text-slate-800">{t('nav.faq')}</Link>
+            <Link href="/faq" className="text-slate-600 hover:text-slate-800">{t('nav.faq')}</Link>
           </nav>
           
           <div className="hidden md:flex items-center space-x-4">
@@ -61,7 +61,7 @@ export default function HomePage() {
               <Link href="#demo" className="block py-2 text-slate-600" onClick={() => setMobileMenuOpen(false)}>{t('nav.howItWorks')}</Link>
               <Link href="#pricing" className="block py-2 text-slate-600" onClick={() => setMobileMenuOpen(false)}>{t('nav.pricing')}</Link>
               <Link href="/blog" className="block py-2 text-slate-600" onClick={() => setMobileMenuOpen(false)}>{t('nav.blog')}</Link>
-              <Link href="#faq" className="block py-2 text-slate-600" onClick={() => setMobileMenuOpen(false)}>{t('nav.faq')}</Link>
+              <Link href="/faq" className="block py-2 text-slate-600" onClick={() => setMobileMenuOpen(false)}>{t('nav.faq')}</Link>
               <hr className="my-3" />
               <div className="flex items-center justify-between py-2">
                 <span className="text-slate-600">Sprache:</span>
@@ -413,15 +413,15 @@ export default function HomePage() {
                 <li><Link href="#demo" className="hover:text-white transition">{t('footer.howItWorks')}</Link></li>
                 <li><Link href="/docs" className="hover:text-white transition">{t('footer.documentation')}</Link></li>
                 <li><Link href="#pricing" className="hover:text-white transition">{t('nav.pricing')}</Link></li>
-                <li><Link href="#faq" className="hover:text-white transition">{t('nav.faq')}</Link></li>
-                <li><Link href="/login" className="hover:text-white transition">{t('nav.login')}</Link></li>
+                <li><Link href="/blog" className="hover:text-white transition">{t('nav.blog')}</Link></li>
               </ul>
             </div>
             <div>
               <div className="font-semibold text-white mb-3 md:mb-4 text-sm md:text-base">{t('footer.support')}</div>
               <ul className="space-y-2 text-xs md:text-sm">
                 <li><a href="mailto:support@translateshop.ch" className="hover:text-white transition break-all">support@translateshop.ch</a></li>
-                <li><Link href="#faq" className="hover:text-white transition">{t('footer.help')}</Link></li>
+                <li><Link href="/faq" className="hover:text-white transition">{t('footer.help')}</Link></li>
+                <li><Link href="/docs" className="hover:text-white transition">{t('footer.documentation')}</Link></li>
               </ul>
             </div>
             <div>
