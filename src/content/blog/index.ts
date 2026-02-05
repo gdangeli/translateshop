@@ -900,6 +900,304 @@ Ja, WooCommerce macht es einem nicht leicht mit Mehrsprachigkeit. Aber mit der r
     `,
   },
   {
+    slug: 'seo-mehrsprachiger-shop-schweiz',
+    title: 'SEO für mehrsprachige Shops: So ranken Sie in allen Schweizer Sprachregionen',
+    excerpt: 'hreflang, lokale Keywords, regionale Backlinks — der komplette SEO-Guide für Schweizer Online-Shops, die in DE, FR und IT gefunden werden wollen.',
+    category: 'SEO',
+    readTime: 9,
+    emoji: '🔍',
+    publishedAt: '2026-02-05',
+    author: 'TranslateShop Team',
+    keywords: ['seo mehrsprachig', 'hreflang schweiz', 'lokale seo', 'schweiz seo', 'e-commerce seo', 'google schweiz'],
+    content: `
+## Warum mehrsprachiges SEO in der Schweiz anders ist
+
+Sie haben Ihren Shop übersetzt. Produkte auf Deutsch, Französisch, Italienisch. Aber Ihre Romandie-Kunden finden Sie trotzdem nicht? Willkommen im Labyrinth des mehrsprachigen SEO.
+
+Die Schweiz ist ein SEO-Sonderfall: **Drei Sprachen, ein Land, eine Google-Domain** (google.ch). Das macht die Sache gleichzeitig einfacher und komplizierter als in der EU.
+
+## Die 3 Säulen des mehrsprachigen Schweizer SEO
+
+### Säule 1: Technisches SEO (hreflang & Co.)
+
+Google muss verstehen, welche Seite für welche Sprache gedacht ist. Dafür gibt es **hreflang-Tags**.
+
+**So sieht es aus:**
+
+\\\`\\\`\\\`html
+<link rel="alternate" hreflang="de-CH" href="https://shop.ch/de/produkt/" />
+<link rel="alternate" hreflang="fr-CH" href="https://shop.ch/fr/produit/" />
+<link rel="alternate" hreflang="it-CH" href="https://shop.ch/it/prodotto/" />
+<link rel="alternate" hreflang="x-default" href="https://shop.ch/de/produkt/" />
+\\\`\\\`\\\`
+
+**Wichtig für die Schweiz:**
+- Verwenden Sie **de-CH**, nicht nur **de** — sonst zeigt Google Ihre Seite auch Deutschen
+- **x-default** ist Ihre Fallback-Sprache (meist Deutsch)
+- Jede Sprachversion braucht hreflang-Tags zu ALLEN anderen Versionen
+
+### Häufige hreflang-Fehler
+
+| Fehler | Problem | Lösung |
+|--------|---------|--------|
+| Nur de statt de-CH | Konkurriert mit .de-Shops | Immer Sprache+Land |
+| Fehlende Selbstreferenz | Google ignoriert die Tags | Jede Seite verlinkt auch sich selbst |
+| 404 in hreflang | Zerstört alle Tags der Seite | Alle URLs müssen existieren |
+| Inkonsistente Tags | Seite A verlinkt B, aber B nicht A | Immer bidirektional |
+
+### URL-Struktur
+
+Für die Schweiz empfehlen wir **Subdirectories**:
+
+- ✅ shop.ch/de/produkt/
+- ✅ shop.ch/fr/produit/
+- ✅ shop.ch/it/prodotto/
+
+**Alternativen:**
+
+| Struktur | Beispiel | Empfehlung |
+|----------|----------|------------|
+| Subdirectories | /de/, /fr/, /it/ | ✅ Best Practice |
+| Subdomains | de.shop.ch | ⚠️ Mehr Aufwand |
+| Parameter | ?lang=fr | ❌ Schlecht für SEO |
+| Separate Domains | shop.de, shop.fr | ❌ Übertrieben für CH |
+
+### Säule 2: Content-SEO (Keywords & Texte)
+
+Übersetzung ≠ Lokalisierung. Keywords müssen **recherchiert**, nicht nur übersetzt werden.
+
+**Beispiel "Wanderschuhe":**
+
+| Deutsch | Naheliegende Übersetzung | Tatsächlich gesucht |
+|---------|-------------------------|---------------------|
+| Wanderschuhe | Chaussures de randonnée | ✅ Korrekt |
+| Trekkingschuhe | Chaussures de trekking | Chaussures de marche |
+| Bergschuhe | Chaussures de montagne | Chaussures d'alpinisme |
+
+"Chaussures de marche" hat in der Romandie **3x mehr Suchvolumen** als "chaussures de trekking" — obwohl "Trekkingschuhe" die wörtliche Übersetzung wäre.
+
+### Keyword-Recherche pro Sprache
+
+**Tools:**
+- Google Keyword Planner (Standort: Schweiz, Sprache: Französisch/Italienisch)
+- Ubersuggest
+- ahrefs/SEMrush (teuer, aber gut)
+
+**Vorgehen:**
+1. Deutsche Keywords sammeln
+2. Für jedes Keyword: Übersetzung + lokale Alternativen recherchieren
+3. Suchvolumen in CH prüfen (nicht global!)
+4. Keyword mit höchstem CH-Volumen wählen
+
+### Säule 3: Lokale Signale
+
+Google bewertet auch **lokale Relevanz**. Für die Romandie zu ranken heisst: Google muss glauben, dass Sie für die Romandie relevant sind.
+
+**Lokale Signale:**
+- **Backlinks von .ch-Domains** auf Französisch
+- **Erwähnungen** in Westschweizer Medien/Blogs
+- **Google Business Profile** (falls physischer Standort)
+- **Lokale Inhalte** (Blog über Westschweizer Themen)
+- **Schweizer Hosting** (minor, aber schadet nicht)
+
+## Schritt-für-Schritt: SEO-Optimierung für 3 Sprachen
+
+### Woche 1: Technisches Fundament
+
+**Tag 1-2: hreflang implementieren**
+
+Je nach Shop-System:
+
+*Shopify:*
+- Shopify Markets setzt hreflang automatisch
+- Prüfen Sie mit hreflang-Checker-Tools
+
+*WooCommerce + WPML:*
+- WPML setzt hreflang automatisch
+- Prüfen im Quellcode
+
+*Manuell/Custom:*
+- Im \`<head>\` jeder Seite einfügen
+- Oder via XML-Sitemap
+
+**Tag 3-4: Sitemap prüfen**
+
+Ihre Sitemap sollte alle Sprachversionen enthalten:
+
+\\\`\\\`\\\`xml
+<url>
+  <loc>https://shop.ch/de/produkt/</loc>
+  <xhtml:link rel="alternate" hreflang="de-CH" href="https://shop.ch/de/produkt/"/>
+  <xhtml:link rel="alternate" hreflang="fr-CH" href="https://shop.ch/fr/produit/"/>
+  <xhtml:link rel="alternate" hreflang="it-CH" href="https://shop.ch/it/prodotto/"/>
+</url>
+\\\`\\\`\\\`
+
+**Tag 5: Google Search Console**
+
+- Separate Properties für jede Sprache (optional, aber hilfreich)
+- Internationale Ausrichtung: Schweiz
+- Sitemaps einreichen
+
+### Woche 2: Keyword-Optimierung
+
+**Für jede Sprache:**
+
+1. **Meta-Titles** mit lokalen Keywords
+   - DE: "Wanderschuhe kaufen | Schweizer Outdoor-Shop"
+   - FR: "Chaussures de randonnée | Boutique outdoor suisse"
+   - IT: "Scarpe da trekking | Negozio outdoor svizzero"
+
+2. **Meta-Descriptions** übersetzen UND lokalisieren
+   - Nicht nur übersetzen, sondern lokale USPs einbauen
+   - "Schnelle Lieferung in die Romandie"
+   - "Spedizione veloce in Ticino"
+
+3. **H1-H2 Überschriften** optimieren
+   - Hauptkeyword in H1
+   - Varianten in H2
+
+4. **Produktbeschreibungen** mit Keywords anreichern
+   - Natürlich, nicht keyword-stuffing
+   - Synonyme und verwandte Begriffe
+
+### Woche 3-4: Content-Aufbau
+
+**Blog in allen Sprachen:**
+
+Ein Blog zeigt Google, dass Sie relevant sind. Aber: Nicht einfach übersetzen, sondern **lokalisieren**.
+
+**Beispiel Blogthemen:**
+
+| Deutsch | Französisch (lokalisiert) |
+|---------|--------------------------|
+| "Wandern im Berner Oberland" | "Randonnée dans les Alpes vaudoises" |
+| "Ausrüstung für Schweizer Berge" | "Équipement pour la montagne suisse" |
+| "Winterschuhe Test" | "Test chaussures d'hiver - Guide romand" |
+
+Die Französische Version behandelt **andere Orte**, nicht nur übersetzte.
+
+### Laufend: Backlink-Aufbau
+
+**Strategie für Romandie-Backlinks:**
+
+1. **Lokale Verzeichnisse**
+   - local.ch (französische Version)
+   - Branchenverzeichnisse der Westschweiz
+
+2. **Westschweizer Blogs**
+   - Gastbeiträge auf relevanten Blogs
+   - Produkttests/Reviews
+
+3. **Lokale Medien**
+   - Pressemitteilungen auf Französisch
+   - Lokale Events sponsern
+
+4. **Partnerschaften**
+   - Westschweizer Influencer
+   - Lokale Vereine/Clubs
+
+## Messen und Optimieren
+
+### Google Search Console nutzen
+
+Filtern Sie nach Sprache/Land:
+- Leistung → Filter → Land: Schweiz → Sprache
+- Welche Queries bringen FR-Traffic?
+- Welche Seiten ranken für IT-Keywords?
+
+### KPIs pro Sprachregion
+
+Tracken Sie separat:
+
+| KPI | Deutsch | Französisch | Italienisch |
+|-----|---------|-------------|-------------|
+| Organischer Traffic | Baseline | Ziel: +50% | Ziel: +30% |
+| Keyword-Rankings (Top 10) | X | Y | Z |
+| Conversion-Rate | X% | Y% | Z% |
+
+### Typische Fehler beim Tracking
+
+- **Fehler:** GA4 zeigt nur Gesamt-Traffic
+- **Lösung:** Segmente nach Browser-Sprache oder URL-Pfad erstellen
+
+## Spezialfall: Lokale Suchintention
+
+Manche Suchen sind **implizit lokal**:
+
+Wenn jemand in Genf nach "magasin de sport" sucht, will Google Ergebnisse in Genf zeigen — nicht Ihren Zürcher Shop.
+
+**Lösung:**
+- **Google Business Profile** für alle Standorte
+- **Lokale Landingpages** ("Sportgeschäft Genf - Online & Vor Ort")
+- **Strukturierte Daten** (LocalBusiness Schema)
+
+## Was TranslateShop für Ihr SEO tut
+
+Die Übersetzung ist die Grundlage. Ohne französische Produkttexte kein französisches SEO.
+
+**TranslateShop hilft bei:**
+- ✅ Schnelle Übersetzung aller Produkttexte
+- ✅ Konsistente Terminologie (wichtig für SEO)
+- ✅ Meta-Descriptions und Titles
+- ✅ Kategorie-Beschreibungen
+
+**Was Sie zusätzlich brauchen:**
+- Keyword-Recherche pro Sprache
+- Technische SEO-Implementierung
+- Lokale Backlinks
+- Content-Strategie
+
+## Checkliste: Mehrsprachiges SEO Schweiz
+
+### Technisch
+- [ ] hreflang-Tags auf allen Seiten
+- [ ] Selbstreferenzierende hreflang-Tags
+- [ ] x-default definiert
+- [ ] XML-Sitemap mit hreflang
+- [ ] Google Search Console eingerichtet
+- [ ] Canonical Tags korrekt
+
+### Content
+- [ ] Keywords pro Sprache recherchiert
+- [ ] Meta-Titles optimiert (alle Sprachen)
+- [ ] Meta-Descriptions optimiert
+- [ ] H1/H2 mit Keywords
+- [ ] Alt-Texte übersetzt
+- [ ] Blog-Strategie für alle Sprachen
+
+### Lokal
+- [ ] Google Business Profile (falls relevant)
+- [ ] Lokale Backlinks (Romandie/Tessin)
+- [ ] Lokale Verzeichniseinträge
+- [ ] Strukturierte Daten
+
+### Tracking
+- [ ] GA4-Segmente nach Sprache
+- [ ] Search Console nach Sprache filtern
+- [ ] Keyword-Rankings tracken
+- [ ] Monatliche SEO-Reports
+
+## Fazit: SEO braucht alle drei Sprachen
+
+Sie können den besten Shop der Schweiz haben — wenn Google Sie nicht findet, existieren Sie nicht. Mehrsprachiges SEO ist kein Luxus, sondern **Pflicht** für jeden Shop, der über die Deutschschweiz hinaus verkaufen will.
+
+Die gute Nachricht: Mit dem richtigen Setup ist es keine Raketenwissenschaft. hreflang einmal richtig aufsetzen, Keywords recherchieren, lokale Inhalte erstellen — und Google belohnt Sie mit Kunden aus der ganzen Schweiz.
+
+**Nächste Schritte:**
+1. Technisches Audit (hreflang-Tags vorhanden?)
+2. Keyword-Gap-Analyse (fehlen französische/italienische Rankings?)
+3. Produkttexte übersetzen mit TranslateShop
+4. SEO-Optimierung pro Sprache
+
+[→ Übersetzung starten — SEO-Basis schaffen](/register)
+
+---
+
+*SEO-Fragen? Schreiben Sie uns: support@translateshop.ch*
+    `,
+  },
+  {
     slug: 'tessin-italienisch-e-commerce-schweiz',
     title: 'E-Commerce im Tessin: So erreichen Sie 350\'000 italienischsprachige Kunden',
     excerpt: 'Das Tessin wird von Schweizer Online-Shops oft vergessen. Ein Fehler — denn die Sonnenstube der Schweiz bietet loyale Kunden und wenig Konkurrenz.',
