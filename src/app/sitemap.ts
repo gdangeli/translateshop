@@ -2,7 +2,8 @@ import { MetadataRoute } from 'next';
 import { blogPosts } from '@/content/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://translateshop.ch';
+  // WICHTIG: www. verwenden, da Vercel dorthin redirected
+  const baseUrl = 'https://www.translateshop.ch';
   
   const staticPages: MetadataRoute.Sitemap = [
     {

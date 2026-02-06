@@ -18,24 +18,18 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   alternates: {
-    canonical: "https://translateshop.ch",
-    languages: {
-      'de': 'https://translateshop.ch',
-      'fr': 'https://translateshop.ch/fr',
-      'it': 'https://translateshop.ch/it',
-      'en': 'https://translateshop.ch/en',
-    },
+    canonical: "https://www.translateshop.ch",
   },
   openGraph: {
     type: "website",
     locale: "de_CH",
-    url: "https://translateshop.ch",
+    url: "https://www.translateshop.ch",
     siteName: "TranslateShop.ch",
     title: "TranslateShop.ch | Ihr Shop in 4 Sprachen",
     description: "Erreichen Sie die ganze Schweiz. Übersetzen Sie Ihren Online-Shop automatisch auf Deutsch, Französisch, Italienisch und Englisch.",
     images: [
       {
-        url: "https://translateshop.ch/og-image.png",
+        url: "https://www.translateshop.ch/og-image.png",
         width: 1200,
         height: 630,
         alt: "TranslateShop.ch - Online-Shop Übersetzung",
@@ -46,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "TranslateShop.ch | Online-Shop Übersetzung",
     description: "Übersetzen Sie Ihren Schweizer Online-Shop automatisch in alle 4 Landessprachen.",
-    images: ["https://translateshop.ch/og-image.png"],
+    images: ["https://www.translateshop.ch/og-image.png"],
   },
 };
 
@@ -57,18 +51,17 @@ const jsonLd = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "Automatische Übersetzung für Schweizer Online-Shops",
-  url: "https://translateshop.ch",
+  url: "https://www.translateshop.ch",
   offers: {
-    "@type": "AggregateOffer",
+    "@type": "Offer",
     priceCurrency: "CHF",
-    lowPrice: "0",
-    highPrice: "199",
-    offerCount: "4",
+    price: "0",
+    description: "Kostenloser Start mit 50 Credits",
   },
   provider: {
     "@type": "Organization",
     name: "TranslateShop.ch",
-    url: "https://translateshop.ch",
+    url: "https://www.translateshop.ch",
     address: {
       "@type": "PostalAddress",
       addressCountry: "CH",
