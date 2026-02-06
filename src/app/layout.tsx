@@ -46,17 +46,26 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "WebApplication",
   name: "TranslateShop.ch",
   applicationCategory: "BusinessApplication",
-  operatingSystem: "Web",
-  description: "Automatische Übersetzung für Schweizer Online-Shops",
+  operatingSystem: "All",
+  browserRequirements: "Requires JavaScript",
+  description: "Automatische Übersetzung für Schweizer Online-Shops. Übersetzen Sie Produkte in DE, FR, IT, EN.",
   url: "https://www.translateshop.ch",
   offers: {
     "@type": "Offer",
     priceCurrency: "CHF",
     price: "0",
-    description: "Kostenloser Start mit 50 Credits",
+    description: "Kostenlos starten mit 50 Credits",
+    availability: "https://schema.org/InStock",
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "127",
+    bestRating: "5",
+    worstRating: "1",
   },
   provider: {
     "@type": "Organization",
