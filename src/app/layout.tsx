@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.translateshop.ch"),
   title: "TranslateShop.ch | Online-Shop Übersetzung für die Schweiz",
   description: "Übersetzen Sie Ihren Schweizer Online-Shop automatisch auf Deutsch, Französisch, Italienisch und Englisch. KI-gestützt, Schweizer Qualität. Ab CHF 49/Monat.",
   keywords: "Shop Übersetzung, E-Commerce Übersetzung, Schweiz, mehrsprachig, Shopify übersetzen, WooCommerce übersetzen",
@@ -18,12 +19,11 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   alternates: {
-    canonical: "https://www.translateshop.ch",
+    canonical: "./",
   },
   openGraph: {
     type: "website",
     locale: "de_CH",
-    url: "https://www.translateshop.ch",
     siteName: "TranslateShop.ch",
     title: "TranslateShop.ch | Ihr Shop in 4 Sprachen",
     description: "Erreichen Sie die ganze Schweiz. Übersetzen Sie Ihren Online-Shop automatisch auf Deutsch, Französisch, Italienisch und Englisch.",
