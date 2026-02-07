@@ -412,7 +412,7 @@ export default function HomePage() {
               <ul className="space-y-2 text-xs md:text-sm">
                 <li><Link href="#demo" className="hover:text-white transition">{t('footer.howItWorks')}</Link></li>
                 <li><Link href="/docs" className="hover:text-white transition">{t('footer.documentation')}</Link></li>
-                <li><Link href="#pricing" className="hover:text-white transition">{t('nav.pricing')}</Link></li>
+                <li><Link href="/pricing" className="hover:text-white transition">{t('nav.pricing')}</Link></li>
                 <li><Link href="/blog" className="hover:text-white transition">{t('nav.blog')}</Link></li>
               </ul>
             </div>

@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Developer API | TranslateShop.ch',
-  description: 'REST API Dokumentation für Entwickler. Integrieren Sie TranslateShop-Übersetzungen in Ihre Anwendungen.',
+  description: 'REST API Dokumentation für Entwickler. Integrieren Sie TranslateShop-Übersetzungen in Ihre Anwendungen. Endpoints, Authentifizierung und Code-Beispiele.',
 };
 
 export default function ApiDocsPage() {

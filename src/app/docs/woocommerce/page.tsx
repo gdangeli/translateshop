@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'WooCommerce Integration | TranslateShop.ch',
-  description: 'Schritt-für-Schritt Anleitung zur Verbindung Ihres WooCommerce-Shops mit TranslateShop.',
+  description: 'Schritt-für-Schritt Anleitung zur Verbindung Ihres WooCommerce-Shops mit TranslateShop. REST API nutzen, Produkte importieren und mehrsprachig machen.',
 };
 
 export default function WooCommerceDocsPage() {

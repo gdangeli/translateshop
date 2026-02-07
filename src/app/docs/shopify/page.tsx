@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Shopify Integration | TranslateShop.ch',
-  description: 'Schritt-für-Schritt Anleitung zur Verbindung Ihres Shopify-Shops mit TranslateShop.',
+  description: 'Schritt-für-Schritt Anleitung zur Verbindung Ihres Shopify-Shops mit TranslateShop. Produkte automatisch importieren und in DE, FR, IT, EN übersetzen.',
 };
 
 export default function ShopifyDocsPage() {
