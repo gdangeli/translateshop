@@ -60,31 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.5,
     },
-    {
-      url: `${baseUrl}/agb`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/datenschutz`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/impressum`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    // Login hat niedrige Priorität, ist aber für Nutzer wichtig
-    {
-      url: `${baseUrl}/login`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.4,
-    },
+    // NICHT in Sitemap: /agb, /datenschutz, /impressum, /login (haben noindex)
   ];
 
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
