@@ -2148,7 +2148,7 @@ Investieren Sie in Ihren mehrsprachigen Checkout. Die Zahlen sprechen für sich:
     publishedAt: '2026-02-09',
     author: 'TranslateShop Team',
     keywords: ['social media schweiz', 'romandie marketing', 'tessin marketing', 'mehrsprachiges marketing', 'instagram schweiz', 'facebook romandie'],
-    content: \`
+    content: `
 ## Der blinde Fleck: Social Media nur auf Deutsch
 
 Sie haben Ihren Shop übersetzt. Französische Produkttexte, italienischer Checkout — alles perfekt. Aber dann posten Sie auf Instagram: "Neue Sommerkollektion! 🌞" Nur auf Deutsch.
@@ -2339,7 +2339,7 @@ Starten Sie klein: Ein Post pro Woche auf Französisch. Messen Sie das Engagemen
 ---
 
 *Mehr Marketing-Tipps? Folgen Sie uns auf Instagram: @translateshop_ch*
-    \`,
+    `,
   },
 ];
 
