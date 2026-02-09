@@ -2138,6 +2138,209 @@ Investieren Sie in Ihren mehrsprachigen Checkout. Die Zahlen sprechen für sich:
 *Brauchen Sie Hilfe bei der Checkout-Optimierung? Kontaktieren Sie uns: support@translateshop.ch*
     `,
   },
+  {
+    slug: 'social-media-marketing-romandie-tessin-schweiz',
+    title: 'Social Media Marketing für Romandie & Tessin: So erreichen Sie alle Sprachregionen',
+    excerpt: 'Ihr Shop ist übersetzt — aber wie erreichen Sie Kunden in der Romandie und im Tessin über Social Media? Strategien, Plattformen und Content-Tipps.',
+    category: 'Marketing',
+    readTime: 7,
+    emoji: '📱',
+    publishedAt: '2026-02-09',
+    author: 'TranslateShop Team',
+    keywords: ['social media schweiz', 'romandie marketing', 'tessin marketing', 'mehrsprachiges marketing', 'instagram schweiz', 'facebook romandie'],
+    content: \`
+## Der blinde Fleck: Social Media nur auf Deutsch
+
+Sie haben Ihren Shop übersetzt. Französische Produkttexte, italienischer Checkout — alles perfekt. Aber dann posten Sie auf Instagram: "Neue Sommerkollektion! 🌞" Nur auf Deutsch.
+
+**Das Problem:** Ihre Westschweizer und Tessiner Kunden sehen den Post — und scrollen weiter. Nicht weil sie kein Deutsch verstehen, sondern weil sie sich nicht angesprochen fühlen.
+
+### Die Realität in Zahlen
+
+| Plattform | Deutschschweiz | Romandie | Tessin |
+|-----------|---------------|----------|--------|
+| Instagram | 2.1 Mio. | 850'000 | 280'000 |
+| Facebook | 3.2 Mio. | 1.1 Mio. | 350'000 |
+| TikTok | 1.8 Mio. | 650'000 | 220'000 |
+
+Das sind **über 2 Millionen potenzielle Kunden** in der Romandie und im Tessin — auf Instagram allein!
+
+## Strategie 1: Getrennte Accounts
+
+Die sauberste Lösung: Ein Account pro Sprache.
+
+**Vorteile:**
+- 🎯 Klare Zielgruppenansprache
+- 📈 Besseres Engagement (Algorithmus bevorzugt konsistente Sprache)
+- 🔍 Lokales SEO auf Social Media
+
+**Nachteile:**
+- ⏰ 3x Content-Aufwand
+- 📊 Follower-Split
+- 💰 Höhere Werbekosten
+
+**Beispiele aus der Praxis:**
+- IKEA: @ikeaschweiz, @ikeafrance_ch, @ikeaitalia_ch
+- Migros: @migros, @migros_romandie
+
+### Wann getrennte Accounts sinnvoll sind
+
+- Ab 10'000+ Followern
+- Wenn Sie regelmässig (3+ Posts/Woche) posten
+- Wenn Sie lokale Angebote pro Region haben
+- Wenn Sie ein dediziertes Marketing-Team haben
+
+## Strategie 2: Ein Account, mehrsprachiger Content
+
+Für die meisten KMU die praktischere Lösung:
+
+### Option A: Jeder Post in allen Sprachen
+
+\\\`\\\`\\\`
+🛍️ Neue Sommerkollektion!
+Entdecke 50+ neue Styles.
+
+🇫🇷 Nouvelle collection d'été !
+Découvrez 50+ nouveaux styles.
+
+🇮🇹 Nuova collezione estiva!
+Scopri 50+ nuovi stili.
+
+#summerfashion #modesuisse #fashionch
+\\\`\\\`\\\`
+
+**Tipps:**
+- Deutsch zuerst (grösste Reichweite)
+- Flaggen-Emojis als visuelle Trenner
+- Gleiche Hashtags für alle Sprachen nutzen
+
+### Option B: Abwechselnde Sprachen
+
+Montag: Deutsch  
+Mittwoch: Französisch  
+Freitag: Italienisch
+
+**Vorteil:** Content wirkt natürlicher
+**Nachteil:** Nicht jeder sieht jeden Post
+
+### Option C: Deutsch + Reels/Stories mehrsprachig
+
+Feed-Posts auf Deutsch, aber Stories und Reels regelmässig auf Französisch/Italienisch. Stories sind kurzlebiger — ideal zum Experimentieren.
+
+## Plattform-spezifische Tipps
+
+### Instagram Romandie
+
+Die Romandie tickt anders als die Deutschschweiz:
+
+- **Posting-Zeiten:** 12:00-13:00 und 19:00-21:00 (Französische Mittagspause ist heilig!)
+- **Hashtags:** #suisseromande, #geneve, #lausanne, #romandie, #swissfrench
+- **Stil:** Etwas eleganter, lifestyle-orientierter
+
+### Instagram Tessin
+
+- **Posting-Zeiten:** 13:00-14:00 und 20:00-22:00 (Italienisches Timing)
+- **Hashtags:** #tessin, #ticino, #svizzeraitaliana, #lugano, #locarno
+- **Stil:** Wärmer, emotionaler, mehr Storytelling
+
+### Facebook: Die Romandie liebt es noch
+
+Während Facebook in der Deutschschweiz "nur noch für Boomer" gilt, ist es in der **Romandie immer noch stark** — besonders für:
+- Lokale Businesses
+- 35+ Zielgruppe
+- Event-Promotion
+
+**Tipp:** Facebook-Gruppen sind in der Romandie sehr aktiv. Suchen Sie nach \`[Ihre Nische] Suisse Romande\` und werden Sie Teil der Community.
+
+## Content-Übersetzung: Die häufigsten Fehler
+
+### Fehler 1: Google Translate für Posts
+
+Ein echter Fall:  
+DE: "Wir feiern unser 10-jähriges Jubiläum!"  
+Google FR: "Nous célébrons notre 10ème anniversaire!"  
+✅ Grammatisch korrekt  
+❌ Klingt wie eine Übersetzung
+
+Besser:  
+"10 ans déjà ! Merci à tous nos clients romands 🎉"
+
+### Fehler 2: Gleiche Emojis für alle Kulturen
+
+Die Deutschschweiz liebt 🔥💪👍  
+Die Romandie bevorzugt 💫✨💛  
+Das Tessin mag ❤️🙌☀️
+
+Keine harte Regel, aber kulturelle Nuancen existieren.
+
+### Fehler 3: Schweizer Eigenheiten vergessen
+
+| Deutsch | Falsch (FR) | Richtig (CH-FR) |
+|---------|-------------|-----------------|
+| Natel | téléphone portable | natel / mobile |
+| Velo | vélo | vélo (✓) |
+| Einkaufen | faire du shopping | faire les courses |
+| Aktion | promotion | action |
+
+## Werbung schalten: So targeten Sie richtig
+
+### Facebook/Instagram Ads
+
+**Targeting Romandie:**
+- Standort: Kantone GE, VD, NE, FR, VS (französischsprachige Teile), JU
+- ODER: Sprache = Französisch + Land = Schweiz
+
+**Targeting Tessin:**
+- Standort: Kanton TI, italienischsprachiges GR
+- ODER: Sprache = Italienisch + Land = Schweiz
+
+### Kosten-Vergleich
+
+Interessant: **Werbung in der Romandie ist oft günstiger** als in der Deutschschweiz!
+
+| Metrik | Deutschschweiz | Romandie | Tessin |
+|--------|---------------|----------|--------|
+| CPM (1000 Impressions) | CHF 8-12 | CHF 5-8 | CHF 4-7 |
+| CPC (pro Klick) | CHF 0.40-0.80 | CHF 0.25-0.50 | CHF 0.20-0.45 |
+
+Weniger Konkurrenz = bessere Preise!
+
+## Quick Wins für diese Woche
+
+1. **Heute:** Nächsten Post auch auf Französisch verfassen
+2. **Morgen:** Bio auf Instagram/Facebook um FR/IT Zeile ergänzen
+3. **Diese Woche:** Ein Story-Template in allen 3 Sprachen erstellen
+4. **Diesen Monat:** Ein Reel komplett auf Französisch testen
+
+## Tool-Tipp: Content effizient übersetzen
+
+Sie haben 50 Instagram-Captions zum Übersetzen? Machen Sie's systematisch:
+
+1. Exportieren Sie Ihre Posts in eine **Tabelle** (Caption pro Zeile)
+2. **Übersetzen** Sie mit TranslateShop (kostenlos bis 50 Zeilen)
+3. **Passen Sie an:** Emojis, lokale Ausdrücke, Hashtags
+4. **Planen** Sie mit einem Scheduling-Tool
+
+**Zeitaufwand:** 50 Posts in ~30 Minuten statt 5 Stunden manuell.
+
+## Fazit: Mehrsprachiges Social Media lohnt sich
+
+Die Romandie und das Tessin sind nicht "kleine Märkte" — sie sind **unterversorgte Märkte**. Während jeder um Deutschschweizer Kunden kämpft, haben Sie in den anderen Sprachregionen weniger Konkurrenz.
+
+**Der ROI ist real:**
+- Tiefere Werbekosten
+- Weniger Konkurrenz
+- Loyalere Kunden (weil sie endlich angesprochen werden!)
+
+Starten Sie klein: Ein Post pro Woche auf Französisch. Messen Sie das Engagement. Skalieren Sie, was funktioniert.
+
+[→ Jetzt Social-Media-Texte übersetzen](/register)
+
+---
+
+*Mehr Marketing-Tipps? Folgen Sie uns auf Instagram: @translateshop_ch*
+    \`,
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
