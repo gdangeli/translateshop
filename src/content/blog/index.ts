@@ -2341,9 +2341,7 @@ Starten Sie klein: Ein Post pro Woche auf Französisch. Messen Sie das Engagemen
 *Mehr Marketing-Tipps? Folgen Sie uns auf Instagram: @translateshop_ch*
     `,
   },
-];
-
-{
+  {
     slug: 'google-ads-mehrsprachig-schweiz-romandie-tessin',
     title: 'Google Ads für mehrsprachige Schweizer Shops: So verdreifachen Sie Ihre Reichweite',
     excerpt: 'Ihre Konkurrenz wirbt nur auf Deutsch. Erfahren Sie, wie Sie mit französischen und italienischen Google Ads Kampagnen günstiger einkaufen und mehr verkaufen.',
