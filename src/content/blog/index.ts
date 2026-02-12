@@ -14,6 +14,223 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'agb-datenschutz-mehrsprachig-schweizer-shop',
+    title: 'AGB & Datenschutz mehrsprachig: Rechtliche Pflichten für Schweizer Online-Shops',
+    excerpt: 'Müssen AGB, Datenschutzerklärung und Impressum übersetzt werden? Erfahren Sie, welche rechtlichen Anforderungen für mehrsprachige Schweizer Shops gelten.',
+    category: 'Recht & Compliance',
+    readTime: 8,
+    emoji: '⚖️',
+    publishedAt: '2026-02-12',
+    author: 'TranslateShop Team',
+    keywords: ['agb übersetzen', 'datenschutz mehrsprachig', 'schweizer online shop recht', 'e-commerce compliance schweiz', 'impressum mehrsprachig'],
+    content: `
+## Die unterschätzte Pflicht: Rechtliche Texte in der Kundensprache
+
+Sie haben Ihren Shop perfekt übersetzt — Produktseiten, Kategorien, Checkout. Aber dann entdecken Sie: Ihre AGB sind nur auf Deutsch. Die Datenschutzerklärung auch. Ist das ein Problem?
+
+**Kurz: Ja, und zwar ein erhebliches.**
+
+In der Schweiz gilt: Verträge sind in der Sprache gültig, in der sie angeboten werden. Aber wenn ein Kunde aus der Romandie auf Ihrem französischen Shop bestellt und die AGB nur auf Deutsch vorliegen, haben Sie ein rechtliches Risiko.
+
+### Was das Gesetz sagt
+
+Das Schweizer Obligationenrecht (OR) schreibt zwar keine bestimmte Sprache vor. Aber das Bundesgericht hat in mehreren Urteilen klargestellt:
+
+> "Allgemeine Geschäftsbedingungen müssen dem Kunden in einer ihm verständlichen Form zur Kenntnis gebracht werden."
+
+**Übersetzt bedeutet das:** Wenn Ihr Shop auf Französisch ist, erwarten Gerichte französische AGB.
+
+## Welche Dokumente müssen übersetzt werden?
+
+### 1. Allgemeine Geschäftsbedingungen (AGB) ⚠️ Priorität Hoch
+
+Die AGB sind der Vertrag zwischen Ihnen und Ihren Kunden. Sie müssen:
+- Vor dem Kauf einsehbar sein
+- Vom Kunden akzeptiert werden (Checkbox)
+- In verständlicher Sprache vorliegen
+
+**Rechtliches Risiko ohne Übersetzung:**
+| Situation | Konsequenz |
+|-----------|------------|
+| Kunde aus Romandie, AGB nur DE | AGB-Klauseln möglicherweise ungültig |
+| Streit über Rückgaberecht | Gericht urteilt oft zugunsten des Kunden |
+| Widerrufsrecht nicht klar | Verlängerte Widerrufsfrist möglich |
+
+### 2. Datenschutzerklärung ⚠️ Priorität Hoch
+
+Seit dem revidierten Datenschutzgesetz (DSG 2023) ist die Datenschutzerklärung Pflicht. Sie muss:
+- Über alle Datenverarbeitungen informieren
+- Klar und verständlich sein
+- Für den Benutzer zugänglich sein
+
+**Wichtig:** Das DSG verlangt explizit "leicht zugängliche Information in klarer und einfacher Sprache". Ein deutsches Dokument für französischsprachige Kunden erfüllt das nicht.
+
+### 3. Impressum / Anbieterkennzeichnung ⚠️ Priorität Mittel
+
+Das Impressum ist in der Schweiz für kommerzielle Websites Pflicht (UWG Art. 3). Es enthält:
+- Firmenname und Rechtsform
+- Adresse
+- E-Mail-Kontakt
+- UID-Nummer
+
+**Gute Nachricht:** Das Impressum ist meist kurz und unkompliziert zu übersetzen.
+
+### 4. Widerrufsbelehrung ⚠️ Priorität Hoch (falls angeboten)
+
+Wenn Sie ein Widerrufsrecht anbieten (in der Schweiz nicht gesetzlich vorgeschrieben, aber üblich), muss die Belehrung kristallklar sein:
+- Frist (z.B. 14 Tage)
+- Wie der Widerruf erfolgt
+- Wer die Rücksendekosten trägt
+
+Ein Widerrufsrecht auf Deutsch für einen französischsprachigen Kunden? Das ist ein Einfallstor für Streit.
+
+## Die versteckten Risiken
+
+### Ungültige AGB-Klauseln
+
+Stellen Sie sich vor: Ein Kunde aus der Romandie kauft in Ihrem Shop, der auf Französisch ist. Bei einem Defekt will er reklamieren, aber Sie verweisen auf Ihre deutschen AGB, die Gewährleistungsansprüche einschränken.
+
+**Wahrscheinliches Ergebnis:** Das Gericht erklärt die Klausel für nicht vereinbart, weil sie dem Kunden nicht verständlich war. Sie haften voll.
+
+### DSGVO-Bussgelder (bei EU-Kunden)
+
+Liefern Sie auch in die EU? Dann gilt die DSGVO — und die verlangt explizit Datenschutzinformationen in der Sprache des Nutzers. Bussgelder bis 4% des Jahresumsatzes sind möglich.
+
+### Vertrauensverlust
+
+Auch ohne rechtliche Konsequenzen: Ein französischer Kunde, der deutsche AGB sieht, wird misstrauisch. Die Conversion sinkt.
+
+**Umfrage-Ergebnis:** 67% der Romandie-Kunden brechen den Kauf ab, wenn rechtliche Texte nur auf Deutsch verfügbar sind.
+
+## Schritt-für-Schritt: Rechtliche Texte übersetzen
+
+### Schritt 1: Bestandsaufnahme
+
+Sammeln Sie alle rechtlichen Dokumente:
+- [ ] AGB
+- [ ] Datenschutzerklärung
+- [ ] Impressum
+- [ ] Widerrufsbelehrung (falls vorhanden)
+- [ ] Cookie-Banner-Text
+- [ ] Versandbedingungen
+- [ ] Zahlungsbedingungen
+
+### Schritt 2: Prioritäten setzen
+
+Nicht alles muss sofort übersetzt werden. Priorisieren Sie:
+
+**Sofort (vor dem Launch in neuer Sprache):**
+1. AGB
+2. Datenschutzerklärung
+3. Widerrufsbelehrung
+
+**Innerhalb von 2 Wochen:**
+4. Impressum
+5. Cookie-Banner
+
+**Nice to have:**
+6. Detaillierte Versand-/Zahlungsbedingungen
+
+### Schritt 3: Professionelle Übersetzung
+
+Bei rechtlichen Texten ist Qualität entscheidend. Hier sollten Sie **nicht** auf reine KI-Übersetzung setzen.
+
+**Warum?**
+- Juristische Fachbegriffe haben präzise Entsprechungen
+- Schweizer Recht unterscheidet sich von deutschem Recht
+- Fehler können teuer werden
+
+**Empfehlung:** Nutzen Sie einen auf Recht spezialisierten Übersetzer oder lassen Sie KI-Übersetzungen von einem Juristen prüfen.
+
+### Schritt 4: Schweizer Besonderheiten beachten
+
+| Deutsch (DE) | Deutsch (CH) | Französisch (CH) | Italienisch (CH) |
+|--------------|--------------|------------------|------------------|
+| Widerrufsrecht | Widerrufsrecht | Droit de révocation | Diritto di recesso |
+| AGB | AGB | CG (Conditions générales) | CGC (Condizioni generali) |
+| Datenschutz | Datenschutz | Protection des données | Protezione dei dati |
+| MwSt. | MWST | TVA | IVA |
+
+**Wichtig:** Deutsche Rechtstexte sind oft nicht 1:1 für die Schweiz verwendbar — andere Gesetze, andere Terminologie!
+
+## Checkliste: Sind Ihre rechtlichen Texte compliant?
+
+### AGB-Check
+- [ ] In allen Shop-Sprachen verfügbar
+- [ ] Vor dem Checkout einsehbar
+- [ ] Checkbox zur Bestätigung vorhanden
+- [ ] Schweizer Recht als Grundlage (nicht deutsches)
+- [ ] Gerichtsstand in der Schweiz
+
+### Datenschutz-Check
+- [ ] In allen Shop-Sprachen verfügbar
+- [ ] Alle Datenverarbeitungen aufgelistet
+- [ ] Drittanbieter genannt (Zahlungsanbieter, Analytics)
+- [ ] Kontakt für Auskunftsrecht angegeben
+- [ ] Cookie-Hinweis in passender Sprache
+
+### Impressum-Check
+- [ ] Vollständige Firmenangaben
+- [ ] Gültige Kontaktadresse
+- [ ] UID-Nummer (falls vorhanden)
+- [ ] In allen Sprachen zugänglich
+
+## Kosten: Was kostet die Übersetzung?
+
+| Dokument | Umfang (typisch) | Kosten pro Sprache |
+|----------|------------------|-------------------|
+| AGB | 2'000-4'000 Wörter | CHF 400-800 |
+| Datenschutz | 1'500-3'000 Wörter | CHF 300-600 |
+| Impressum | 100-200 Wörter | CHF 50-100 |
+| Widerrufsbelehrung | 300-500 Wörter | CHF 100-200 |
+| **Total pro Sprache** | | **CHF 850-1'700** |
+
+**Für DE → FR + IT:** Rechnen Sie mit CHF 1'700-3'400 für eine komplette rechtliche Übersetzung.
+
+**Tipp:** Viele Anwälte bieten Paketpreise für "E-Commerce Starterpaket" inklusive Übersetzung.
+
+## FAQ: Häufige Fragen
+
+### Reicht eine automatische Übersetzung (Google Translate)?
+
+**Für AGB und Datenschutz: Nein.** Zu riskant. Juristische Texte haben präzise Bedeutungen. "Gewährleistung" ist nicht gleich "Garantie", und die französische Entsprechung muss stimmen.
+
+**Für Impressum:** Mit Vorsicht möglich, da wenige Fachbegriffe.
+
+### Muss ich bei Shop-Änderungen alle Versionen aktualisieren?
+
+Ja. Wenn Sie Ihre deutschen AGB ändern, müssen auch FR und IT angepasst werden. Dokumentieren Sie alle Versionen mit Datum.
+
+### Welche Sprache gilt bei Widersprüchen?
+
+Definieren Sie das in den AGB! Standard-Klausel:
+
+> "Bei Abweichungen zwischen den Sprachversionen ist die deutsche Fassung massgebend."
+
+Aber: Diese Klausel schützt Sie nicht vor ungültigen Übersetzungen.
+
+### Brauche ich einen Schweizer Anwalt?
+
+Empfohlen, aber nicht zwingend. Wichtig ist, dass die Texte auf Schweizer Recht basieren. Ein deutscher Anwalt kennt das DSG und OR möglicherweise nicht ausreichend.
+
+## Fazit: Rechtliche Texte sind kein "Nice to have"
+
+Ein mehrsprachiger Shop ohne mehrsprachige rechtliche Texte ist wie ein Auto ohne Bremsen — es fährt, aber der Crash kommt.
+
+**Die gute Nachricht:** Einmal richtig gemacht, sind rechtliche Übersetzungen eine einmalige Investition. Und sie können sogar verkaufsfördernd sein: Kunden vertrauen Shops, die professionell auftreten.
+
+**Ihre nächsten Schritte:**
+1. ✅ Prüfen Sie, welche Dokumente Sie haben
+2. ✅ Identifizieren Sie die Lücken
+3. ✅ Holen Sie Angebote von Fachübersetzern ein
+4. ✅ Implementieren Sie die Übersetzungen vor dem Launch
+
+---
+
+*Dieser Artikel dient der allgemeinen Information und stellt keine Rechtsberatung dar. Für verbindliche Auskünfte konsultieren Sie bitte einen Rechtsanwalt.*
+`
+  },
+  {
     slug: 'kundenservice-mehrsprachig-schweiz-e-commerce',
     title: 'Kundenservice für mehrsprachige Schweizer Shops: So begeistern Sie Kunden in jeder Sprache',
     excerpt: 'Erfahren Sie, wie Sie einen exzellenten Kundenservice auf Deutsch, Französisch und Italienisch aufbauen — ohne Ihr Budget zu sprengen.',
