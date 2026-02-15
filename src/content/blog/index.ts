@@ -14,6 +14,239 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'google-ads-mehrsprachig-schweiz-romandie-tessin',
+    title: 'Google Ads für mehrsprachige Schweizer Shops: So werben Sie in DE, FR und IT',
+    excerpt: 'Ihre Google Ads laufen nur auf Deutsch? Dann verschenken Sie 37% des Schweizer Marktes. So erstellen Sie effektive Kampagnen für alle Sprachregionen.',
+    category: 'Marketing',
+    readTime: 9,
+    emoji: '🎯',
+    publishedAt: '2026-02-15',
+    author: 'TranslateShop Team',
+    keywords: ['google ads schweiz', 'google ads mehrsprachig', 'google ads romandie', 'google ads tessin', 'sea schweiz', 'ppc mehrsprachig', 'google ads französisch'],
+    content: `
+## Warum einsprachige Google Ads in der Schweiz Geld verbrennen
+
+Sie schalten Google Ads auf Deutsch und wundern sich, warum Ihre Romandie-Kampagnen nicht performen? Das Problem: **Google Ads auf Deutsch erreichen nur 63% der Schweiz**. Die restlichen 37% — 2 Millionen Romands und 350'000 Tessiner — suchen in ihrer Muttersprache.
+
+Und hier wird es interessant: **Die CPCs in der Romandie und im Tessin sind oft 20-40% günstiger** als in der Deutschschweiz. Weniger Konkurrenz, niedrigere Klickpreise, gleiche Kaufkraft.
+
+## Die 3 grössten Fehler bei mehrsprachigen Google Ads
+
+### Fehler 1: Deutsche Ads für alle Sprachen
+
+Google's Spracheinstellung bedeutet nicht, dass Ihre Anzeige übersetzt wird. Eine deutsche Anzeige wird einem Romand angezeigt, wenn Sie auf "Alle Sprachen" targeten — und sofort ignoriert.
+
+**Was passiert:**
+- Romand sucht "chaussures de randonnée"
+- Sieht Ihre Anzeige: "Wanderschuhe kaufen - Jetzt bestellen!"
+- Scrollt weiter
+- Sie zahlen trotzdem (bei Search) oder verschwenden Impressions (bei Display)
+
+### Fehler 2: Keywords nur übersetzen
+
+"Wanderschuhe" ist nicht gleich "chaussures de randonnée". In der Romandie suchen mehr Menschen nach "chaussures de marche" — ein Synonym, das Sie verpassen, wenn Sie nur wörtlich übersetzen.
+
+| Deutsch | Wörtliche Übersetzung | Tatsächlich gesucht (Romandie) |
+|---------|----------------------|-------------------------------|
+| Wanderschuhe | Chaussures de randonnée | Chaussures de marche |
+| Online-Shop | Boutique en ligne | Magasin en ligne |
+| Günstig kaufen | Acheter pas cher | Acheter à bon prix |
+
+### Fehler 3: Ein Konto für alles
+
+Wenn Sie DE, FR und IT in einem Konto ohne klare Struktur mischen, verlieren Sie:
+- Übersicht über Performance pro Sprache
+- Fähigkeit, Budgets regional zu steuern
+- Qualitätsscore (gemischte Sprachen = verwirrender Relevanz-Score)
+
+## Die richtige Kontostruktur für mehrsprachige Schweizer Ads
+
+### Option A: Separate Kampagnen pro Sprache (empfohlen)
+
+Strukturieren Sie Ihr Konto so:
+
+**Konto: MeinShop.ch**
+- **Kampagne: Search_DE_Wanderschuhe** — Sprache: Deutsch, Standort: Schweiz
+- **Kampagne: Search_FR_Chaussures** — Sprache: Französisch, Standort: Schweiz
+- **Kampagne: Search_IT_Scarpe** — Sprache: Italienisch, Standort: Schweiz
+
+**Vorteile:**
+- Klare Performance-Übersicht
+- Separate Budgets pro Sprache
+- Optimale Qualitätsscores
+
+### Option B: Regionales Targeting (für Fortgeschrittene)
+
+Zusätzlich zur Sprache können Sie nach Kanton targeten:
+
+**Romandie-Kampagne:**
+- Kantone: GE, VD, NE, JU, FR (teilweise), VS (teilweise)
+- Sprache: Französisch
+
+**Tessin-Kampagne:**
+- Kantone: TI, GR (teilweise)
+- Sprache: Italienisch
+
+**Vorteil:** Noch präzisere Budgetsteuerung. **Nachteil:** Romands in Zürich werden nicht erreicht.
+
+## Keyword-Recherche für jede Sprache: So geht's
+
+### Schritt 1: Seed-Keywords auf Deutsch sammeln
+
+Listen Sie Ihre wichtigsten deutschen Keywords auf:
+- Produktnamen
+- Kategorien
+- Kaufintentionen ("kaufen", "bestellen", "günstig")
+
+### Schritt 2: Nicht nur übersetzen — recherchieren
+
+Für jedes Keyword:
+1. Übersetzen Sie es (DeepL, Google Translate)
+2. Geben Sie die Übersetzung in den Google Keyword Planner ein
+3. Schauen Sie sich **verwandte Keywords** an
+4. Prüfen Sie das **Suchvolumen in der Schweiz**
+
+**Beispiel "Sneaker":**
+- Google Translate: "Baskets" (FR)
+- Keyword Planner zeigt: "Tennis" hat in CH mehr Volumen
+- Entscheidung: Beide Keywords nutzen
+
+### Schritt 3: Lokale Begriffe hinzufügen
+
+Schweizer suchen anders als Franzosen:
+
+| Frankreich | Schweiz (FR) |
+|------------|--------------|
+| Portable | Natel |
+| Parking | Parcage |
+| Soldes | Actions |
+
+Fügen Sie Schweizer Begriffe als separate Keywords hinzu.
+
+## Anzeigentexte, die in der Romandie konvertieren
+
+### Die Formel für französische Anzeigen
+
+**Headline 1:** Hauptkeyword + Nutzen
+**Headline 2:** USP (Schweiz-Bezug!)
+**Headline 3:** Call-to-Action
+**Beschreibung:** Problem → Lösung → Vertrauen → CTA
+
+### Beispiel: Wanderschuhe
+
+**Deutsch:**
+"Wanderschuhe Online | Grosse Auswahl — Schnelle Lieferung in die Schweiz — Jetzt entdecken!"
+
+**Französisch:**
+"Chaussures de Randonnée | Grand Choix — Livraison Rapide en Suisse Romande — Découvrez Maintenant!"
+
+### Wichtig: Lokale Trust-Signale
+
+Romands kaufen lieber bei Schweizer Shops. Betonen Sie:
+- "Boutique suisse" / "Negozio svizzero"
+- "Livraison depuis la Suisse"
+- "Service client en français"
+- "Prix en CHF"
+
+## Budget-Verteilung: Wie viel für welche Sprache?
+
+### Startpunkt: Proportional zur Bevölkerung
+
+| Region | Bevölkerungsanteil | Start-Budget |
+|--------|-------------------|--------------|
+| Deutschschweiz | 63% | 60% |
+| Romandie | 23% | 25% |
+| Tessin | 8% | 10% |
+| Reserve | - | 5% |
+
+**Warum Romandie/Tessin übergewichten?** Niedrigere CPCs, weniger Konkurrenz, oft bessere Conversion-Rates (weniger Alternativen).
+
+### Nach 2-4 Wochen: Datenbasiert optimieren
+
+Analysieren Sie CPC, Conversion-Rate und ROAS pro Sprache — und verschieben Sie Budget dorthin, wo es am besten performt.
+
+## Performance-Messung: Diese KPIs zählen
+
+### Pro Sprache tracken
+
+| KPI | Deutsch | Französisch | Italienisch |
+|-----|---------|-------------|-------------|
+| Klicks | X | Y | Z |
+| CTR | X% | Y% | Z% |
+| CPC | CHF X | CHF Y | CHF Z |
+| Conversions | X | Y | Z |
+| ROAS | X:1 | Y:1 | Z:1 |
+
+### Typische Benchmarks Schweiz (E-Commerce)
+
+| Metrik | Deutschschweiz | Romandie | Tessin |
+|--------|---------------|----------|--------|
+| Durchschn. CPC | CHF 0.80-1.50 | CHF 0.50-1.00 | CHF 0.40-0.90 |
+| CTR Search | 3-5% | 3-6% | 3-5% |
+| Conv. Rate | 2-4% | 2-4% | 1.5-3% |
+
+**Beobachtung:** Tessin hat oft niedrigere Conversion-Rates, aber auch viel niedrigere CPCs — der ROAS kann trotzdem stimmen.
+
+## Häufige Fragen
+
+### Soll ich für jede Sprache eine eigene Landingpage haben?
+
+**Unbedingt!** Eine französische Anzeige, die auf eine deutsche Seite führt = verschwendetes Geld. Die Landingpage muss zur Anzeige passen.
+
+### Kann ich auto-übersetzte Anzeigen nutzen?
+
+Google bietet automatische Übersetzung an. **Nicht empfohlen** für die Schweiz — die Übersetzungen sind oft Frankreich-Französisch und klingen fremd.
+
+### Brauche ich separate Google Ads Konten?
+
+Nicht unbedingt. Separate **Kampagnen** im selben Konto reichen für die meisten Shops.
+
+## Checkliste: Mehrsprachige Google Ads Schweiz
+
+### Setup
+- Separate Kampagnen pro Sprache erstellt
+- Spracheinstellung korrekt (DE/FR/IT)
+- Standort: Schweiz (oder Kantone)
+- Budget pro Kampagne definiert
+
+### Keywords
+- Keywords pro Sprache recherchiert (nicht nur übersetzt!)
+- Lokale Schweizer Begriffe hinzugefügt
+- Negative Keywords in allen Sprachen
+- Match Types strategisch gewählt
+
+### Anzeigen
+- Anzeigentexte in jeder Sprache geschrieben
+- Lokale USPs eingebaut (Schweizer Shop, CHF, etc.)
+- Responsive Search Ads mit mind. 10 Headlines
+- Anzeigenerweiterungen übersetzt
+
+### Landingpages
+- Jede Anzeige führt zur passenden Sprachversion
+- Landingpages enthalten Anzeigen-Keywords
+- CHF als Währung
+- Trust-Signale (Schweizer Shop)
+
+## Fazit: Mehrsprachige Ads = Wettbewerbsvorteil
+
+Die meisten Schweizer Shops schalten nur deutsche Google Ads. Das ist Ihre Chance: Mit professionellen Kampagnen auf Französisch und Italienisch erreichen Sie **37% mehr potenzielle Kunden** — bei **niedrigeren Klickpreisen**.
+
+Der Aufwand? Überschaubar. Sie brauchen:
+1. Übersetzte Keywords (recherchieren, nicht nur übersetzen!)
+2. Lokalisierte Anzeigentexte
+3. Passende Landingpages
+4. Separate Kampagnen-Struktur
+
+Das grösste Hindernis für die meisten Shops: Die Übersetzung von Shop-Inhalten und Landingpages. Genau hier hilft TranslateShop — damit Ihre Google Ads auch Seiten haben, auf die sie führen können.
+
+[→ Shop übersetzen und Google Ads vorbereiten](/register)
+
+---
+
+*Fragen zu mehrsprachigen Google Ads? Schreiben Sie uns: support@translateshop.ch*
+`
+  },
+  {
     slug: 'social-media-marketing-romandie-tessin-schweiz',
     title: 'Social Media Marketing für Romandie & Tessin: So erreichen Sie alle Schweizer',
     excerpt: 'Instagram, Facebook, TikTok — aber auf Französisch und Italienisch? Erfahren Sie, wie Sie Ihre Social-Media-Strategie für alle Schweizer Sprachregionen optimieren.',
