@@ -14,6 +14,290 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'seo-mehrsprachiger-shop-schweiz',
+    title: 'SEO für mehrsprachige Shops: So ranken Sie in allen Schweizer Sprachregionen',
+    excerpt: 'Google indexiert jede Sprachversion separat. Lernen Sie, wie Sie mit der richtigen technischen Struktur in der Deutschschweiz, Romandie und im Tessin gleichzeitig gefunden werden.',
+    category: 'SEO',
+    readTime: 10,
+    emoji: '🔍',
+    publishedAt: '2026-02-17',
+    author: 'TranslateShop Team',
+    keywords: ['mehrsprachiges SEO', 'hreflang schweiz', 'internationales SEO', 'google ranking mehrsprachig', 'SEO romandie', 'SEO tessin', 'shopify SEO'],
+    content: \`
+## Warum mehrsprachiges SEO anders funktioniert
+
+Sie haben Ihren Shop übersetzt — grossartig! Aber übersetzte Inhalte allein reichen nicht. Google muss verstehen, welche Seite für welche Sprachregion gedacht ist. Ohne die richtige technische Struktur konkurrieren Ihre eigenen Sprachversionen gegeneinander.
+
+Das Ergebnis: Die deutsche Version rankt in der Romandie, die französische Version erscheint für Deutschschweizer — und niemand ist zufrieden.
+
+## Die technische Basis: URL-Struktur
+
+Bevor wir über Keywords sprechen, muss die Struktur stimmen. Es gibt drei gängige Ansätze:
+
+### Option 1: Subdirectories (empfohlen)
+
+\\\`\\\`\\\`
+meinshop.ch/de/produkte/
+meinshop.ch/fr/produits/
+meinshop.ch/it/prodotti/
+\\\`\\\`\\\`
+
+**Vorteile:**
+- Eine Domain, gesamte SEO-Autorität bleibt gebündelt
+- Einfach zu verwalten
+- Kostengünstig
+
+**Shopify:** Nutzen Sie Shopify Markets oder Apps wie Weglot/Langify.
+
+**WooCommerce:** WPML oder Polylang mit Subdirectory-Setup.
+
+### Option 2: Subdomains
+
+\\\`\\\`\\\`
+de.meinshop.ch
+fr.meinshop.ch
+it.meinshop.ch
+\\\`\\\`\\\`
+
+**Vorteile:**
+- Technisch separate Instanzen möglich
+- Gut für sehr grosse Shops
+
+**Nachteile:**
+- SEO-Autorität wird aufgeteilt
+- Mehr technischer Aufwand
+
+### Option 3: Separate Domains (nicht empfohlen)
+
+\\\`\\\`\\\`
+meinshop.ch (deutsch)
+meinshop.fr (französisch)
+\\\`\\\`\\\`
+
+**Probleme:**
+- Komplett getrennte SEO-Autorität
+- Hohe Kosten (mehrere Domains)
+- Verwirrend für Nutzer
+
+**Fazit:** Für die meisten Schweizer Shops sind Subdirectories die beste Wahl.
+
+## Hreflang-Tags: Das A und O
+
+Hreflang-Tags sagen Google: "Diese Seite gibt es auch in anderen Sprachen". Ohne sie rät Google — und rät oft falsch.
+
+### Korrektes Setup für die Schweiz
+
+Jede Seite braucht hreflang-Tags für ALLE Sprachversionen:
+
+\\\`\\\`\\\`html
+<link rel="alternate" hreflang="de-CH" href="https://meinshop.ch/de/produkt-abc/" />
+<link rel="alternate" hreflang="fr-CH" href="https://meinshop.ch/fr/produit-abc/" />
+<link rel="alternate" hreflang="it-CH" href="https://meinshop.ch/it/prodotto-abc/" />
+<link rel="alternate" hreflang="x-default" href="https://meinshop.ch/de/produkt-abc/" />
+\\\`\\\`\\\`
+
+### Die häufigsten Fehler
+
+| Fehler | Auswirkung |
+|--------|------------|
+| Hreflang fehlt komplett | Sprachversionen konkurrieren |
+| Nur auf Homepage gesetzt | Unterseiten werden falsch zugeordnet |
+| Selbstreferenz fehlt | Google ignoriert den Tag |
+| x-default fehlt | Keine Fallback-Logik |
+| Falsche Sprach-Codes | Tags werden ignoriert |
+
+### Schweiz-spezifisch: de-CH vs. de
+
+Verwenden Sie **immer** Sprach-Region-Kombinationen:
+
+- \\\`de-CH\\\` statt nur \\\`de\\\`
+- \\\`fr-CH\\\` statt nur \\\`fr\\\`
+- \\\`it-CH\\\` statt nur \\\`it\\\`
+
+Google unterscheidet "Deutsch für Deutschland" von "Deutsch für die Schweiz". Ein Shop aus Zürich sollte für Suchen aus der Deutschschweiz erscheinen — nicht ein deutscher Konkurrent.
+
+## Keyword-Recherche pro Sprachregion
+
+Übersetzung ist keine Keyword-Strategie. Ein Begriff, der in der Deutschschweiz 1'000 Mal gesucht wird, hat auf Französisch vielleicht ein ganz anderes Suchvolumen.
+
+### Unterschiedliches Suchverhalten
+
+| Deutsch | Französisch | Italienisch |
+|---------|-------------|-------------|
+| "Sneaker kaufen" | "acheter sneakers" | "comprare sneakers" |
+| 2'400 Suchen/Monat | 1'800 Suchen/Monat | 450 Suchen/Monat |
+
+Aber auch:
+
+| Deutsch | Französisch | Suchvolumen |
+|---------|-------------|-------------|
+| "Schuhe online" | "chaussures en ligne" | FR: **3x höher** |
+
+Die Romandie sucht anders. Manche Produkte sind dort beliebter, andere weniger.
+
+### Tools für Schweizer Keyword-Recherche
+
+1. **Google Keyword Planner** — Standort auf "Schweiz" setzen, Sprache wechseln
+2. **Ubersuggest** — Kostenlose Alternative
+3. **SEMrush/Ahrefs** — Für tiefere Analysen
+4. **Google Trends** — Vergleich zwischen Regionen
+
+### Lokale Begriffe beachten
+
+Schweizerdeutsch und Schweizer Französisch haben Eigenheiten:
+
+- "Natel" statt "Handy" (CH-DE)
+- "Velo" statt "Fahrrad" (CH-DE)
+- "Natel" wird auch auf Französisch verstanden (CH-FR)
+- "Soldes" für Ausverkauf (CH-FR)
+
+Diese regionalen Begriffe können goldene Keywords sein — weniger Wettbewerb, hohe Relevanz.
+
+## Content-Strategie für drei Sprachen
+
+### Nicht alles übersetzen — Priorisieren
+
+Starten Sie mit den wichtigsten Seiten:
+
+1. **Prio 1 (sofort):** Startseite, Produktseiten, Checkout, Kategorien
+2. **Prio 2 (bald):** Über uns, FAQ, Kontakt
+3. **Prio 3 (später):** Blog, Ratgeber-Inhalte
+
+### Blog-Inhalte: Übersetzen oder neu schreiben?
+
+Für SEO ist **Neuschreiben oft besser** als Übersetzen:
+
+- Sie können auf regionale Keywords optimieren
+- Der Text wirkt natürlicher
+- Sie können lokale Themen aufgreifen
+
+**Beispiel:** Ein Artikel über "Weihnachtsgeschenke" könnte:
+- Für die Deutschschweiz: Skifahren, Fondue-Sets betonen
+- Für die Romandie: Andere Geschenktraditionen aufgreifen
+- Fürs Tessin: Pandoro/Panettone erwähnen
+
+### Content-Lücken als Chance
+
+Prüfen Sie, welche Themen in der Romandie oder im Tessin weniger Wettbewerb haben. Oft sind französische und italienische Inhalte im Schweizer E-Commerce unterversorgt — eine Chance für Sie!
+
+## Technische SEO-Checkliste
+
+### Für jede Sprachversion
+
+- [ ] Eigene URL mit Sprachpfad
+- [ ] Hreflang-Tags auf allen Seiten
+- [ ] Kanonische URLs korrekt gesetzt
+- [ ] Meta-Title und Description übersetzt
+- [ ] Alt-Texte für Bilder übersetzt
+- [ ] Strukturierte Daten (Schema.org) in der jeweiligen Sprache
+- [ ] Sitemap enthält alle Sprachversionen
+
+### Sitemap-Struktur
+
+Ihre XML-Sitemap sollte Sprachversionen verknüpfen:
+
+\\\`\\\`\\\`xml
+<url>
+  <loc>https://meinshop.ch/de/produkt-abc/</loc>
+  <xhtml:link rel="alternate" hreflang="de-CH" href="https://meinshop.ch/de/produkt-abc/"/>
+  <xhtml:link rel="alternate" hreflang="fr-CH" href="https://meinshop.ch/fr/produit-abc/"/>
+  <xhtml:link rel="alternate" hreflang="it-CH" href="https://meinshop.ch/it/prodotto-abc/"/>
+</url>
+\\\`\\\`\\\`
+
+### Google Search Console Setup
+
+Richten Sie in der Search Console eine Property für die gesamte Domain ein. So sehen Sie:
+
+- Performance pro Sprache
+- Indexierungsstatus pro Sprachversion
+- Hreflang-Fehler (unter "Internationale Ausrichtung")
+
+## Häufige Fehler und Lösungen
+
+### Fehler 1: Automatische Weiterleitung nach Sprache
+
+Viele Shops leiten Besucher automatisch basierend auf Browser-Sprache oder IP weiter.
+
+**Problem für SEO:** Googlebot crawlt oft mit US-IP und englischer Sprache. Er sieht dann nie Ihre französische Version.
+
+**Lösung:** Keine automatische Weiterleitung. Zeigen Sie stattdessen ein Banner: "Möchten Sie zur französischen Version wechseln?"
+
+### Fehler 2: Gleiches Content, unterschiedliche URLs
+
+Wenn /de/produkt und /fr/produkt identischen deutschen Text haben, entsteht Duplicate Content.
+
+**Lösung:** Jede URL muss echten, übersetzten Content haben. Noch nicht übersetzt? Seite noch nicht indexieren lassen (noindex).
+
+### Fehler 3: Übersetzungen ohne SEO-Optimierung
+
+Der Übersetzer übersetzt "Damenschuhe" zu "chaussures femme" — korrekt, aber vielleicht sucht niemand danach.
+
+**Lösung:** Keywords recherchieren, dann übersetzen und optimieren. Nicht umgekehrt.
+
+### Fehler 4: Vergessene URL-Slugs
+
+Die URL bleibt /de/damenschuhe, aber die französische Version heisst auch /fr/damenschuhe statt /fr/chaussures-femme.
+
+**Lösung:** URLs sind Teil der Übersetzung. Auch Slugs übersetzen und mit Keywords optimieren.
+
+## Lokale Backlinks aufbauen
+
+Backlinks aus der jeweiligen Sprachregion stärken Ihre lokale Relevanz.
+
+### Strategien für die Romandie
+
+- Kontakt zu Westschweizer Blogs
+- Lokale Medien (24heures, Tribune de Genève)
+- Branchenverzeichnisse auf Französisch
+- Partnerschaften mit Romand-Influencern
+
+### Strategien fürs Tessin
+
+- Tessiner Medien (Corriere del Ticino, laRegione)
+- Lokale Branchenverbände
+- Italienischsprachige Schweizer Foren
+- Tessiner Instagram-Accounts
+
+## Erfolgsmessung
+
+### KPIs pro Sprachregion tracken
+
+Richten Sie in Google Analytics Segmente ein:
+
+- Besucher mit Sprache=de aus CH
+- Besucher mit Sprache=fr aus CH
+- Besucher mit Sprache=it aus CH
+
+Messen Sie pro Segment:
+- Organischer Traffic
+- Conversion Rate
+- Bounce Rate
+- Durchschnittlicher Bestellwert
+
+### Google Search Console nutzen
+
+Filtern Sie nach Seiten:
+- Welche französischen Seiten ranken?
+- Welche Keywords bringen Traffic?
+- Wo gibt es Klicks, aber schlechte Rankings (Optimierungspotenzial)?
+
+## Fazit: SEO ist pro Sprache
+
+Mehrsprachiges SEO bedeutet, drei separate SEO-Strategien zu fahren:
+
+1. **Technische Basis:** Korrekte URL-Struktur, Hreflang, Sitemap
+2. **Content-Strategie:** Lokale Keywords, regionaler Content
+3. **Offpage:** Backlinks aus der jeweiligen Sprachregion
+
+Der Aufwand lohnt sich: Wer in der Romandie und im Tessin gefunden wird, erschliesst 35% mehr potenzielle Kunden — und hat dort oft weniger Konkurrenz.
+
+---
+
+*Brauchen Sie Unterstützung bei der SEO-Optimierung Ihres mehrsprachigen Shops? TranslateShop kombiniert professionelle Übersetzung mit SEO-Know-how. [Jetzt Offerte anfragen](/kontakt)*
+\`,
+  },
+  {
     slug: 'conversion-rate-steigern-lokalisierung-schweiz',
     title: 'Conversion-Rate steigern durch Lokalisierung: So machen Sie aus Besuchern Käufer',
     excerpt: '72% der Schweizer kaufen lieber in ihrer Muttersprache. Erfahren Sie, wie Sie mit gezielter Lokalisierung Ihre Conversion-Rate um bis zu 40% steigern.',
