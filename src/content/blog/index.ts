@@ -14,6 +14,174 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'produktbeschreibungen-uebersetzen-e-commerce-schweiz',
+    title: 'Produktbeschreibungen übersetzen: So verkaufen Ihre Texte in allen Sprachregionen',
+    excerpt: 'Eine gute Übersetzung reicht nicht — Produkttexte müssen verkaufen. Erfahren Sie, wie Sie Produktbeschreibungen für Deutschschweiz, Romandie und Tessin optimieren.',
+    category: 'Lokalisierung',
+    readTime: 7,
+    emoji: '✍️',
+    publishedAt: '2026-02-19',
+    author: 'TranslateShop Team',
+    keywords: ['Produktbeschreibungen übersetzen', 'E-Commerce Texte Schweiz', 'Shop Lokalisierung', 'Verkaufstexte mehrsprachig', 'Produkttexte Romandie', 'Italienisch Tessin Shop'],
+    content: \`
+## Warum Produktbeschreibungen mehr als Übersetzung brauchen
+
+"Hochwertiges Produkt aus nachhaltiger Produktion" — klingt gut auf Deutsch. Aber verkauft dieser Text auch in Lausanne oder Lugano? Die Antwort ist oft: Nein.
+
+**Das Problem:** Wörtliche Übersetzungen transportieren Fakten, aber keine Emotionen. Und Kaufentscheidungen sind emotional.
+
+## Der Unterschied: Übersetzen vs. Lokalisieren
+
+### Nur übersetzt (schlecht):
+> **DE:** "Weiche Baumwolle für maximalen Komfort"
+> **FR:** "Coton doux pour un confort maximal"
+> **IT:** "Cotone morbido per il massimo comfort"
+
+Grammatisch korrekt, aber flach.
+
+### Lokalisiert (verkauft):
+> **DE:** "Fühlt sich an wie Ihr Lieblings-T-Shirt — vom ersten Tag an"
+> **FR:** "Doux comme une seconde peau — confort immédiat"
+> **IT:** "Morbidezza che accarezza — comfort dal primo istante"
+
+Der lokalisierte Text spricht die Emotionen der jeweiligen Kultur an.
+
+## 5 Regeln für Produkttexte, die verkaufen
+
+### 1. Vorteile vor Features
+
+Kunden kaufen keine Eigenschaften, sie kaufen Lösungen.
+
+| Statt (Feature) | Besser (Vorteil) |
+|-----------------|------------------|
+| "500ml Fassungsvermögen" | "Genug für den ganzen Arbeitstag" |
+| "Wasserdicht bis 50m" | "Perfekt für Pool, Strand und Dusche" |
+| "100% Bio-Baumwolle" | "Gut für Ihre Haut und die Umwelt" |
+
+### 2. Kulturelle Trigger verstehen
+
+**Deutschschweiz:**
+- Qualität und Langlebigkeit betonen
+- Schweizer Herkunft ist Verkaufsargument
+- Präzise, sachliche Sprache bevorzugt
+
+**Romandie:**
+- Eleganz und Lifestyle ansprechen
+- Emotionalere Sprache funktioniert
+- Französische Trends werden beachtet
+
+**Tessin:**
+- Italienische Lebensart einbeziehen
+- Design und Ästhetik wichtig
+- Familientradition als Wert
+
+### 3. Suchbegriffe pro Sprache recherchieren
+
+Was in einer Sprache gesucht wird, ist in einer anderen anders.
+
+**Beispiel "Sneaker":**
+- DE: "Sneaker", "Turnschuhe", "Sportschuhe"
+- FR: "Baskets", "Sneakers", "Chaussures de sport"
+- IT: "Sneakers", "Scarpe da ginnastica", "Scarpe sportive"
+
+**Tipp:** Google Keyword Planner für jede Sprachregion separat nutzen.
+
+### 4. Anrede und Ton anpassen
+
+| Aspekt | Deutschschweiz | Romandie | Tessin |
+|--------|----------------|----------|--------|
+| Anrede | "Sie" (formell) | "Vous" / manchmal "Tu" | "Lei" / "Tu" je nach Branche |
+| Stil | Direkt, sachlich | Eleganter, blumiger | Warm, persönlich |
+| Länge | Kompakt | Darf länger sein | Mittellang |
+
+### 5. Vertrauen regional aufbauen
+
+**Vertrauenssignale Deutschschweiz:**
+- "Swiss Made" / "Hergestellt in der Schweiz"
+- "Gratis Lieferung in der Schweiz"
+- "Service auf Deutsch"
+
+**Vertrauenssignale Romandie:**
+- "Service en français"
+- "Livraison rapide en Suisse romande"
+- "Conseils personnalisés"
+
+**Vertrauenssignale Tessin:**
+- "Servizio in italiano"
+- "Spedizione veloce in Ticino"
+- "Assistenza clienti italiana"
+
+## Häufige Fehler bei mehrsprachigen Produkttexten
+
+### Fehler 1: Google Translate für Produkttexte
+
+**Das passiert:**
+> Original: "Diese Handtasche ist ein echter Hingucker"
+> Google FR: "Ce sac à main est un vrai accroche-regard"
+
+"Accroche-regard" versteht niemand. Besser: "Ce sac ne passe pas inaperçu" oder "Un sac qui fait tourner les têtes".
+
+### Fehler 2: Deutsche Keywords in andere Sprachen kopieren
+
+SEO funktioniert pro Sprache. "Nachhaltiger Rucksack" wird nicht zu "sac à dos durable" gesucht, sondern zu "sac à dos écologique" oder "sac à dos éco-responsable".
+
+### Fehler 3: Einheitstexte für alle Regionen
+
+Ein Produkttext, der für München geschrieben wurde, funktioniert nicht in Genf. Selbst innerhalb der Schweiz gibt es Unterschiede in Vokabular und Stil.
+
+### Fehler 4: Nur den sichtbaren Text übersetzen
+
+Vergessen Sie nicht:
+- Meta-Descriptions
+- Alt-Texte für Bilder
+- Varianten-Namen (Farben, Grössen)
+- Bewertungsanfrage-E-Mails
+
+## Checkliste: Produktbeschreibung lokalisieren
+
+**Inhalt:**
+- [ ] Vorteile statt nur Features?
+- [ ] Emotional ansprechend?
+- [ ] Kulturell passende Beispiele?
+- [ ] Regionale Vertrauenssignale?
+
+**Sprache:**
+- [ ] Lokale Keywords recherchiert?
+- [ ] Passende Anrede (Sie/Du)?
+- [ ] Natürlicher Sprachfluss?
+- [ ] Von Muttersprachler geprüft?
+
+**SEO:**
+- [ ] Meta-Title lokalisiert?
+- [ ] Meta-Description angepasst?
+- [ ] Alt-Texte übersetzt?
+- [ ] URL-Struktur korrekt?
+
+## ROI: Lohnt sich der Aufwand?
+
+**Die Rechnung:**
+- Professionelle Lokalisierung: CHF 0.15-0.25 pro Wort
+- Durchschnittlicher Produkttext: 150 Wörter
+- Kosten pro Produkt: CHF 22-38 (zwei Sprachen)
+
+**Der Return:**
+- Bessere Conversion in Romandie/Tessin
+- Höhere Sichtbarkeit durch lokale SEO
+- Weniger Retouren durch klarere Beschreibungen
+- Professioneller Gesamteindruck
+
+Bei 100 Produkten: CHF 2'200-3'800 für alle Texte. Ein einziger zusätzlicher Verkauf pro Woche amortisiert diese Investition.
+
+## Fazit
+
+Produktbeschreibungen sind Verkäufer, die nie schlafen. Geben Sie ihnen die Werkzeuge, um in jeder Sprachregion zu überzeugen. Das bedeutet: Nicht nur übersetzen, sondern lokalisieren. Mit den richtigen Worten, dem richtigen Ton und den richtigen Argumenten für jede Kultur.
+
+---
+
+*Brauchen Sie Hilfe bei der Lokalisierung Ihrer Produkttexte? TranslateShop kombiniert E-Commerce-Expertise mit professioneller Übersetzung für die Schweiz. [Jetzt Offerte anfragen](/kontakt)*
+\`,
+  },
+  {
     slug: 'zahlungsmethoden-schweizer-online-shops',
     title: 'Zahlungsmethoden für Schweizer Online-Shops: Was Kunden wirklich erwarten',
     excerpt: 'TWINT, Kreditkarte oder Rechnung? Die richtige Zahlungsauswahl entscheidet über Conversion. Erfahren Sie, welche Methoden in der Deutschschweiz, Romandie und im Tessin bevorzugt werden.',
