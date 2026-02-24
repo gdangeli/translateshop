@@ -14,6 +14,308 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'woocommerce-shop-uebersetzen-schweiz-anleitung',
+    title: 'WooCommerce Shop übersetzen: Komplette Anleitung für den Schweizer Markt',
+    excerpt: 'WooCommerce ist flexibel, aber mehrsprachig wird es kompliziert. Erfahren Sie, welche Plugins Sie brauchen und wie Sie Ihren Shop für die Romandie und das Tessin fit machen.',
+    category: 'Tutorial',
+    readTime: 10,
+    emoji: '🔌',
+    publishedAt: '2026-02-24',
+    author: 'TranslateShop Team',
+    keywords: ['WooCommerce übersetzen', 'WooCommerce mehrsprachig', 'WPML WooCommerce', 'Polylang WooCommerce', 'WordPress Shop Schweiz', 'WooCommerce Romandie'],
+    content: `
+## WooCommerce mehrsprachig: Die Herausforderung
+
+WooCommerce ist das beliebteste E-Commerce-Plugin für WordPress — und in der Schweiz weit verbreitet. Aber: WooCommerce ist standardmässig einsprachig. Für den Schweizer Markt mit seinen drei Hauptsprachen brauchen Sie zusätzliche Tools.
+
+Die gute Nachricht: Es gibt Lösungen. Die schlechte: Sie müssen die richtige wählen und korrekt einrichten. Dieser Guide zeigt Ihnen wie.
+
+## Die zwei Wege: WPML vs. Polylang
+
+### WPML (WordPress Multilingual Plugin)
+
+**Der Platzhirsch für mehrsprachige WordPress-Seiten.**
+
+**Vorteile:**
+- Tiefe WooCommerce-Integration
+- Übersetzt alles: Produkte, Kategorien, Attribute, Checkout
+- Professioneller Support
+- String Translation für Theme-Texte
+
+**Nachteile:**
+- Kostenpflichtig (ab 39€/Jahr, WooCommerce-Version 99€/Jahr)
+- Kann Performance beeinträchtigen
+- Komplexe Einrichtung
+
+**Wann WPML wählen:**
+- Grosser Shop mit vielen Produkten
+- Budget für Premium-Plugin vorhanden
+- Langfristige, professionelle Lösung gewünscht
+
+### Polylang (+ Polylang for WooCommerce)
+
+**Die flexible Alternative.**
+
+**Vorteile:**
+- Grundversion kostenlos
+- Leichtgewichtiger als WPML
+- Gute Community
+
+**Nachteile:**
+- WooCommerce-Addon kostenpflichtig (99€)
+- Weniger automatisierte Features
+- Mehr manuelle Arbeit
+
+**Wann Polylang wählen:**
+- Kleiner bis mittlerer Shop
+- Technische Kenntnisse vorhanden
+- Budget-bewusst
+
+## Schritt-für-Schritt: WooCommerce mit WPML übersetzen
+
+### Schritt 1: WPML installieren und einrichten
+
+1. WPML Multilingual CMS installieren
+2. WPML String Translation installieren
+3. WPML Translation Management installieren
+4. WooCommerce Multilingual installieren
+
+**Wichtige Einstellungen:**
+
+\`\`\`
+WPML → Sprachen → Sprachen der Website:
+✓ Deutsch (de-CH) — Standard
+✓ Français (fr-CH)
+✓ Italiano (it-CH)
+
+URL-Format: Verzeichnisse
+shop.ch/de/
+shop.ch/fr/
+shop.ch/it/
+\`\`\`
+
+### Schritt 2: WooCommerce-Seiten übersetzen
+
+WooCommerce erstellt automatisch wichtige Seiten:
+- Shop
+- Warenkorb (Panier / Carrello)
+- Kasse (Paiement / Cassa)
+- Mein Konto (Mon compte / Il mio account)
+
+**Gehen Sie zu:** WooCommerce → WooCommerce Multilingual → Status
+
+Hier sehen Sie, welche Seiten noch übersetzt werden müssen.
+
+### Schritt 3: Produkte übersetzen
+
+Für jedes Produkt:
+
+1. Produkt öffnen
+2. Im WPML-Sprachbox auf "+" klicken (neue Übersetzung)
+3. Produktname, Beschreibung, Kurzbeschreibung übersetzen
+4. **Wichtig:** Varianten und Attribute separat übersetzen
+
+**Pro-Tipp:** Nutzen Sie die "Translation Management" Funktion für Massenübersetzungen.
+
+### Schritt 4: Kategorien und Attribute
+
+Oft vergessen, aber wichtig für SEO:
+
+\`\`\`
+Beispiel Kategorien:
+DE: Herrenbekleidung → Jacken → Winterjacken
+FR: Vêtements homme → Vestes → Vestes d'hiver
+IT: Abbigliamento uomo → Giacche → Giacche invernali
+
+Beispiel Attribute:
+DE: Grösse: S, M, L, XL
+FR: Taille: S, M, L, XL
+IT: Taglia: S, M, L, XL
+
+DE: Farbe: Schwarz, Weiss, Blau
+FR: Couleur: Noir, Blanc, Bleu
+IT: Colore: Nero, Bianco, Blu
+\`\`\`
+
+### Schritt 5: Checkout und E-Mails
+
+Der Checkout ist kritisch — hier darf nichts schief gehen.
+
+**Checkout-Felder übersetzen:**
+
+WPML → String Translation → Filter: "woocommerce"
+
+Suchen und übersetzen Sie:
+- "In den Warenkorb" → "Ajouter au panier" / "Aggiungi al carrello"
+- "Zur Kasse" → "Commander" / "Procedi al pagamento"
+- "Bestellung aufgeben" → "Passer commande" / "Effettua ordine"
+
+**E-Mail-Vorlagen:**
+
+WooCommerce → Einstellungen → E-Mails
+
+Jede E-Mail muss separat übersetzt werden:
+- Neue Bestellung (an Admin)
+- Bestellung in Bearbeitung
+- Bestellung abgeschlossen
+- Kundenrechnung
+
+**WPML-Tipp:** WooCommerce Multilingual & Multicurrency hat eine spezielle E-Mail-Übersetzungsfunktion.
+
+## Währung und Preise
+
+### Multicurrency aktivieren
+
+In der Schweiz weniger relevant (alle nutzen CHF), aber wichtig für grenzüberschreitenden Verkauf:
+
+\`\`\`
+WooCommerce Multilingual → Multicurrency
+✓ Aktivieren
+Standard: CHF
+Zusätzlich: EUR (für Grenzregionen)
+\`\`\`
+
+### Preisanzeige pro Region
+
+Manche Händler zeigen gerundete Preise je nach Region:
+- DE: CHF 49.90
+- FR: CHF 50.–
+- IT: CHF 49.90
+
+Mit WPML können Sie unterschiedliche Preise pro Sprache festlegen (unter "Custom Prices").
+
+## SEO für mehrsprachige WooCommerce-Shops
+
+### Yoast SEO + WPML
+
+Die Kombination aus Yoast SEO und WPML deckt die wichtigsten SEO-Aspekte ab:
+
+**hreflang-Tags automatisch:**
+\`\`\`html
+<link rel="alternate" hreflang="de-CH" href="https://shop.ch/de/produkt/" />
+<link rel="alternate" hreflang="fr-CH" href="https://shop.ch/fr/produit/" />
+<link rel="alternate" hreflang="it-CH" href="https://shop.ch/it/prodotto/" />
+\`\`\`
+
+**Meta-Descriptions pro Sprache:**
+Jede Produktübersetzung hat eigene SEO-Felder in Yoast.
+
+**Strukturierte Daten:**
+WooCommerce generiert automatisch Product-Schema — stellen Sie sicher, dass die Sprache korrekt ausgegeben wird.
+
+### URL-Struktur
+
+**Empfohlen:**
+\`\`\`
+shop.ch/de/produkte/winterjacke-herren/
+shop.ch/fr/produits/veste-hiver-homme/
+shop.ch/it/prodotti/giacca-invernale-uomo/
+\`\`\`
+
+**Vermeiden:**
+\`\`\`
+shop.ch/produkt/?lang=fr  (Parameter = schlecht für SEO)
+\`\`\`
+
+## Häufige Fehler vermeiden
+
+### Fehler 1: Nur Hauptseiten übersetzen
+
+Problem: Produkte sind übersetzt, aber Widgets, Footer, Menüs sind noch auf Deutsch.
+
+**Lösung:** Checkliste erstellen:
+- [ ] Menüs (jede Sprache eigenes Menü)
+- [ ] Footer-Widgets
+- [ ] Sidebar-Widgets
+- [ ] 404-Seite
+- [ ] Suchergebnisse-Seite
+
+### Fehler 2: Checkout-Felder vergessen
+
+Problem: Der "Place Order"-Button ist noch auf Englisch.
+
+**Lösung:** String Translation durchsuchen nach:
+- "woocommerce" Domain
+- "Place order"
+- "Apply coupon"
+- "Update cart"
+
+### Fehler 3: Produkt-Varianten nicht synchron
+
+Problem: Deutsche Version hat 5 Farben, französische nur 3.
+
+**Lösung:** In WPML gibt es "Synchronize product variations" — aktivieren!
+
+### Fehler 4: Versandoptionen nicht übersetzt
+
+Problem: "Flat Rate" erscheint statt "Forfait" oder "Tariffa fissa".
+
+**Lösung:** WooCommerce → Einstellungen → Versand → Jede Zone/Methode bearbeiten und WPML-Übersetzung erstellen.
+
+## Performance optimieren
+
+Mehrsprachige Plugins können die Seite verlangsamen. Gegenmassnahmen:
+
+### Caching
+
+\`\`\`
+WP Super Cache oder W3 Total Cache
+→ "Cache per language" aktivieren
+→ Jede Sprachversion wird separat gecacht
+\`\`\`
+
+### Datenbankoptimierung
+
+WPML erstellt zusätzliche Datenbank-Tabellen. Regelmässig optimieren:
+
+\`\`\`sql
+OPTIMIZE TABLE wp_icl_translations;
+OPTIMIZE TABLE wp_icl_strings;
+\`\`\`
+
+Oder: Plugin wie "WP-Optimize" nutzen.
+
+### Lazy Loading für Übersetzungen
+
+Bei sehr vielen Produkten: Nutzen Sie "Translation Memory" in WPML, um redundante Übersetzungen zu vermeiden.
+
+## Alternative: Separate Shops
+
+Manchmal ist die bessere Lösung: Drei separate WooCommerce-Installationen.
+
+**Wann separate Shops Sinn machen:**
+- Sehr unterschiedliches Sortiment pro Region
+- Verschiedene Zahlungsanbieter nötig
+- Team in jeder Sprachregion
+- Performance-Kritisch
+
+**WordPress Multisite:**
+\`\`\`
+shop.ch (Netzwerk)
+├── de.shop.ch
+├── fr.shop.ch
+└── it.shop.ch
+\`\`\`
+
+Vorteil: Plugins und Themes zentral verwaltet, aber jeder Shop ist unabhängig.
+
+## Fazit: Der richtige Weg für Ihren Shop
+
+| Shop-Grösse | Empfehlung |
+|-------------|------------|
+| Klein (<50 Produkte) | Polylang + manuell |
+| Mittel (50-500 Produkte) | WPML + WooCommerce Multilingual |
+| Gross (>500 Produkte) | WPML + Translation Management + ggf. Agentur |
+| Enterprise | Multisite oder Headless Commerce |
+
+Die Investition in eine saubere mehrsprachige Struktur zahlt sich aus: Sie erschliessen die Romandie (1.5 Mio. potenzielle Kunden) und das Tessin (350'000) — Märkte, die viele Deutschschweizer Shops komplett ignorieren.
+
+---
+
+*TranslateShop übersetzt Ihren WooCommerce-Shop professionell in alle Landessprachen — inklusive SEO-Optimierung und technischer Integration. [Kostenlose Analyse anfragen](/de#contact)*
+`,
+  },
+  {
     slug: 'newsletter-email-marketing-mehrsprachig-schweiz',
     title: 'Newsletter-Marketing für alle Sprachregionen: So mailen Sie richtig',
     excerpt: 'Ihre Newsletter performen in der Deutschschweiz, aber floppen in der Romandie? Erfahren Sie, wie Sie E-Mail-Marketing für alle Schweizer Sprachregionen optimieren.',
