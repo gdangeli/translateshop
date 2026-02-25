@@ -813,7 +813,7 @@ Der mehrsprachige Checkout ist kein "Nice-to-have" — er ist der Unterschied zw
     publishedAt: '2026-02-21',
     author: 'TranslateShop Team',
     keywords: ['Retouren mehrsprachig', 'After-Sales Schweiz', 'Kundenbindung E-Commerce', 'Retourenmanagement Romandie', 'Rücksendung Tessin', 'Kundenservice mehrsprachig'],
-    content: \`
+    content: `
 ## Die unterschätzte Phase: Nach dem Kauf
 
 Der Kunde hat bestellt, die Zahlung ist eingegangen — fertig? Weit gefehlt. **Die After-Sales-Phase entscheidet, ob aus einem Einmalkäufer ein Stammkunde wird.**
@@ -985,7 +985,7 @@ Jede Interaktion nach dem Kauf ist **Marketing**. Ein Kunde, der bei einer Retou
 In der Schweiz, wo Mundpropaganda Gold wert ist, kann exzellenter mehrsprachiger After-Sales der Unterschied zwischen Überleben und Wachsen sein.
 
 **Der nächste Schritt:** Prüfen Sie diese Woche alle Ihre After-Sales-E-Mails. Sind sie in allen Sprachen gleich professionell? Falls nicht — Sie wissen, wen Sie anrufen können.
-\`,
+`,
   },
   {
     slug: 'produktbeschreibungen-uebersetzen-e-commerce-schweiz',
@@ -997,7 +997,7 @@ In der Schweiz, wo Mundpropaganda Gold wert ist, kann exzellenter mehrsprachiger
     publishedAt: '2026-02-19',
     author: 'TranslateShop Team',
     keywords: ['Produktbeschreibungen übersetzen', 'E-Commerce Texte Schweiz', 'Shop Lokalisierung', 'Verkaufstexte mehrsprachig', 'Produkttexte Romandie', 'Italienisch Tessin Shop'],
-    content: \`
+    content: `
 ## Warum Produktbeschreibungen mehr als Übersetzung brauchen
 
 "Hochwertiges Produkt aus nachhaltiger Produktion" — klingt gut auf Deutsch. Aber verkauft dieser Text auch in Lausanne oder Lugano? Die Antwort ist oft: Nein.
@@ -1153,7 +1153,7 @@ Produktbeschreibungen sind Verkäufer, die nie schlafen. Geben Sie ihnen die Wer
 ---
 
 *Brauchen Sie Hilfe bei der Lokalisierung Ihrer Produkttexte? TranslateShop kombiniert E-Commerce-Expertise mit professioneller Übersetzung für die Schweiz. [Jetzt Offerte anfragen](/kontakt)*
-\`,
+`,
   },
   {
     slug: 'zahlungsmethoden-schweizer-online-shops',
@@ -1319,7 +1319,7 @@ Die Schweiz ist kein "normaler" Markt. TWINT, Rechnung und PostFinance sind kein
     publishedAt: '2026-02-17',
     author: 'TranslateShop Team',
     keywords: ['mehrsprachiges SEO', 'hreflang schweiz', 'internationales SEO', 'google ranking mehrsprachig', 'SEO romandie', 'SEO tessin', 'shopify SEO'],
-    content: \`
+    content: `
 ## Warum mehrsprachiges SEO anders funktioniert
 
 Sie haben Ihren Shop übersetzt — grossartig! Aber übersetzte Inhalte allein reichen nicht. Google muss verstehen, welche Seite für welche Sprachregion gedacht ist. Ohne die richtige technische Struktur konkurrieren Ihre eigenen Sprachversionen gegeneinander.
@@ -1591,7 +1591,7 @@ Der Aufwand lohnt sich: Wer in der Romandie und im Tessin gefunden wird, erschli
 ---
 
 *Brauchen Sie Unterstützung bei der SEO-Optimierung Ihres mehrsprachigen Shops? TranslateShop kombiniert professionelle Übersetzung mit SEO-Know-how. [Jetzt Offerte anfragen](/kontakt)*
-\`,
+`,
   },
   {
     slug: 'conversion-rate-steigern-lokalisierung-schweiz',
