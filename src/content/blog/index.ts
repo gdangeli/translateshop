@@ -14,6 +14,323 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'shopify-vs-woocommerce-mehrsprachige-schweizer-shops',
+    title: 'Shopify vs. WooCommerce: Welche Plattform für mehrsprachige Schweizer Shops?',
+    excerpt: 'Beide Plattformen versprechen mehrsprachige Shops. Aber welche eignet sich wirklich für den Schweizer Markt mit drei Landessprachen? Ein ehrlicher Vergleich.',
+    category: 'Technik',
+    readTime: 12,
+    emoji: '⚙️',
+    publishedAt: '2026-02-28',
+    author: 'TranslateShop Team',
+    keywords: ['Shopify Schweiz', 'WooCommerce mehrsprachig', 'E-Commerce Plattform Schweiz', 'Online-Shop erstellen Schweiz', 'Shopify vs WooCommerce', 'mehrsprachiger Webshop'],
+    content: \`
+## Die Plattform-Entscheidung: Wichtiger als Sie denken
+
+Sie wollen einen Online-Shop für die Schweiz aufbauen. Oder Sie haben bereits einen und überlegen, auf mehrere Sprachen zu erweitern. In beiden Fällen stehen Sie vor einer grundlegenden Frage: Welche Plattform?
+
+In der Schweiz dominieren zwei Namen: Shopify und WooCommerce. Zusammen decken sie geschätzte 70% aller Schweizer Online-Shops ab. Beide versprechen "einfache Mehrsprachigkeit". Beide haben Recht — und beide verschweigen einiges.
+
+Dieser Artikel zeigt Ihnen, was wirklich dahintersteckt. Ohne Marketing-Floskeln, dafür mit konkreten Erfahrungswerten aus dutzenden Schweizer Shop-Projekten.
+
+## Der Grundunterschied: Mieten vs. Besitzen
+
+### Shopify: Das Rundum-Sorglos-Paket
+
+Shopify ist ein gehosteter Service. Sie mieten Ihren Shop bei Shopify und zahlen monatlich. Die Infrastruktur, Updates, Sicherheit — alles wird für Sie erledigt.
+
+Das klingt bequem, und das ist es auch. Aber es hat Konsequenzen.
+
+**Was Sie bekommen:**
+- Hosting, SSL, Updates inklusive
+- 24/7 Support (englisch, teils deutsch)
+- App-Store mit tausenden Erweiterungen
+- Professionelle Themes
+- Eingebauter Zahlungsanbieter (Shopify Payments)
+
+**Was Sie aufgeben:**
+- Volle Kontrolle über Ihren Code
+- Datenhoheit (Ihre Daten liegen bei Shopify in Kanada/USA)
+- Flexibilität bei speziellen Anforderungen
+- Unabhängigkeit vom Anbieter
+
+### WooCommerce: Das Baukasten-System
+
+WooCommerce ist ein Plugin für WordPress. Sie installieren es auf Ihrem eigenen Server (oder Hosting). Sie sind der Besitzer — mit allen Vor- und Nachteilen.
+
+**Was Sie bekommen:**
+- Volle Kontrolle über alles
+- Daten auf Schweizer Servern möglich
+- Unbegrenzte Anpassungsmöglichkeiten
+- Keine laufenden Plattform-Gebühren
+- Riesiges Ökosystem an Plugins
+
+**Was Sie aufgeben:**
+- Jemand muss sich um Updates kümmern
+- Sicherheit ist Ihre Verantwortung
+- Hosting müssen Sie selbst organisieren
+- Bei Problemen sind Sie (oder Ihr Entwickler) gefragt
+
+### Was das für die Schweiz bedeutet
+
+Für Schweizer Shops ist ein Aspekt besonders relevant: **Datenschutz**. 
+
+Mit Shopify liegen Ihre Kundendaten ausserhalb der Schweiz. Das ist legal, aber manche Kunden — besonders B2B — reagieren sensibel. Mit WooCommerce können Sie einen Schweizer Hoster wählen (Hostpoint, Cyon, Infomaniak) und die Daten bleiben in der Schweiz.
+
+## Mehrsprachigkeit im Detail
+
+Jetzt wird's konkret. Wie gut funktioniert Mehrsprachigkeit wirklich?
+
+### Shopify: Markets und Apps
+
+Shopify hat 2022 "Shopify Markets" eingeführt — eine eingebaute Lösung für internationale Verkäufe. Damit können Sie verschiedene Sprachen und Währungen anbieten.
+
+**So funktioniert's:**
+
+1. Sie aktivieren Markets in den Einstellungen
+2. Sie fügen Sprachen hinzu (DE, FR, IT)
+3. Sie übersetzen Ihre Inhalte (manuell oder per App)
+4. Kunden sehen die Seite in ihrer Sprache
+
+**Die Realität:**
+
+Die Grundfunktion ist gratis, aber begrenzt. Für echte Mehrsprachigkeit brauchen Sie eine Übersetzungs-App wie:
+
+- **Weglot** (ab $15/Monat): Automatische Übersetzung, einfach zu nutzen
+- **Langify** (ab $17.50/Monat): Manuelle Übersetzungen, mehr Kontrolle
+- **Translate & Adapt** (gratis von Shopify): Grundfunktion, limitiert
+
+**Typische Kosten für dreisprachigen Schweizer Shop:**
+- Shopify Basic: CHF 36/Monat
+- Übersetzungs-App: CHF 15-50/Monat
+- Premium-Theme: CHF 350 einmalig
+- **Laufend: ca. CHF 50-90/Monat**
+
+**Vorteile:**
+- Schnell eingerichtet
+- Funktioniert sofort
+- Wenig technisches Wissen nötig
+
+**Nachteile:**
+- Automatische Übersetzungen oft mangelhaft
+- Manuelle Nacharbeit bei jedem neuen Produkt
+- URL-Struktur nicht optimal für SEO (oft /fr/products statt /fr/produkte)
+
+### WooCommerce: WPML oder Polylang
+
+Bei WooCommerce ist Mehrsprachigkeit nicht eingebaut. Sie brauchen ein Plugin.
+
+**Die zwei Platzhirsche:**
+
+**WPML (WordPress Multilingual Plugin):**
+- Marktführer, sehr mächtig
+- Einmalzahlung: $99/Jahr (Multilingual CMS)
+- Funktioniert mit fast allen Themes und Plugins
+- Steile Lernkurve
+
+**Polylang:**
+- Einfacher, günstiger
+- Gratis-Version verfügbar
+- Pro-Version ab €99/Jahr
+- Für WooCommerce: zusätzliches Plugin nötig
+
+**So funktioniert's:**
+
+1. Plugin installieren und konfigurieren
+2. Sprachen definieren (DE, FR, IT)
+3. Jede Seite/jedes Produkt einzeln übersetzen
+4. Sprachmenü einrichten
+
+**Typische Kosten für dreisprachigen Schweizer Shop:**
+- WooCommerce: Gratis
+- Hosting (Schweiz, performant): CHF 15-30/Monat
+- Theme: CHF 50-80 einmalig
+- WPML oder Polylang Pro: CHF 100/Jahr
+- **Laufend: ca. CHF 20-40/Monat**
+
+**Vorteile:**
+- Günstiger langfristig
+- Perfekte URL-Struktur möglich (/de/, /fr/, /it/)
+- Volle Kontrolle über SEO
+- Übersetzungen gehören Ihnen
+
+**Nachteile:**
+- Mehr Einrichtungsaufwand
+- Technisches Verständnis hilfreich
+- Updates können Konflikte verursachen
+
+## SEO-Vergleich: Wer rankt besser?
+
+Für Schweizer Shops ist SEO entscheidend. Sie wollen gefunden werden — auf Deutsch, Französisch und Italienisch.
+
+### URL-Struktur
+
+**Shopify:**
+- Deutsch: /products/rotes-kleid
+- Französisch: /fr/products/rotes-kleid (!)
+
+Sehen Sie das Problem? Die Produkt-URL bleibt deutsch, auch in der französischen Version. Das ist schlecht für SEO und verwirrend für Kunden.
+
+Mit Apps wie Weglot wird es besser:
+- Französisch: /fr/produits/robe-rouge
+
+Aber: Das kostet extra und funktioniert nicht immer perfekt.
+
+**WooCommerce mit WPML:**
+- Deutsch: /de/produkte/rotes-kleid
+- Französisch: /fr/produits/robe-rouge
+- Italienisch: /it/prodotti/vestito-rosso
+
+Perfekte Struktur, perfekte Kontrolle.
+
+### Hreflang-Tags
+
+Diese Tags sagen Google, welche Seite für welche Sprache/Region gedacht ist. Ohne sie konkurrieren Ihre Sprachversionen gegeneinander.
+
+**Shopify:** Markets setzt Hreflang automatisch. Funktioniert in der Regel gut.
+
+**WooCommerce:** WPML setzt Hreflang automatisch. Polylang braucht eventuell Konfiguration.
+
+Hier sind beide gleichwertig.
+
+### Meta-Beschreibungen und Titles
+
+**Shopify:** Mit Apps übersetzbar, aber umständlich. Jede Änderung muss synchronisiert werden.
+
+**WooCommerce:** Mit Plugins wie Yoast SEO + WPML perfekte Kontrolle pro Sprache.
+
+### Fazit SEO
+
+Für maximale SEO-Kontrolle gewinnt WooCommerce. Shopify ist gut genug, wenn Sie keine komplexen Anforderungen haben.
+
+## Schweizer Zahlungsmethoden
+
+In der Schweiz sind drei Zahlungsmethoden besonders wichtig:
+
+1. **Kreditkarten** (Visa, Mastercard)
+2. **TWINT** (Swiss Mobile Payment)
+3. **Rechnung** (besonders wichtig!)
+
+### Shopify und Schweizer Zahlungen
+
+**Shopify Payments:** 
+- Kreditkarten: Ja
+- TWINT: Nein (!)
+- Rechnung: Nein
+
+Sie brauchen zusätzliche Apps:
+- **TWINT:** Über Mollie oder Wallee möglich (zusätzliche Gebühren)
+- **Rechnung:** Apps wie PayPal Pay in 30 oder Klarna (Verfügbarkeit Schweiz prüfen)
+
+Das wird schnell unübersichtlich und teuer.
+
+### WooCommerce und Schweizer Zahlungen
+
+**Standard-Gateways:**
+- Kreditkarten: Stripe, PayPal, viele andere
+- TWINT: Über Plugins (z.B. WooCommerce TWINT)
+- Rechnung: Plugins wie Byjuno, MF Group, oder eigene Lösung
+
+Die Auswahl ist grösser, aber Sie müssen selbst integrieren.
+
+### Unser Favorit für die Schweiz: Wallee
+
+Wallee ist ein Schweizer Payment-Anbieter, der alle gängigen Methoden bündelt. Funktioniert mit Shopify UND WooCommerce. Ein Vertrag, alle Zahlungsarten.
+
+## Performance und Geschwindigkeit
+
+Ein langsamer Shop verliert Kunden. Google berücksichtigt Ladezeit im Ranking.
+
+### Shopify
+
+- Hosting ist optimiert
+- Themes sind (meist) schnell
+- CDN weltweit inklusive
+- Typische Ladezeit: 1.5-2.5 Sekunden
+
+**Problem:** Jede App verlangsamt den Shop. Ein Shop mit 10+ Apps kann träge werden.
+
+### WooCommerce
+
+- Stark abhängig vom Hosting
+- Gutes Hosting (Kinsta, Cloudways): 1-2 Sekunden
+- Schlechtes Hosting: 5+ Sekunden
+- Optimierung ist möglich, braucht aber Know-how
+
+**Vorteil:** Mit richtigem Setup können Sie sehr schnelle Shops bauen. Aber es braucht Arbeit.
+
+## Kosten-Vergleich: 3 Jahre Betrieb
+
+Rechnen wir durch, was ein dreisprachiger Schweizer Shop über 3 Jahre kostet.
+
+### Shopify (mittelgrosser Shop)
+
+| Posten | Jahr 1 | Jahr 2 | Jahr 3 |
+|--------|--------|--------|--------|
+| Shopify Basic | CHF 432 | CHF 432 | CHF 432 |
+| Theme | CHF 350 | - | - |
+| Übersetzungs-App | CHF 240 | CHF 240 | CHF 240 |
+| TWINT-App | CHF 120 | CHF 120 | CHF 120 |
+| **Total** | CHF 1'142 | CHF 792 | CHF 792 |
+
+**3-Jahres-Total: ca. CHF 2'726**
+
+### WooCommerce (mittelgrosser Shop)
+
+| Posten | Jahr 1 | Jahr 2 | Jahr 3 |
+|--------|--------|--------|--------|
+| WooCommerce | CHF 0 | CHF 0 | CHF 0 |
+| Hosting (Schweiz) | CHF 240 | CHF 240 | CHF 240 |
+| Theme | CHF 70 | - | - |
+| WPML | CHF 90 | CHF 90 | CHF 90 |
+| Payment Plugin | CHF 50 | - | - |
+| **Total** | CHF 450 | CHF 330 | CHF 330 |
+
+**3-Jahres-Total: ca. CHF 1'110**
+
+### Der versteckte Kostenfaktor: Zeit
+
+Shopify spart Zeit bei der Einrichtung und Wartung. Wenn Ihre Zeit CHF 100/Stunde wert ist und Shopify Ihnen 20 Stunden im Jahr spart, relativiert sich der Preisunterschied.
+
+WooCommerce ist günstiger, aber Sie (oder jemand anderes) müssen Updates einspielen, Backups prüfen und gelegentlich Probleme lösen.
+
+## Unsere Empfehlung: Wer sollte was wählen?
+
+### Wählen Sie Shopify, wenn:
+
+- Sie schnell starten wollen
+- Technik Sie nicht interessiert
+- Sie weniger als 500 Produkte haben
+- Budget für laufende Kosten da ist
+- Sie keinen Entwickler haben/wollen
+
+### Wählen Sie WooCommerce, wenn:
+
+- Sie volle Kontrolle wollen
+- Daten in der Schweiz bleiben müssen
+- Sie technisch versiert sind (oder jemanden haben)
+- Langfristige Kosten wichtiger sind als Startkomfort
+- Sie komplexe Anforderungen haben
+
+### Die dritte Option: Starten Sie mit Shopify, wechseln Sie später
+
+Viele erfolgreiche Shops starten mit Shopify — schnell und unkompliziert. Wenn der Shop wächst und die Anforderungen komplexer werden, migrieren sie zu WooCommerce.
+
+Das ist ein valider Weg. Die Migration ist aufwändig, aber machbar. Und Sie haben in der Zwischenzeit Umsatz gemacht statt an der Technik gebastelt.
+
+## Fazit: Es gibt keine "beste" Plattform
+
+Die richtige Plattform hängt von Ihrer Situation ab. Beide können mehrsprachige Schweizer Shops betreiben. Beide haben Stärken und Schwächen.
+
+Was zählt, ist nicht die Plattform — sondern was Sie daraus machen. Die besten Übersetzungen nützen nichts, wenn niemand den Shop findet. Das schnellste Hosting bringt nichts, wenn die Produkte nicht überzeugen.
+
+Wählen Sie die Plattform, die zu Ihnen passt. Und investieren Sie die gesparte Energie in das, was wirklich zählt: grossartige Produkte und zufriedene Kunden.
+
+---
+
+**Übrigens:** Egal ob Shopify oder WooCommerce — wir übersetzen Ihren Shop professionell in alle Schweizer Landessprachen. Fordern Sie ein unverbindliches Angebot an.
+    \`.trim()
+  },
+  {
     slug: 'romandie-markt-erschliessen-deutschschweizer-shops',
     title: 'Die Romandie erschliessen: So gewinnen Deutschschweizer Shops Kunden in der Westschweiz',
     excerpt: 'Die Romandie ist ein Markt mit 2 Millionen kaufkräftigen Konsumenten — und wird von den meisten Deutschschweizer Shops ignoriert. So erschliessen Sie diesen Markt systematisch.',
