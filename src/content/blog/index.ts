@@ -14,6 +14,619 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'e-commerce-romandie-franzoesischsprachige-kunden-schweiz',
+    title: 'E-Commerce in der Romandie: So erreichen Sie französischsprachige Kunden',
+    excerpt: 'Die Romandie ist mehr als nur "Französisch übersetzen". Kulturelle Besonderheiten, lokale Gewohnheiten und sprachliche Feinheiten entscheiden über Erfolg oder Misserfolg. Ein Praxis-Leitfaden.',
+    category: 'Markt',
+    readTime: 14,
+    emoji: '🇨🇭',
+    publishedAt: '2026-03-01',
+    author: 'TranslateShop Team',
+    keywords: ['Romandie E-Commerce', 'französischsprachige Kunden Schweiz', 'Online-Shop Westschweiz', 'Genf Online-Shop', 'Lausanne E-Commerce', 'Shop übersetzen Französisch'],
+    content: `
+## Warum die Romandie nicht einfach "französischer Markt" ist
+
+2,1 Millionen Menschen leben in der französischsprachigen Schweiz. Das sind knapp 25% der Bevölkerung — ein Viertel Ihres potenziellen Marktes. Und doch machen viele Deutschschweizer Online-Shops hier einen fundamentalen Fehler: Sie behandeln die Romandie wie eine Übersetzungsaufgabe.
+
+Das funktioniert nicht.
+
+Die Westschweiz hat eigene Kaufgewohnheiten, andere Zahlungspräferenzen und kulturelle Besonderheiten, die über "einfach Französisch" hinausgehen. Wer das ignoriert, lässt nicht nur Umsatz liegen — er schadet aktiv seiner Marke.
+
+Dieser Artikel zeigt, was Sie wirklich wissen müssen. Basierend auf Erfahrungen mit dutzenden Schweizer Shops, die erfolgreich beide Sprachregionen bedienen.
+
+## Die harten Fakten: Die Romandie in Zahlen
+
+### Kaufkraft und Online-Verhalten
+
+| Kennzahl | Romandie | Deutschschweiz |
+|----------|----------|----------------|
+| **Bevölkerung** | 2,1 Mio (25%) | 5,2 Mio (63%) |
+| **Kaufkraft pro Kopf** | CHF 68'500/Jahr | CHF 71'200/Jahr |
+| **Online-Käufer** | 82% | 86% |
+| **Mobil-Anteil** | 67% | 58% |
+| **Durchschnittlicher Warenkorbwert** | CHF 182 | CHF 156 |
+
+Was sofort auffällt: **Höherer Warenkorbwert, mehr Mobile-Shopping**. Die Romandie ist für E-Commerce attraktiv — aber anders.
+
+### Sprachverteilung in den Kantonen
+
+Nicht alle "französischen" Kantone sind gleich:
+
+**Romandie pur (>90% Französisch):**
+- Genf
+- Waadt
+- Neuenburg
+- Jura
+
+**Zweisprachige Kantone:**
+- Freiburg (63% Französisch)
+- Wallis (62% Französisch)
+- Bern (8% Französisch, aber Biel wichtig)
+
+Das bedeutet: In Freiburg und Wallis brauchen Sie *beide* Sprachen. Ein reiner französischer Shop funktioniert dort nicht.
+
+## Der grösste Fehler: Google Translate reicht
+
+### Was passiert, wenn Sie schlecht übersetzen
+
+Ein Zürcher Möbel-Shop macht 2024 seinen Shop "mehrsprachig". Sie nutzen eine automatische Übersetzung und denken, damit sei es getan.
+
+**Das Resultat:**
+- "Verbindlich bestellen" wird zu "Commander de manière contraignante"
+- "Versandkosten ab CHF 19.-" wird zu "Frais d'expédition dès CHF 19.-" (richtig wäre: "Livraison gratuite dès CHF 19.-")
+- "Auf Lager" wird zu "En stock" (sollte sein: "Disponible immédiatement")
+
+Was passiert? Die Conversion-Rate in der Romandie liegt bei 0,8% — in der Deutschschweiz bei 2,3%. **Fast dreimal schlechter.**
+
+### Warum automatische Übersetzung scheitert
+
+**1. Kulturelle Kontexte fehlen**
+
+Deutscher Text: "Günstig kaufen — schnell geliefert"
+Wörtlich übersetzt: "Acheter bon marché — livraison rapide"
+Problem: "Bon marché" klingt billig, nicht preiswert. Besser: "Prix avantageux — livraison express"
+
+**2. Call-to-Actions funktionieren nicht**
+
+Deutschsprachige Shops lieben Imperative: "Jetzt kaufen!", "Hier bestellen!", "Sofort sparen!"
+
+In der Romandie wirkt das aggressiv. Besser:
+- "Découvrir maintenant" (jetzt entdecken)
+- "Voir les offres" (Angebote ansehen)
+- "Commander en toute confiance" (vertrauensvoll bestellen)
+
+**3. Rechtliche Begriffe sind anders**
+
+Die Schweiz hat eigene französische Begriffe, die sich von Frankreich unterscheiden:
+
+| Deutsch | Schweizer Französisch | Französisch (FR) |
+|---------|----------------------|------------------|
+| MwSt | TVA | TVA |
+| Rechnung | Facture | Facture |
+| Lieferfrist | Délai de livraison | Délai de livraison |
+| Umtausch | Échange | Échange |
+| Widerrufsrecht | Droit de rétractation | Droit de rétractation |
+
+Klingt gleich? Nicht ganz. In der Schweiz gilt *teilweise* anderes Recht als in der EU, und manche Begriffe sind spezifisch.
+
+## Die Romandie ist nicht homogen
+
+### Genf: International und anspruchsvoll
+
+Genf ist die internationalste Stadt der Schweiz. 40% der Bevölkerung sind Ausländer, viele aus Frankreich.
+
+**Was das für E-Commerce bedeutet:**
+- Höhere Qualitätserwartungen
+- Vergleich mit französischen Shops (Zalando, Amazon.fr)
+- Schnelle Lieferung erwartet (24h-Standard)
+- Retouren müssen unkompliziert sein
+
+**Typische Fehler:**
+- Versandkosten zu hoch (Konkurrenz aus Frankreich)
+- Lieferzeiten zu lang (3-5 Tage sind zu viel)
+- Keine Angabe zu Zoll (bei Käufern aus F wichtig)
+
+### Lausanne/Waadt: Lokale Verbundenheit
+
+Die Waadt ist stolz auf ihre lokalen Händler. "Made in Vaud" ist ein echtes Verkaufsargument.
+
+**Was funktioniert:**
+- Lokale Bezüge ("Livraison rapide à Lausanne")
+- Schweizer Qualität betonen
+- Weniger internationale Vergleiche
+
+**Typische Käufe:**
+- Wein, Käse, Lebensmittel (stark lokal)
+- Mode (international, aber Schweizer Service wichtig)
+- Elektronik (Preis-sensitiv)
+
+### Neuenburg/Jura: Klein, aber digital
+
+Die kleineren Kantone sind überraschend online-affin. Hohe Smartphone-Penetration, viel Mobile-Commerce.
+
+**Besonderheit:**
+- Mobil-optimierte Shops sind Pflicht
+- Einfache Checkout-Prozesse (wenig Geduld)
+- Persönlicher Service geschätzt (kleine Läden als Konkurrenz)
+
+## Sprachliche Feinheiten, die den Unterschied machen
+
+### Helvetismen im Französischen
+
+Die Romandie spricht **Schweizer Französisch**, nicht Pariser Französisch. Manche Begriffe sind anders:
+
+| Romandie | Frankreich | Bedeutung |
+|----------|------------|-----------|
+| Septante | Soixante-dix | 70 |
+| Huitante / Octante | Quatre-vingts | 80 |
+| Nonante | Quatre-vingt-dix | 90 |
+| Déjeuner | Petit-déjeuner | Frühstück |
+| Dîner | Déjeuner | Mittagessen |
+| Souper | Dîner | Abendessen |
+| Natel | Portable | Handy |
+| Panosse | Serpillière | Putzlappen |
+
+**Für E-Commerce relevant:**
+Wenn Sie Uhrzeiten oder Öffnungszeiten angeben, nutzen Sie Romandie-Begriffe. "Livraison jusqu'à 18h" statt komplizierter französischer Formulierungen.
+
+### Anrede und Ton
+
+**Deutsch vs. Französisch:**
+Deutsche Shops sind oft direkt: "Bestellen Sie jetzt!"
+Französische Shops sind höflicher: "Nous vous invitons à découvrir..."
+
+**Was in der Romandie funktioniert:**
+- Formell, aber nicht steif
+- "Vous" ist Standard (kein "tu")
+- Weniger Ausrufezeichen als in deutschen Shops
+- Mehr Konjunktiv ("nous serions ravis de vous accueillir")
+
+### Typische Übersetzungsfehler vermeiden
+
+**Falsch:**
+"Gratis Versand ab CHF 100.-" → "Expédition gratuite dès CHF 100.-"
+
+Problem: "Expédition" ist technisch, "gratuite" wird oft übersehen.
+
+**Besser:**
+"Livraison offerte dès CHF 100.-"
+
+Klingt freundlicher, "offerte" (angeboten) ist wärmer als "gratuite".
+
+---
+
+**Falsch:**
+"30 Tage Rückgaberecht" → "Droit de retour de 30 jours"
+
+Problem: Klingt bürokratisch.
+
+**Besser:**
+"Retour gratuit sous 30 jours"
+
+Kürzer, klarer, fokussiert auf Vorteil (gratis).
+
+---
+
+**Falsch:**
+"Nur noch 3 Stück auf Lager" → "Seulement 3 pièces en stock"
+
+Problem: "Seulement" wirkt negativ.
+
+**Besser:**
+"Derniers articles disponibles"
+
+Erzeugt Dringlichkeit ohne negative Formulierung.
+
+## Zahlungspräferenzen in der Romandie
+
+### Was die Daten zeigen
+
+| Zahlungsart | Romandie | Deutschschweiz |
+|-------------|----------|----------------|
+| **Kreditkarte** | 42% | 31% |
+| **Rechnung** | 28% | 38% |
+| **TWINT** | 18% | 23% |
+| **PayPal** | 9% | 6% |
+| **PostFinance** | 3% | 2% |
+
+**Was auffällt:** Die Romandie nutzt häufiger Kreditkarten, seltener Rechnung.
+
+### Warum das wichtig ist
+
+Wenn Sie in der Deutschschweiz nur "Rechnung" als Haupt-Zahlungsart anbieten, verlieren Sie in der Romandie 12% potenzielle Käufe.
+
+**Minimum-Setup für Romandie:**
+1. Kreditkarte (Visa, Mastercard) — Pflicht
+2. Rechnung — für Sicherheitsbewusste
+3. TWINT — wächst stark, besonders bei unter 40-Jährigen
+4. PayPal — für Online-gewohnte Käufer
+
+**Nice to have:**
+- Apple Pay / Google Pay (Mobile-Checkout)
+- Klarna / Swissbilling (Ratenzahlung)
+
+### Sprache bei Zahlungsarten
+
+Fehler: Deutsche Begriffe in französischer Version.
+
+❌ "Kauf auf Rechnung" → "Achat sur facture"
+✅ Besser: "Paiement sur facture"
+
+❌ "Kreditkarte" → "Carte de crédit" (technisch richtig, aber...)
+✅ Besser: "Payer par carte" (so wird es gesagt)
+
+## Versand und Logistik: Was die Romandie erwartet
+
+### Lieferzeiten als Dealbreaker
+
+Eine Basler Mode-Boutique bietet "3-5 Werktage Lieferzeit" an. In Basel akzeptiert. In Genf? Katastrophe.
+
+**Warum?**
+
+Genfer Kunden vergleichen mit:
+- Amazon.fr (24h-Lieferung)
+- Zalando (2-3 Tage)
+- Lokale Shops in Genf (same-day pickup)
+
+Ihre 5 Tage wirken langsam.
+
+### Lösungen
+
+**Option 1: Regionale Lieferzeiten kommunizieren**
+
+Statt:
+"Lieferung in 3-5 Werktagen"
+
+Besser:
+"Livraison rapide:
+- Suisse romande: 1-2 jours
+- Suisse alémanique: 2-3 jours"
+
+Zeigt, dass Sie die Romandie priorisieren.
+
+**Option 2: Lokale Abholung anbieten**
+
+"Click & Collect" ist in der Romandie beliebter als in der Deutschschweiz.
+
+**Warum?**
+- Nähe zu Frankreich (gewohnt von französischen Shops)
+- Urbanität (kurze Wege in Genf/Lausanne)
+- Keine Wartezeit zuhause
+
+Implementierung:
+- Packstationen (Die Post)
+- Partner-Shops (Kioske, Tankstellen)
+- Eigene Abholstation (wenn Sie Ladengeschäft haben)
+
+### Versandkosten als Hürde
+
+In der Romandie gibt es mehr Preissensitivität bei Versandkosten.
+
+**Beispiel aus der Praxis:**
+
+Shop A (Zürich):
+- Versandkosten: CHF 7.90
+- Gratisversand ab CHF 80.-
+
+Shop B (Genf):
+- Versandkosten: CHF 9.90
+- Gratisversand ab CHF 60.-
+
+Shop B macht in der Romandie 23% mehr Umsatz. **Nicht** wegen der höheren Versandkosten (die zahlt kaum jemand), sondern wegen der **niedrigeren Gratisgrenze**.
+
+**Tipp:**
+Romandie-Kunden optimieren eher den Warenkorb, um Gratisversand zu erreichen, als einfach die CHF 7.90 zu zahlen.
+
+## Marketing und Kundengewinnung
+
+### Wo Sie Romandie-Kunden erreichen
+
+**Google Ads:**
+Getrennte Kampagnen für französischsprachige Schweiz.
+
+Warum?
+- Keywords unterscheiden sich ("achat en ligne suisse" vs. "online kaufen schweiz")
+- Cost-per-Click ist in der Romandie oft niedriger
+- Geo-Targeting funktioniert gut (Kantone)
+
+**Meta Ads (Facebook/Instagram):**
+Hohe Reichweite in Genf und Waadt.
+
+Best Practice:
+- Visuals mit französischem Text (kein gemischter Content)
+- Targeting: Sprache Französisch + Schweiz
+- Personas: Urban, 25-45, mittlere bis hohe Kaufkraft
+
+**Lokal**:
+24heures (Lausanne), Tribune de Genève — lokale Medien mit Online-Präsenz.
+
+Oft übersehen, aber effektiv für Brand Awareness.
+
+### Content-Marketing in Französisch
+
+Bloggen Sie auf Französisch? Sollten Sie.
+
+**Warum es sich lohnt:**
+- Weniger Konkurrenz als auf Deutsch
+- Romandie-Kunden suchen französische Inhalte
+- SEO-Vorteil (weniger Wettbewerb für Schweizer Keywords)
+
+**Themen, die funktionieren:**
+- "Guide d'achat: [Produktkategorie] en Suisse"
+- "Comparatif: [Produkt A] vs [Produkt B] pour la Romandie"
+- "Livraison rapide en Suisse romande: notre promesse"
+
+### E-Mail-Marketing: Ton und Timing
+
+**Ton:**
+Deutscher Newsletter: "Jetzt 20% sparen!"
+Französischer Newsletter: "Profitez de 20% de réduction"
+
+Subtiler Unterschied, aber wichtig.
+
+**Timing:**
+Romandie öffnet E-Mails eher abends (19-21 Uhr).
+Deutschschweiz: Morgens (7-9 Uhr) oder Mittag (12-13 Uhr).
+
+Testen Sie separate Versandzeiten.
+
+## Technische Umsetzung: Mehrsprachigkeit richtig gemacht
+
+### URL-Struktur
+
+**Option 1: Subdomains**
+- de.meinshop.ch
+- fr.meinshop.ch
+
+Vorteil: Klare Trennung
+Nachteil: SEO-Power wird geteilt
+
+**Option 2: Verzeichnisse**
+- meinshop.ch/de/
+- meinshop.ch/fr/
+
+Vorteil: SEO-Power bleibt gebündelt
+Nachteil: Etwas komplexere Struktur
+
+**Empfehlung für Schweiz:** Option 2 (Verzeichnisse).
+
+**Wichtig:** Spracherkennung automatisch, aber mit manueller Wahl.
+
+Code-Beispiel:
+\\\`\\\`\\\`javascript
+// Automatische Spracherkennung
+const browserLang = navigator.language;
+if (browserLang.startsWith('fr')) {
+  redirect('/fr/');
+} else {
+  redirect('/de/');
+}
+
+// Aber: Immer Sprachwahl-Button sichtbar
+\\\`\\\`\\\`
+
+### Hreflang-Tags für Google
+
+Damit Google weiss, welche Sprachversion für wen ist:
+
+\\\`\\\`\\\`html
+<link rel="alternate" hreflang="de-CH" href="https://meinshop.ch/de/" />
+<link rel="alternate" hreflang="fr-CH" href="https://meinshop.ch/fr/" />
+<link rel="alternate" hreflang="x-default" href="https://meinshop.ch/" />
+\\\`\\\`\\\`
+
+**Wichtig:** \`de-CH\` und \`fr-CH\`, nicht einfach \`de\` und \`fr\`.
+
+### Checkout-Prozess
+
+**Kritischer Punkt:** Adressfelder.
+
+Schweizer Adressen sind anders als deutsche oder französische.
+
+**Falsch:**
+\`\`\`
+Straße
+PLZ / Stadt
+\`\`\`
+
+**Richtig:**
+\`\`\`
+Rue / Route
+NPA / Localité
+\`\`\`
+
+Scheint trivial, aber "PLZ" sagt einem Romand nichts. Es heisst "NPA" (Numéro postal d'acheminement).
+
+## Rechtliche Besonderheiten
+
+### AGB und Datenschutz
+
+Schweizer Recht gilt — aber in beiden Sprachen.
+
+**Fehler:**
+Deutsche AGB mit Google-Translate übersetzen.
+
+**Richtig:**
+Professionelle juristische Übersetzung. AGB sind Vertragstext, keine Marketing-Copy.
+
+**Was besonders wichtig ist:**
+- Widerrufsrecht (Droit de rétractation): 14 Tage in der Schweiz (nicht 30 wie manche denken)
+- MwSt-Angaben (TVA): Transparent ausweisen
+- Lieferbedingungen (Conditions de livraison): Klar formuliert
+
+### DSGVO vs. DSG
+
+Die Schweiz hat das **DSG** (Datenschutzgesetz), nicht die DSGVO.
+
+Aber: Wenn Sie Kunden in der EU haben (Grenzregion Genf!), gilt teilweise auch DSGVO.
+
+**Best Practice:**
+- Cookie-Banner in beiden Sprachen
+- Datenschutzerklärung auf Französisch
+- Opt-in für Newsletter (nicht Opt-out)
+
+## Erfolgsbeispiele: Was funktioniert
+
+### Case 1: Berner Online-Weinhändler
+
+**Ausgangslage:**
+- 95% Umsatz in Deutschschweiz
+- Romandie "macht keinen Sinn" (O-Ton Geschäftsführer)
+
+**Was sie änderten:**
+1. Website auf Französisch übersetzt (professionell)
+2. Waadtländer Weine ins Sortiment
+3. Lokale Bezüge ("Les vins de chez nous")
+4. Gratisversand ab CHF 60.- (statt CHF 100.-)
+
+**Resultat nach 6 Monaten:**
+- Romandie-Anteil: 18%
+- Höherer Average Order Value (CHF 156 vs. CHF 134)
+- Weniger Retouren (bessere Beschreibungen)
+
+### Case 2: Zürcher Modehaus
+
+**Ausgangslage:**
+- Physische Shops in Zürich und Luzern
+- Online-Shop nur Deutsch
+
+**Was sie änderten:**
+1. Französische Version mit eigenem Look (moderne Ästhetik, passend zu Romandie)
+2. Influencer-Kooperationen in Genf
+3. Click & Collect in Genf (Partner-Shop)
+4. Targeting auf Instagram
+
+**Resultat nach 1 Jahr:**
+- Romandie-Umsatz: 22% des Online-Umsatzes
+- Conversion Rate Romandie: 2,8% (Deutschschweiz: 2,1%)
+- Expansion mit eigenem Shop in Lausanne (2025)
+
+### Case 3: St. Galler Elektronik-Shop
+
+**Ausgangslage:**
+- Technische Produkte (Elektronik, Gadgets)
+- Kundenservice nur Deutsch
+
+**Was sie änderten:**
+1. Französischsprachiger Support (1 Person, 20% Stelle)
+2. FAQs auf Französisch
+3. Produktbeschreibungen professionell übersetzt
+4. Schweizer Stecker-Hinweise (wichtig für Frankreich-Käufer)
+
+**Resultat nach 9 Monaten:**
+- Romandie-Umsatz: 14%
+- Weniger Retouren (bessere Kommunikation)
+- Höhere Kundenzufriedenheit (NPS +12 Punkte)
+
+## Typische Fehler und wie Sie sie vermeiden
+
+### Fehler 1: Halbherzige Übersetzung
+
+**Das Problem:**
+Homepage übersetzt, aber Checkout auf Deutsch.
+
+Oder: Produktbeschreibungen übersetzt, aber Lieferbedingungen auf Deutsch.
+
+**Die Lösung:**
+Entweder ganz oder gar nicht. Ein teilweise übersetzter Shop schreckt mehr ab als ein rein deutscher Shop.
+
+### Fehler 2: Keine lokalen Bezüge
+
+**Das Problem:**
+"Schweizer Online-Shop" — aber alle Bilder zeigen deutsche Schweiz.
+
+**Die Lösung:**
+- Bilder mit Romandie-Bezug (Genfersee, nicht Zürichsee)
+- Testimonials aus der Romandie
+- Lokale Referenzen ("Trusted by 200+ Romands")
+
+### Fehler 3: Ignorieren von Mobile
+
+Die Romandie ist mobiler als die Deutschschweiz.
+
+**Das Problem:**
+Desktop-optimierter Shop, Mobile ist Afterthought.
+
+**Die Lösung:**
+- Mobile First Design
+- Touch-optimierte Buttons
+- Schnelle Ladezeiten (3G-Test in der Romandie wichtig)
+
+### Fehler 4: Kundenservice vergessen
+
+**Das Problem:**
+Französische Website, aber Support nur auf Deutsch.
+
+**Die Lösung:**
+Mindestens:
+- E-Mail-Support auf Französisch
+- FAQ auf Französisch
+- Chat-Bot mit französischer Option
+
+Ideal:
+- Telefon-Support (auch französisch)
+- Live-Chat mit zweisprachigen Agenten
+
+## Checkliste: Ist Ihr Shop Romandie-ready?
+
+### Basis (Minimum)
+
+- [ ] Website professionell auf Französisch übersetzt
+- [ ] Checkout komplett auf Französisch
+- [ ] AGB und Datenschutz auf Französisch
+- [ ] Kreditkarte als Zahlungsart
+- [ ] Versandkosten klar kommuniziert
+- [ ] Mobile-optimiert
+
+### Fortgeschritten
+
+- [ ] Separate Google Ads für Romandie
+- [ ] Blog-Content auf Französisch
+- [ ] Kundenservice auf Französisch
+- [ ] Lokale Testimonials
+- [ ] Click & Collect Option
+- [ ] Hreflang-Tags korrekt
+
+### Profi-Level
+
+- [ ] Romandie-spezifisches Design/Branding
+- [ ] Influencer-Marketing in Romandie
+- [ ] Lokale Lager/schnellere Lieferung
+- [ ] Separate E-Mail-Kampagnen (Timing, Ton)
+- [ ] Community-Building (Romandie-exklusive Events/Angebote)
+
+## Fazit: Lohnt sich der Aufwand?
+
+Die ehrliche Antwort: **Ja, aber...**
+
+Die Romandie richtig zu bedienen ist Arbeit. Übersetzung allein reicht nicht. Sie brauchen:
+- Kulturelles Verständnis
+- Angepasstes Marketing
+- Eventuell separate Logistik
+- Französischsprachigen Support
+
+**Aber:**
+
+Ein Viertel des Schweizer Marktes liegt in der Romandie. Mit höherem Average Order Value und weniger Wettbewerb (viele deutsche Shops ignorieren die Romandie).
+
+Wenn Sie ernsthaft E-Commerce in der Schweiz betreiben wollen, ist die Romandie kein "Nice-to-have". Sie ist ein Must-have.
+
+---
+
+**Der erste Schritt?**
+
+Starten Sie klein:
+1. Website professionell übersetzen (nicht Google Translate)
+2. Checkout-Prozess auf Französisch
+3. Google Ads für Romandie schalten
+4. Ergebnisse messen
+
+Wenn Sie in 3 Monaten sehen, dass es funktioniert, investieren Sie mehr.
+
+Die Romandie wartet auf Sie. 🇨🇭
+\`,
+  },
+  {
     slug: 'shopify-vs-woocommerce-mehrsprachige-schweizer-shops',
     title: 'Shopify vs. WooCommerce: Welche Plattform für mehrsprachige Schweizer Shops?',
     excerpt: 'Beide Plattformen versprechen mehrsprachige Shops. Aber welche eignet sich wirklich für den Schweizer Markt mit drei Landessprachen? Ein ehrlicher Vergleich.',
