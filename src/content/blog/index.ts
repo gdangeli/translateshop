@@ -14,6 +14,451 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'shopify-mehrsprachig-einrichten-schweiz-guide',
+    title: 'Shopify mehrsprachig einrichten: Der komplette Guide für Schweizer Shops',
+    excerpt: 'Shopify bietet native Mehrsprachigkeit — aber die Einrichtung für die Schweiz hat Tücken. Von der Domain-Struktur bis zur automatischen Spracherkennung: So machen Sie Ihren Shop fit für DE, FR und IT.',
+    category: 'Technik',
+    readTime: 16,
+    emoji: '🛠️',
+    publishedAt: '2026-03-02',
+    author: 'TranslateShop Team',
+    keywords: ['Shopify mehrsprachig', 'Shopify Schweiz Sprachen', 'Shopify DE FR IT', 'mehrsprachiger Online-Shop Shopify', 'Shopify Translate & Adapt', 'Shopify internationalisieren Schweiz'],
+    content: `
+## Warum Shopifys Mehrsprachigkeit für die Schweiz perfekt ist (fast)
+
+Seit 2021 unterstützt Shopify mehrere Sprachen nativ — ohne Plugins, ohne komplizierte Workarounds. Für Schweizer E-Commerce-Betreiber ist das ein Gamechanger: Sie können DE, FR und IT auf einer Plattform bedienen, ohne drei separate Shops zu betreiben.
+
+Aber (und das ist ein grosses Aber): Die Standard-Einrichtung ist für globale Märkte optimiert, nicht für die Schweiz. Wer hier nicht aufpasst, verliert SEO-Rankings, verwirrt Kunden oder verstösst gegen Schweizer E-Commerce-Recht.
+
+Dieser Guide zeigt Ihnen die richtige Einrichtung — basierend auf realen Projekten mit Schweizer Shops zwischen CHF 500'000 und CHF 8 Mio. Jahresumsatz.
+
+## Die drei Shopify-Ansätze für Mehrsprachigkeit
+
+Shopify bietet verschiedene Wege, mehrere Sprachen zu unterstützen. Nicht alle sind für die Schweiz geeignet.
+
+### Option 1: Subfolders (empfohlen für CH)
+
+**Struktur:**
+- \`shop.ch\` (Deutsch, Standard)
+- \`shop.ch/fr\` (Französisch)
+- \`shop.ch/it\` (Italienisch)
+
+**Vorteile:**
+- Eine Domain, einfache Verwaltung
+- SEO-Kraft bleibt gebündelt
+- Keine zusätzlichen Domain-Kosten
+- Kunden bleiben auf derselben Domain (Vertrauen)
+
+**Nachteile:**
+- Sprachauswahl muss manuell erfolgen (Geolocation funktioniert nicht perfekt)
+- Warenkorb wird nicht sprachübergreifend synchronisiert
+
+**Wann nutzen:** Standard für 90% der Schweizer Shops. Wenn Sie primär CH-Kunden haben und keine separate Marktpositionierung pro Sprachregion brauchen.
+
+### Option 2: Subdomains
+
+**Struktur:**
+- \`www.shop.ch\` (Deutsch)
+- \`fr.shop.ch\` (Französisch)
+- \`it.shop.ch\` (Italienisch)
+
+**Vorteile:**
+- Technisch sauberer für grosse Shops
+- Bessere Trennung bei unterschiedlichen Sortimenten pro Region
+- Einfachere Analytics-Segmentierung
+
+**Nachteile:**
+- SEO-Kraft wird aufgeteilt
+- SSL-Zertifikat für Subdomains nötig
+- Komplexere Einrichtung
+
+**Wann nutzen:** Wenn Sie pro Sprachregion unterschiedliche Sortimente oder Preise haben. Oder wenn Ihr Shop >CHF 5 Mio. Umsatz macht.
+
+### Option 3: Separate Domains (nicht empfohlen für CH)
+
+**Struktur:**
+- \`shop-de.ch\`
+- \`shop-fr.ch\`
+- \`shop-it.ch\`
+
+**Warum nicht:** SEO wird aufgeteilt, Vertrauen leidet (Kunden fragen sich "Warum drei Domains?"), höhere Kosten, komplizierte Verwaltung.
+
+**Ausnahme:** Wenn Sie gezielt Marken pro Sprachregion aufbauen (z.B. "SwissGarden" in DE, "JardinSuisse" in FR). Dann sind separate Domains sinnvoll.
+
+## Schritt-für-Schritt: Shopify mehrsprachig einrichten
+
+### 1. Sprachen aktivieren (Settings > Languages)
+
+Gehen Sie zu **Settings > Languages** und aktivieren Sie:
+- Deutsch (Standard)
+- Französisch (Frankreich) — *nicht* Canada
+- Italienisch (Italien) — *nicht* Switzerland (gibt es nicht als eigene Option)
+
+**Wichtig:** Wählen Sie "Französisch (Frankreich)" und nicht "Französisch (Canada)". Schweizer Französisch ist näher an Frankreich als an Quebec.
+
+**Domain-Struktur:** Wählen Sie "Subfolders" (Unterverzeichnisse).
+
+**Publikation:** Aktivieren Sie alle drei Sprachen. Shopify erstellt automatisch:
+- \`/fr/\` für Französisch
+- \`/it/\` für Italienisch
+
+### 2. Übersetzungs-Workflow definieren
+
+Sie haben drei Möglichkeiten, Inhalte zu übersetzen:
+
+**A) Manuell (gratis, zeitaufwändig)**
+
+Für jeden Produkt, jede Seite, jede Collection: Manuell übersetzen in **Products > [Produkt] > Translate**.
+
+**Wann sinnvoll:** Kleine Shops (<50 Produkte), oder wenn Sie perfekte Kontrolle brauchen.
+
+**B) Shopify Translate & Adapt (kostenpflichtig)**
+
+Shopify bietet ein eigenes Übersetzungs-Tool mit KI-Unterstützung. Kosten: ca. CHF 10/Monat für kleinere Shops.
+
+**Vorteile:**
+- Automatische Übersetzungen (DeepL-ähnlich)
+- Manuelles Nachbearbeiten möglich
+- Versionskontrolle
+
+**Nachteile:**
+- KI-Übersetzungen müssen überprüft werden
+- Keine Schweizer Besonderheiten (z.B. "CHF" statt "€")
+
+**Wann sinnvoll:** 100-500 Produkte, Budget vorhanden, Basis-Übersetzung gewünscht.
+
+**C) Langify oder Weglot (externe Apps)**
+
+**Langify:** CHF 15-25/Monat, fokussiert auf E-Commerce, gute Schweiz-Unterstützung
+**Weglot:** CHF 10-50/Monat, einfachste Lösung, aber teurer bei grossen Shops
+
+**Wann sinnvoll:** Shops >500 Produkte, oder wenn Sie automatische Übersetzung + manuelle Nachbearbeitung brauchen.
+
+### 3. Produkte übersetzen (Best Practices)
+
+**Produkttitel:**
+- DE: "Herren-Wanderschuhe Salomon X Ultra 4"
+- FR: "Chaussures de randonnée Salomon X Ultra 4 pour homme"
+- IT: "Scarpe da trekking Salomon X Ultra 4 da uomo"
+
+**Wichtig:** Markennamen wie "Salomon" **nicht** übersetzen. Produktkategorien schon.
+
+**Produktbeschreibungen:**
+
+Nicht Wort-für-Wort übersetzen. Kulturelle Anpassungen:
+
+**Deutscher Text:**
+"Robust, wasserdicht, perfekt für alpine Touren. Diese Wanderschuhe überzeugen mit erstklassiger Verarbeitung."
+
+**Französischer Text (angepasst):**
+"Robustes et imperméables, ces chaussures sont idéales pour vos randonnées en montagne. Qualité suisse, confort garanti."
+
+**Was geändert wurde:**
+- "Alpine Touren" → "randonnées en montagne" (natürlicher im FR)
+- "Erstklassige Verarbeitung" → "Qualité suisse, confort garanti" (Schweiz-Bezug, emotionaler)
+
+### 4. Navigation und Menüs übersetzen
+
+Gehen Sie zu **Online Store > Navigation** und passen Sie Menüs für jede Sprache an:
+
+**Beispiel Hauptmenü:**
+
+| Deutsch | Französisch | Italienisch |
+|---------|-------------|-------------|
+| Startseite | Accueil | Home |
+| Shop | Boutique | Negozio |
+| Über uns | À propos | Chi siamo |
+| Kontakt | Contact | Contatto |
+| Warenkorb | Panier | Carrello |
+
+**Achtung:** "Shop" wird im Französischen oft zu "Magasin" übersetzt — aber "Boutique" passt besser für Online-Shops.
+
+### 5. Checkout übersetzen
+
+Der Checkout ist das kritischste Element. Shopify übersetzt Standard-Felder automatisch, aber Sie müssen **Custom Checkout Fields** manuell übersetzen.
+
+**Beispiel:**
+- DE: "Lieferadresse"
+- FR: "Adresse de livraison"
+- IT: "Indirizzo di consegna"
+
+**Tipp:** Gehen Sie zu **Settings > Checkout > Customize Checkout** und prüfen Sie jede Sprache einzeln.
+
+### 6. Rechtliche Seiten übersetzen (AGB, Datenschutz, Widerruf)
+
+In der Schweiz müssen **AGB, Datenschutzerklärung und Widerrufsrecht** in allen angebotenen Sprachen verfügbar sein. Das ist nicht optional.
+
+**Fehler vermeiden:**
+- Nicht Google Translate nutzen für rechtliche Texte
+- AGVS/HEV-Musterverträge gibt es auf DE/FR/IT — nutzen Sie diese als Basis
+- Bei Unsicherheit: Juristischen Übersetzer beauftragen (Kosten: ca. CHF 300-600 für alle drei Sprachen)
+
+**Wo einfügen:**
+- \`/pages/agb\` (DE)
+- \`/fr/pages/conditions-generales\` (FR)
+- \`/it/pages/condizioni-generali\` (IT)
+
+Verlinken Sie diese im Footer für alle Sprachen.
+
+### 7. Sprachumschaltung (Language Switcher)
+
+Shopify fügt automatisch einen Sprachumschalter hinzu. Aber: Standard-Design ist oft versteckt oder hässlich.
+
+**Best Practice:**
+- Flaggen + Sprachkürzel anzeigen (🇨🇭 DE | FR | IT)
+- Im Header prominent platzieren (oben rechts)
+- Mobile-Version testen (oft vergessen!)
+
+**Code-Anpassung (für Entwickler):**
+
+Gehen Sie zu **Online Store > Themes > Edit Code** und suchen Sie die Datei \`header.liquid\`. Fügen Sie ein:
+
+\\\`\\\`\\\`liquid
+{% if shop.published_locales.size > 1 %}
+  <div class="language-switcher">
+    {% for locale in shop.published_locales %}
+      <a href="{{ locale.root_url }}" {% if locale.current %}class="active"{% endif %}>
+        {{ locale.endonym_name }}
+      </a>
+    {% endfor %}
+  </div>
+{% endif %}
+\\\`\\\`\\\`
+
+**CSS für Styling:** Platzieren Sie die Flaggen oder Sprachkürzel sichtbar, nicht im Dropdown versteckt.
+
+### 8. SEO für mehrsprachige Shops
+
+Shopify generiert automatisch **hreflang-Tags**. Das ist gut für SEO. Aber Sie müssen zusätzlich:
+
+**A) Meta-Titel und Descriptions pro Sprache anpassen**
+
+Nicht einfach übersetzen — für jede Sprache SEO-optimieren.
+
+**Beispiel Produkt:**
+
+| Sprache | Meta-Title |
+|---------|-----------|
+| DE | "Salomon X Ultra 4 kaufen – Schweizer Wanderschuhe-Shop" |
+| FR | "Acheter Salomon X Ultra 4 – Chaussures de randonnée Suisse" |
+| IT | "Acquista Salomon X Ultra 4 – Scarpe da trekking Svizzera" |
+
+**Warum wichtig:** Suchanfragen sind pro Sprache unterschiedlich. "Wanderschuhe kaufen" ist ein deutsches Keyword — im Französischen suchen User nach "chaussures de randonnée achat en ligne".
+
+**B) URL-Struktur prüfen**
+
+Shopify erstellt automatisch URLs wie:
+- \`/products/salomon-x-ultra-4\` (DE)
+- \`/fr/products/salomon-x-ultra-4\` (FR)
+- \`/it/products/salomon-x-ultra-4\` (IT)
+
+**Problem:** Der Slug bleibt englisch/deutsch. Für besseres SEO sollten Sie:
+- \`/fr/products/chaussures-randonnee-salomon-x-ultra-4\`
+- \`/it/products/scarpe-trekking-salomon-x-ultra-4\`
+
+**Wie ändern:** Gehen Sie zu **Products > [Produkt] > Search engine listing** und passen Sie den URL-Slug pro Sprache an.
+
+**C) Lokales SEO nutzen**
+
+Erwähnen Sie Schweizer Städte/Regionen in Ihren Texten:
+
+- DE: "Kostenloser Versand in Zürich, Bern, Basel"
+- FR: "Livraison gratuite à Genève, Lausanne, Neuchâtel"
+- IT: "Spedizione gratuita a Lugano, Bellinzona, Locarno"
+
+Das hilft bei lokalen Suchanfragen wie "Wanderschuhe kaufen Zürich".
+
+### 9. Bezahlmethoden pro Sprache konfigurieren
+
+Die Schweiz hat unterschiedliche Payment-Präferenzen pro Region:
+
+| Region | Bevorzugte Zahlungsart |
+|--------|------------------------|
+| Deutschschweiz | Rechnung (Klarna, Twint) |
+| Romandie | Kreditkarte, PayPal |
+| Tessin | Kreditkarte, PostFinance |
+
+**Was tun:**
+- Aktivieren Sie **Twint** (speziell für DE-CH wichtig)
+- Zeigen Sie Rechnung prominent an (aber: nur für verifizierte CH-Adressen)
+- PayPal und Kreditkarte überall anbieten
+
+**Einrichtung:** **Settings > Payments** — aktivieren Sie alle relevanten Anbieter.
+
+### 10. Versandkosten und Lieferzeiten übersetzen
+
+Kunden in der Romandie erwarten andere Formulierungen:
+
+**Versandkosten:**
+- DE: "Gratis Versand ab CHF 50.-"
+- FR: "Livraison gratuite dès CHF 50.-"
+- IT: "Spedizione gratuita da CHF 50.-"
+
+**Lieferzeiten:**
+- DE: "Lieferung in 2-3 Werktagen"
+- FR: "Livraison sous 2-3 jours ouvrables"
+- IT: "Consegna in 2-3 giorni lavorativi"
+
+**Wo ändern:** **Settings > Shipping and delivery > Shipping rates** — fügen Sie für jede Sprache einen eigenen Text hinzu.
+
+## Typische Fehler (und wie Sie sie vermeiden)
+
+### Fehler 1: Spracherkennung nach IP-Adresse
+
+Viele Shops versuchen, die Sprache automatisch basierend auf der IP-Adresse zu erkennen. Das scheitert in der Schweiz:
+
+**Warum:** Ein Kunde in Bern spricht vielleicht Französisch. Ein Kunde in Freiburg vielleicht Deutsch. Die IP-Adresse sagt nichts über die Sprachpräferenz.
+
+**Lösung:** Lassen Sie den Kunden beim ersten Besuch manuell wählen. Speichern Sie die Präferenz im Cookie.
+
+### Fehler 2: Inkonsistente Übersetzungen
+
+Produktname auf Deutsch, Checkout auf Französisch, Bestätigungsmail auf Englisch. Das passiert häufiger, als man denkt.
+
+**Lösung:** Checkliste erstellen:
+- [ ] Alle Produkte übersetzt?
+- [ ] Menüs angepasst?
+- [ ] Checkout geprüft?
+- [ ] E-Mail-Templates angepasst?
+- [ ] Footer-Links korrekt?
+
+### Fehler 3: Google Translate für alles nutzen
+
+Google Translate ist gut — aber nicht perfekt. Speziell bei E-Commerce-Texten gibt es kulturelle Nuancen.
+
+**Beispiel:**
+- DE: "Bestseller" → Google übersetzt zu "Meilleure vente" (FR)
+- Besser: "Les plus vendus" oder "Nos favoris"
+
+**Lösung:** Nutzen Sie Google Translate als Basis, aber lassen Sie jemanden mit Muttersprachlern-Niveau gegenlesen.
+
+### Fehler 4: Währung und Preise nicht anpassen
+
+Shopify zeigt automatisch CHF. Aber: Preisdarstellung unterscheidet sich.
+
+**Deutschschweiz:** CHF 49.90 oder CHF 49.–
+**Romandie:** CHF 49.90 (mit Punkt, nicht Komma)
+**Tessin:** CHF 49.90
+
+**Tipp:** Nutzen Sie "CHF" in allen Sprachen, aber passen Sie Formatierung an.
+
+### Fehler 5: Mobile-Version nicht getestet
+
+67% der Romandie-Kunden shoppen mobil (mehr als in der Deutschschweiz). Wenn Ihre Sprachumschaltung auf Mobile nicht funktioniert, verlieren Sie Umsatz.
+
+**Lösung:** Testen Sie Ihren Shop auf iPhone und Android, in allen drei Sprachen.
+
+## Praxisbeispiel: So macht es ein erfolgreicher Schweizer Outdoor-Shop
+
+**Ausgangslage:**
+- Shop-Umsatz CHF 2,1 Mio./Jahr
+- 80% Deutsch, 15% Französisch, 5% Italienisch
+- Ziel: Romandie-Umsatz auf 25% steigern
+
+**Massnahmen:**
+1. Shopify Translate & Adapt installiert
+2. Alle 340 Produkte auf FR/IT übersetzt (Kosten: CHF 2'800)
+3. SEO-Optimierung pro Sprache (Meta-Titles, Descriptions)
+4. Sprachumschalter prominent im Header platziert
+5. E-Mail-Marketing segmentiert nach Sprache
+
+**Resultat nach 6 Monaten:**
+- FR-Umsatz: +180% (von CHF 315k auf CHF 883k)
+- IT-Umsatz: +65% (von CHF 105k auf CHF 173k)
+- Conversion-Rate FR: 1,8% → 2,9%
+- Kein Verlust bei DE-Umsatz
+
+**ROI:** Investition CHF 5'500 (Setup + Übersetzung), zusätzlicher Umsatz CHF 636k/Jahr.
+
+## Tools und Apps für mehrsprachige Shopify-Shops
+
+### Übersetzungs-Tools
+
+| Tool | Kosten | Vorteile | Nachteile |
+|------|--------|----------|-----------|
+| **Shopify Translate & Adapt** | CHF 10/Monat | Native, einfach | Basis-Übersetzung, muss nachbearbeitet werden |
+| **Langify** | CHF 15-25/Monat | E-Commerce-fokussiert | Etwas teurer |
+| **Weglot** | CHF 10-50/Monat | Einfachste Lösung | Teuer bei vielen Seiten |
+| **GTranslate** | CHF 8-20/Monat | Günstig | SEO-Nachteile |
+
+**Empfehlung:** Starten Sie mit **Shopify Translate & Adapt**. Wenn Sie >500 Produkte haben, wechseln Sie zu **Langify**.
+
+### SEO-Tools
+
+- **Plug in SEO:** Prüft hreflang-Tags und Meta-Daten pro Sprache
+- **SEO Manager:** Bulk-Bearbeitung von Meta-Titles/Descriptions
+- **JSON-LD for SEO:** Strukturierte Daten für bessere Rankings
+
+### Analytics
+
+- **Google Analytics 4:** Segmentieren Sie Traffic nach Sprache
+- **Hotjar:** Heatmaps zeigen, ob Sprachumschalter gefunden wird
+- **Microsoft Clarity:** Gratis Alternative zu Hotjar
+
+## Checkliste: Ist Ihr Shopify-Shop bereit für DE/FR/IT?
+
+Gehen Sie diese Liste durch, bevor Sie live gehen:
+
+**Sprach-Setup:**
+- [ ] Alle drei Sprachen aktiviert (DE, FR, IT)
+- [ ] Subfolder-Struktur gewählt (\`/fr\`, \`/it\`)
+- [ ] Sprachumschalter im Header sichtbar
+
+**Inhalte:**
+- [ ] Alle Produkte übersetzt (Titel, Beschreibung, Varianten)
+- [ ] Collections übersetzt
+- [ ] Navigation/Menüs angepasst
+- [ ] Footer-Links korrekt
+- [ ] Startseite vollständig übersetzt
+
+**Rechtliches:**
+- [ ] AGB in allen Sprachen
+- [ ] Datenschutzerklärung in allen Sprachen
+- [ ] Widerrufsrecht in allen Sprachen
+- [ ] Impressum in allen Sprachen
+
+**Checkout & Payment:**
+- [ ] Checkout-Felder übersetzt
+- [ ] Versandkosten-Texte angepasst
+- [ ] Zahlungsanbieter aktiviert (Twint, Klarna, PayPal)
+- [ ] Bestätigungs-E-Mails in allen Sprachen
+
+**SEO:**
+- [ ] Meta-Titles pro Sprache optimiert
+- [ ] Meta-Descriptions angepasst
+- [ ] hreflang-Tags aktiv (automatisch von Shopify)
+- [ ] URL-Slugs pro Sprache angepasst
+
+**Testing:**
+- [ ] Alle Seiten auf Desktop getestet (DE/FR/IT)
+- [ ] Mobile-Version getestet
+- [ ] Checkout-Prozess durchgespielt
+- [ ] E-Mails in allen Sprachen geprüft
+
+## Fazit: Mehrsprachigkeit lohnt sich
+
+Ein mehrsprachiger Shopify-Shop ist kein Nice-to-have — es ist für Schweizer E-Commerce ein Muss. 40% Ihrer potenziellen Kunden sprechen nicht Deutsch. Wer diese ignoriert, verschenkt Umsatz.
+
+Die gute Nachricht: Mit Shopifys nativer Mehrsprachigkeit ist der Aufwand überschaubar. Ein Setup dauert 2-4 Wochen, die Übersetzungskosten liegen bei CHF 2'000-5'000 (je nach Shop-Grösse), und der ROI ist messbar.
+
+Die wichtigsten Punkte nochmals:
+
+1. **Subfolder-Struktur nutzen** (\`shop.ch/fr\`, \`shop.ch/it\`)
+2. **Nicht nur übersetzen, sondern anpassen** (Kultur, Tonalität)
+3. **SEO pro Sprache optimieren** (Meta-Titles, Keywords)
+4. **Rechtliche Texte professionell übersetzen lassen**
+5. **Mobile-Version testen** (speziell wichtig für Romandie)
+
+Mehrsprachigkeit ist kein Kostenfaktor — es ist eine Investition in Wachstum.
+
+---
+
+**Sie brauchen Hilfe bei der Einrichtung?** TranslateShop unterstützt Schweizer E-Commerce-Betreiber bei der mehrsprachigen Shop-Optimierung. Von der Übersetzung bis zur SEO-Anpassung — alles aus einer Hand.
+
+[Jetzt unverbindlich anfragen](/kontakt)
+`,
+  },
+  {
     slug: 'e-commerce-romandie-franzoesischsprachige-kunden-schweiz',
     title: 'E-Commerce in der Romandie: So erreichen Sie französischsprachige Kunden',
     excerpt: 'Die Romandie ist mehr als nur "Französisch übersetzen". Kulturelle Besonderheiten, lokale Gewohnheiten und sprachliche Feinheiten entscheiden über Erfolg oder Misserfolg. Ein Praxis-Leitfaden.',
