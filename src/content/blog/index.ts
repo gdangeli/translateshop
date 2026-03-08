@@ -532,11 +532,11 @@ Nehmen Sie TranslatePress. Es ist intuitiver als WPML, aber mächtiger als Polyl
 
 ### 1. Wie die Plugins Übersetzungen speichern
 
-**WPML:** Erstellt separate Posts pro Sprache. Ihre Datenbank wird grösser, aber jede Sprache hat eine eigene URL (z. B. `/produkt/` vs. `/produit/`).
+**WPML:** Erstellt separate Posts pro Sprache. Ihre Datenbank wird grösser, aber jede Sprache hat eine eigene URL (z. B. '/produkt/' vs. '/produit/').
 
 **Polylang:** Auch separate Posts, aber schlanker implementiert. Weniger Datenbank-Overhead.
 
-**TranslatePress:** Speichert Übersetzungen in einer separaten Tabelle. Die URL bleibt gleich, die Sprache wird per Parameter oder Subdomain gewechselt (z. B. `/produkt/?lang=fr` oder `fr.ihreshop.ch/produkt/`).
+**TranslatePress:** Speichert Übersetzungen in einer separaten Tabelle. Die URL bleibt gleich, die Sprache wird per Parameter oder Subdomain gewechselt (z. B. '/produkt/?lang=fr' oder 'fr.ihreshop.ch/produkt/').
 
 **Weglot:** Speichert Übersetzungen auf ihren Servern. Ihr WordPress bleibt schlank, aber Sie sind abhängig von Weglot.
 
