@@ -342,7 +342,7 @@ Der Aufwand lohnt sich. Ein optimierter Checkout kann die Conversion Rate um 15-
     publishedAt: '2026-03-04',
     author: 'TranslateShop Team',
     keywords: ['WPML Schweiz', 'Polylang WooCommerce', 'mehrsprachiger Shop Schweiz', 'WordPress Übersetzung', 'WooCommerce mehrsprachig', 'TranslatePress Weglot'],
-    content: `Letzte Woche schrieb mir ein Leser: "Ich will meinen WooCommerce Shop auf Französisch übersetzen. Alle empfehlen WPML, aber das kostet $159 pro Jahr. Polylang ist gratis — ist das nicht besser?"
+    content: `Letzte Woche schrieb mir ein Leser: "Ich will meinen WooCommerce Shop auf Französisch übersetzen. Alle empfehlen WPML, aber das kostet \$159 pro Jahr. Polylang ist gratis — ist das nicht besser?"
 
 Gute Frage. Die Antwort: Es kommt drauf an.
 
@@ -399,7 +399,7 @@ WPML hat ein riesiges Support-Team. Forum, Dokumentation, Updates. Wenn etwas ni
 ### Was WPML kostet
 
 - **WPML Multilingual CMS:** $39/Jahr (für einfache Websites)
-- **WPML Multilingual Agency:** $159/Jahr (für WooCommerce Shops — das brauchen Sie)
+- **WPML Multilingual Agency:** \$159/Jahr (für WooCommerce Shops — das brauchen Sie)
 - **Renewals:** 50% Rabatt ab dem 2. Jahr
 
 Dazu kommen eventuell Kosten für professionelle Übersetzungen, falls Sie die nutzen (ca. CHF 0.12-0.20 pro Wort).
@@ -492,7 +492,7 @@ Sie aktivieren Mehrwährungen: CHF in DE, EUR in FR/IT. Sie setzen separate Prei
 
 **Ergebnis:** Professioneller Shop. Französischsprachige Kunden sehen französische Texte, CHF-Preise, alles optimiert. Conversion steigt um 15-20% in der Romandie.
 
-**Kosten:** $159/Jahr (WPML) + CHF 3'000-5'000 (Übersetzung) = ca. CHF 3'200-5'200 im ersten Jahr. Danach nur noch $79/Jahr (Renewal).
+**Kosten:** \$159/Jahr (WPML) + CHF 3'000-5'000 (Übersetzung) = ca. CHF 3'200-5'200 im ersten Jahr. Danach nur noch \$79/Jahr (Renewal).
 
 ### Option 2: Polylang
 
