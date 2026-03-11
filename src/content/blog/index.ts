@@ -14,6 +14,18 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'retouren-kundenservice-mehrsprachig-schweiz',
+    title: 'Retouren & Kundenservice mehrsprachig: Warum französische Kunden 3× öfter zurückschicken',
+    excerpt: 'Schweizer Shops verlieren 34% Umsatz in der Romandie durch mangelhafte mehrsprachige Retourenprozesse. Die Lösung ist einfacher als Sie denken – und steigert die Kundenzufriedenheit um 67%.',
+    category: 'Praxis',
+    readTime: 11,
+    emoji: '🔄',
+    publishedAt: '2026-03-11',
+    author: 'TranslateShop Team',
+    keywords: ['retouren mehrsprachig', 'kundenservice französisch', 'retourenprozess schweiz', 'kundenservice romandie', 'mehrsprachiger support'],
+    content: '' // Content wird aus Markdown-Datei geladen
+  },
+  {
     slug: 'produktbeschreibungen-uebersetzen-romandie-tessin',
     title: 'Produktbeschreibungen übersetzen: So verkaufen Sie in der Romandie und im Tessin',
     excerpt: '85% der Schweizer Shops übersetzen Produkttexte 1:1 – und verlieren damit Umsatz. Erfahren Sie, wie kulturelle Adaption Ihre Conversion in der Romandie um 89% steigern kann.',
