@@ -8035,7 +8035,7 @@ Falls Sie unsicher sind: Prüfen Sie jetzt Ihre hreflang-Tags. Rechtsklick, Seit
     publishedAt: '2026-03-11',
     author: 'TranslateShop Team',
     keywords: ['mehrsprachiger shop kosten', 'übersetzung online shop roi', 'shop übersetzen schweiz kosten', 'e-commerce lokalisierung budget', 'romandie markt erschliessen kosten', 'webshop französisch kosten'],
-    content: \`"Was kostet das?" — die erste Frage, die jeder Shop-Betreiber stellt.
+    content: `"Was kostet das?" — die erste Frage, die jeder Shop-Betreiber stellt.
 
 "Was bringt das?" — die wichtigere Frage, die zu wenige stellen.
 
@@ -8353,7 +8353,7 @@ Die Schweiz ist ein mehrsprachiger Markt. Ihr Shop sollte das auch sein.
 ---
 
 *Möchten Sie wissen, wie hoch der ROI für Ihren spezifischen Shop wäre? TranslateShop bietet eine kostenlose Potenzialanalyse — inklusive konkreter Umsatzprognose für die Romandie und das Tessin.*
-    \`,
+    `,
   },
 ];
 
