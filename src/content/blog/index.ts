@@ -14,6 +14,18 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'live-chat-mehrsprachig-romandie-support',
+    title: 'Live-Chat mehrsprachig: Warum Romandie-Kunden 2× länger warten (und wie Sie das ändern)',
+    excerpt: 'Schweizer Online-Shops verlieren täglich Kunden, weil der Live-Chat nur Deutsch kann. 67% der Westschweizer verlassen den Shop ohne französischen Support. Die Lösung kostet keine Extra-Mitarbeiter.',
+    category: 'Praxis',
+    readTime: 12,
+    emoji: '💬',
+    publishedAt: '2026-03-12',
+    author: 'TranslateShop Team',
+    keywords: ['live chat mehrsprachig', 'kundenservice französisch', 'chat support romandie', 'mehrsprachiger support', 'chatbot schweiz'],
+    content: '' // Content wird aus Markdown-Datei geladen
+  },
+  {
     slug: 'retouren-kundenservice-mehrsprachig-schweiz',
     title: 'Retouren & Kundenservice mehrsprachig: Warum französische Kunden 3× öfter zurückschicken',
     excerpt: 'Schweizer Shops verlieren 34% Umsatz in der Romandie durch mangelhafte mehrsprachige Retourenprozesse. Die Lösung ist einfacher als Sie denken – und steigert die Kundenzufriedenheit um 67%.',
