@@ -14,6 +14,18 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'newsletter-mehrsprachig-romandie-tessin',
+    title: 'Newsletter mehrsprachig: So erreichen Sie Romandie und Tessin mit personalisierten E-Mails',
+    excerpt: '78% höhere Öffnungsrate bei Newslettern in Muttersprache. Erfahren Sie, wie mehrsprachige Newsletter 60-80% mehr Umsatz in Romandie und Tessin bringen – mit minimalem Zusatzaufwand.',
+    category: 'E-Mail-Marketing',
+    readTime: 8,
+    emoji: '📧',
+    publishedAt: '2026-03-13',
+    author: 'TranslateShop Team',
+    keywords: ['newsletter mehrsprachig schweiz', 'e-mail-marketing romandie', 'newsletter französisch italienisch', 'mailchimp mehrsprachig', 'brevo schweiz', 'klaviyo mehrsprachig'],
+    content: '' // Content wird aus Markdown-Datei geladen
+  },
+  {
     slug: 'live-chat-mehrsprachig-romandie-support',
     title: 'Live-Chat mehrsprachig: Warum Romandie-Kunden 2× länger warten (und wie Sie das ändern)',
     excerpt: 'Schweizer Online-Shops verlieren täglich Kunden, weil der Live-Chat nur Deutsch kann. 67% der Westschweizer verlassen den Shop ohne französischen Support. Die Lösung kostet keine Extra-Mitarbeiter.',
