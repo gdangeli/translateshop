@@ -14,6 +14,18 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'checkout-mehrsprachig-conversion-killer',
+    title: 'Checkout mehrsprachig: Der 67%-Abbruch-Faktor, den niemand auf dem Radar hat',
+    excerpt: 'Westschweizer brechen zu 67% beim deutschen Checkout ab – selbst wenn der Shop übersetzt ist. Erfahren Sie die 7 häufigsten Fehler und wie ein mehrsprachiger Checkout Ihre Conversion um 200% steigert.',
+    category: 'Conversion',
+    readTime: 14,
+    emoji: '💳',
+    publishedAt: '2026-03-14',
+    author: 'TranslateShop Team',
+    keywords: ['checkout mehrsprachig', 'mehrsprachiger checkout schweiz', 'conversion romandie', 'warenkorb französisch', 'checkout übersetzung', 'e-commerce checkout schweiz'],
+    content: '' // Content wird aus Markdown-Datei geladen
+  },
+  {
     slug: 'newsletter-mehrsprachig-romandie-tessin',
     title: 'Newsletter mehrsprachig: So erreichen Sie Romandie und Tessin mit personalisierten E-Mails',
     excerpt: '78% höhere Öffnungsrate bei Newslettern in Muttersprache. Erfahren Sie, wie mehrsprachige Newsletter 60-80% mehr Umsatz in Romandie und Tessin bringen – mit minimalem Zusatzaufwand.',
