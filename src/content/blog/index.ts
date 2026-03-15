@@ -14,6 +14,18 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'retourenmanagement-mehrsprachig',
+    title: 'Retourenmanagement mehrsprachig: So wickeln Sie Rücksendungen in DE/FR/IT professionell ab',
+    excerpt: 'Retouren sind teuer – aber auch eine Chance. Wie Sie mit professioneller mehrsprachiger Kommunikation Kunden in der Romandie und im Tessin langfristig binden.',
+    category: 'Praxis',
+    readTime: 9,
+    emoji: '📦',
+    publishedAt: '2026-03-15',
+    author: 'TranslateShop Team',
+    keywords: ['retourenmanagement mehrsprachig', 'rücksendungen e-commerce schweiz', 'returns policy übersetzung', 'retouren shopify woocommerce'],
+    content: '' // Content wird aus Markdown-Datei geladen
+  },
+  {
     slug: 'checkout-mehrsprachig-conversion-killer',
     title: 'Checkout mehrsprachig: Der 67%-Abbruch-Faktor, den niemand auf dem Radar hat',
     excerpt: 'Westschweizer brechen zu 67% beim deutschen Checkout ab – selbst wenn der Shop übersetzt ist. Erfahren Sie die 7 häufigsten Fehler und wie ein mehrsprachiger Checkout Ihre Conversion um 200% steigert.',
