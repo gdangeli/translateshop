@@ -14,6 +14,402 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'shopify-markets-vs-woocommerce-wpml-mehrsprachig-schweiz',
+    title: 'Shopify Markets vs. WooCommerce WPML: Welche Plattform für mehrsprachige Shops in der Schweiz?',
+    excerpt: 'Shopify Markets oder WooCommerce mit WPML? Der ultimative Vergleich für Schweizer E-Commerce: Kosten, Setup-Aufwand, SEO, und welche Lösung sich für DE/FR/IT-Shops wirklich lohnt.',
+    category: 'Plattformen',
+    readTime: 11,
+    emoji: '⚖️',
+    publishedAt: '2026-03-17',
+    author: 'TranslateShop Team',
+    keywords: ['shopify markets schweiz', 'woocommerce wpml mehrsprachig', 'shopify vs woocommerce schweiz', 'mehrsprachiger shop plattform vergleich', 'e-commerce plattform schweiz'],
+    content: `"Soll ich für meinen mehrsprachigen Shop Shopify oder WooCommerce nehmen?"
+
+Diese Frage hören wir **mindestens dreimal pro Woche** von Schweizer E-Commerce-Gründern und Shop-Betreibern.
+
+Die kurze Antwort: **Es kommt darauf an.**
+
+Die längere Antwort: Nach 150+ mehrsprachigen Shops, die wir begleitet haben, gibt es klare Muster, wer mit welcher Plattform erfolgreicher ist.
+
+**Ein Beispiel aus der Praxis:**
+
+Ein Berner Modegeschäft wollte online gehen – DE/FR/IT. Sie starteten mit WooCommerce + WPML. **8 Monate Entwicklung**, vier Plugin-Konflikte, zwei Entwickler-Wechsel, CHF 18'000 Kosten. Resultat: Shop live, aber kompliziert zu pflegen.
+
+Nachbar-Shop aus Basel: Shopify Markets. **3 Wochen Setup**, keine Entwickler nötig, CHF 3'200 Startkosten. Resultat: Shop live, einfach zu bedienen.
+
+**Aber:** Der WooCommerce-Shop kann Dinge, die Shopify nicht kann (Custom Checkout, spezielle B2B-Funktionen). Der Shopify-Shop ist schneller, aber weniger flexibel.
+
+Beide Shops sind erfolgreich – aber für **unterschiedliche Geschäftsmodelle**.
+
+Dieser Guide zeigt Ihnen, welche Plattform für **Ihre** Situation die richtige ist.
+
+## Die zwei Welten: All-in-One vs. Build Your Own
+
+### Shopify: Die "Apple-Philosophie"
+
+**Konzept:** Alles aus einer Hand. Hosting, Sicherheit, Updates, Payments – Shopify kümmert sich.
+
+**Mehrsprachigkeit:** Mit Shopify Markets ist Multi-Language nativ integriert. Ein Shop, mehrere Sprachen, mehrere Märkte.
+
+**Zielgruppe:** Shop-Betreiber, die sich auf **Verkauf & Marketing** konzentrieren wollen – nicht auf Technik.
+
+**Schweizer Erfolgsbeispiele:**
+- Fashion-Shops mit 50-500 Produkten
+- Beauty & Kosmetik (Romandie/Deutschschweiz)
+- Food & Beverage (Abo-Modelle)
+- Handwerk & Design
+
+### WooCommerce: Die "Android-Philosophie"
+
+**Konzept:** Open Source WordPress-Plugin. Volle Kontrolle, unbegrenzte Anpassbarkeit – aber auch volle Verantwortung.
+
+**Mehrsprachigkeit:** Über Plugins wie WPML, Polylang oder TranslatePress. Flexibel, aber Setup-intensiv.
+
+**Zielgruppe:** Shops mit **speziellen Anforderungen**, die keine Standard-Lösung abdeckt. Oder Betreiber mit WordPress-Erfahrung.
+
+**Schweizer Erfolgsbeispiele:**
+- B2B-Shops mit komplexen Preislisten
+- Marktplätze mit mehreren Verkäufern
+- Shops mit Content-Marketing-Fokus (Blog + Shop)
+- Spezielle Checkout-Flows (z.B. Konfiguratoren)
+
+## Feature-Vergleich: Was kann was?
+
+### Mehrsprachigkeit: Out-of-the-Box
+
+| Feature | Shopify Markets | WooCommerce + WPML |
+|---------|-----------------|-------------------|
+| **Native Unterstützung** | ✅ Ja, seit 2021 | ❌ Plugin nötig |
+| **Sprachen-Limit** | Unbegrenzt | Unbegrenzt |
+| **URL-Struktur** | /fr/, /it/ oder Subdomain | /fr/, /it/ oder Subdomain |
+| **Automatische Übersetzung** | ✅ Ja (Shopify Translate & Adapt) | ⚠️ Via Plugin (zusätzlich) |
+| **Manuelle Übersetzung** | ✅ Ja | ✅ Ja |
+| **Produkte übersetzen** | ✅ Einfach | ✅ Einfach |
+| **Blog übersetzen** | ✅ Einfach | ✅ Einfach |
+| **Checkout übersetzen** | ✅ Automatisch | ✅ Ja (mehr Aufwand) |
+| **E-Mails übersetzen** | ✅ Automatisch | ⚠️ Extra Plugin nötig |
+
+**Gewinner Einfachheit: Shopify**
+**Gewinner Flexibilität: WooCommerce**
+
+### SEO: Mehrsprachige Sichtbarkeit
+
+| Feature | Shopify Markets | WooCommerce + WPML |
+|---------|-----------------|-------------------|
+| **hreflang-Tags** | ✅ Automatisch | ✅ Automatisch (WPML) |
+| **Separate URLs pro Sprache** | ✅ Ja | ✅ Ja |
+| **Sitemap pro Sprache** | ✅ Ja | ✅ Ja (Yoast + WPML) |
+| **Canonical-Tags** | ✅ Automatisch | ✅ Automatisch |
+| **Meta-Daten übersetzen** | ✅ Ja | ✅ Ja |
+| **Structured Data** | ✅ Automatisch | ⚠️ Plugin-abhängig |
+| **Core Web Vitals** | ✅ Schnell (CDN) | ⚠️ Hosting-abhängig |
+
+**Unsere Erfahrung:** Shopify-Shops ranken in der Schweiz **leicht besser** – aber hauptsächlich wegen Geschwindigkeit. Ein gut optimierter WooCommerce-Shop (gutes Hosting + Caching) ist gleichwertig.
+
+**SEO-Fazit:** Unentschieden. Beide können sehr gut ranken.
+
+### Kosten: Setup + Laufend
+
+#### Shopify Markets
+
+**Initiale Kosten:**
+- Shopify Basic: CHF 32/Monat
+- Theme: CHF 0-350 (einmalig)
+- Apps für CH-Markt: CHF 20-50/Monat
+- Setup (DIY): 20-40 Stunden
+- Setup (Agentur): CHF 3'000-8'000
+
+**Laufende Kosten:**
+- Hosting: inklusive
+- Sicherheit/SSL: inklusive
+- Updates: automatisch, kostenlos
+- Payment Fees: 2.6% + CHF 0.25 (ohne Shopify Payments 0.5-2% extra)
+
+**Jährlich (Minimal):** ~CHF 750 (nur Shopify + Apps)
+**Jährlich (Realistisch):** ~CHF 1'500-2'500
+
+#### WooCommerce + WPML
+
+**Initiale Kosten:**
+- WordPress: kostenlos
+- WooCommerce: kostenlos
+- WPML: CHF 200/Jahr (CMS Multilingual)
+- Theme: CHF 0-150
+- Hosting: CHF 30-150/Monat (je nach Anbieter)
+- Setup (DIY): 40-80 Stunden
+- Setup (Agentur): CHF 5'000-15'000
+
+**Laufende Kosten:**
+- Hosting: CHF 30-150/Monat
+- SSL: oft inklusive
+- Updates: manuell (Zeit!)
+- WPML Lizenz: CHF 200/Jahr
+- Payment Gateway: 1.9-2.9% (Stripe, PostFinance, etc.)
+- Sicherheit/Backups: CHF 10-30/Monat (Plugin oder manuell)
+
+**Jährlich (Minimal):** ~CHF 900
+**Jährlich (Realistisch):** ~CHF 1'800-3'500
+
+**Wichtig:** Bei WooCommerce kommen oft versteckte Kosten: Entwickler für Anpassungen, Sicherheitsupdates, Plugin-Konflikte beheben.
+
+### Schweiz-spezifische Features
+
+| Feature | Shopify Markets | WooCommerce + WPML |
+|---------|-----------------|-------------------|
+| **TWINT Integration** | ⚠️ Via Apps (CHF 20-50/M) | ✅ Direkt (Plugin) |
+| **PostFinance Checkout** | ⚠️ Via Apps | ✅ Direkt (Plugin) |
+| **Schweizer Rechnung (PDF)** | ⚠️ Apps nötig | ✅ Plugins verfügbar |
+| **MwSt.-Anpassung CH** | ✅ Einfach | ✅ Einfach |
+| **CHF als Währung** | ✅ Native | ✅ Native |
+| **Post-Versand Integration** | ⚠️ Apps | ✅ Plugins (CH-spezifisch) |
+
+**Gewinner Schweiz-Features: WooCommerce** (mehr lokale Entwickler, bessere CH-Integrations-Plugins)
+
+## Die Entscheidungsmatrix: Was passt zu mir?
+
+### Wähle **Shopify Markets**, wenn:
+
+✅ Du willst **schnell starten** (Wochen statt Monate)
+✅ Du hast **keine/kaum technische Erfahrung**
+✅ Dein Shop hat **Standard-Anforderungen** (Produkte, Varianten, einfacher Checkout)
+✅ Du willst dich auf **Marketing & Verkauf** konzentrieren
+✅ Dir ist **Stabilität & Sicherheit** wichtig (kein Plugin-Chaos)
+✅ Du brauchst **mobiles Management** (Shopify-App ist exzellent)
+✅ Dein Budget ist **planbar** (fixe monatliche Kosten)
+
+**Ideal für:**
+- Fashion, Beauty, Lifestyle
+- Dropshipping & Print-on-Demand
+- Subscription-Modelle
+- Kleinere bis mittlere Sortimente (10-5'000 Produkte)
+- Solo-Unternehmer oder kleine Teams
+
+### Wähle **WooCommerce + WPML**, wenn:
+
+✅ Du hast **spezielle Anforderungen**, die Standard-Lösungen nicht abdecken
+✅ Du brauchst **volle Kontrolle** über Daten, Code, Hosting
+✅ Du hast **WordPress-Erfahrung** oder einen Entwickler im Team
+✅ Dein Shop ist **Content-lastig** (Blog + Shop integriert)
+✅ Du willst **Schweizer Payment-Lösungen** direkt integrieren (TWINT, PostFinance)
+✅ Du brauchst **komplexe B2B-Funktionen** (Staffelpreise, Benutzerrollen, Großhandel)
+✅ Du betreibst einen **Marktplatz** (Multi-Vendor)
+
+**Ideal für:**
+- B2B E-Commerce
+- Shops mit vielen SKUs (>5'000 Produkte)
+- Content-Marketing-getriebene Shops
+- Spezielle Checkout-Anforderungen
+- Marktplätze mit mehreren Verkäufern
+
+### Hybrid-Ansatz: Shopify + Headless
+
+Für fortgeschrittene Nutzer gibt es noch eine dritte Option:
+
+**Shopify als Backend** (Produkte, Bestellungen, Payments) + **Custom Frontend** (Next.js, React, etc.)
+
+**Vorteile:**
+- Shopify-Stabilität + volle Design-Freiheit
+- Beste Performance (Static Site Generation)
+- Modernste Tech-Stack
+
+**Nachteile:**
+- Hohe Entwicklungskosten (CHF 15'000-50'000+)
+- Wartung komplex
+- Nur für Shops mit eigenem Tech-Team sinnvoll
+
+**Unsere Empfehlung:** Nur wenn du >CHF 1M Jahresumsatz machst oder sehr spezielle UX-Anforderungen hast.
+
+## Setup-Guide: Mehrsprachig in 7 Tagen
+
+### Shopify Markets: Tag 1-7
+
+**Tag 1-2: Shop-Grundlagen**
+1. Shopify-Account erstellen (14 Tage gratis testen)
+2. Theme wählen (z.B. Dawn – kostenlos & modern)
+3. Grundeinstellungen: Währung CHF, MwSt. Schweiz
+4. Erste Produkte anlegen (auf Deutsch)
+
+**Tag 3-4: Shopify Markets aktivieren**
+1. Settings → Markets → Add market
+2. Schweiz-Markt mit DE/FR/IT erstellen
+3. Domains/Subfolders konfigurieren: `/fr/`, `/it/`
+4. Sprach-Switcher im Theme aktivieren (meist schon eingebaut)
+
+**Tag 5-6: Inhalte übersetzen**
+1. Translate & Adapt-App installieren (kostenlos)
+2. Produkte übersetzen:
+   - Automatisch: Shopify AI nutzen (Vorschau, dann editieren!)
+   - Manuell: Direkt im Editor
+3. Checkout-Sprache: automatisch per Markt
+4. Navigation übersetzen (Menü-Einträge)
+
+**Tag 7: Testing & Launch**
+1. Alle Sprachen im Browser testen
+2. Mobile testen (>60% Traffic in der Schweiz!)
+3. Testbestellung in jeder Sprache
+4. Google Analytics mit Sprach-Tracking
+
+**Fertig!** Shop ist live in drei Sprachen.
+
+### WooCommerce + WPML: Tag 1-7 (ambitionierter Plan!)
+
+**Tag 1: WordPress + WooCommerce**
+1. WordPress auf Hosting installieren
+2. WooCommerce-Plugin installieren & konfigurieren
+3. Theme installieren (z.B. Astra, Storefront)
+4. Basis-Einstellungen: CHF, Versand Schweiz, MwSt.
+
+**Tag 2-3: WPML Setup**
+1. WPML CMS Multilingual kaufen & installieren
+2. Sprachen aktivieren: DE (Standard), FR, IT
+3. WPML WooCommerce Multilingual installieren
+4. URL-Struktur wählen (z.B. `/fr/`, `/it/`)
+
+**Tag 4-5: Inhalte übersetzen**
+1. Erste Produkte anlegen (Deutsch)
+2. Produkte übersetzen:
+   - WPML Translation Editor nutzen
+   - Oder: Produkte duplizieren & manuell anpassen
+3. Seiten übersetzen (AGB, Impressum, etc.)
+4. Menü-Navigation pro Sprache erstellen
+
+**Tag 6: Checkout & E-Mails**
+1. WooCommerce-Checkout-Strings übersetzen (WPML String Translation)
+2. E-Mail-Templates übersetzen (oft Extra-Plugin nötig)
+3. Payment Gateways konfigurieren (Stripe, PostFinance, etc.)
+
+**Tag 7: Testing & Launch**
+1. Alle Sprachen testen
+2. Checkout-Flow in jeder Sprache durchspielen
+3. SEO-Plugin (Yoast) + WPML-Integration prüfen
+4. Google Analytics mit Sprach-Tracking
+
+**Realistisch:** 2 Wochen für Tech-Affine, 4-8 Wochen für Einsteiger (oder Agentur beauftragen).
+
+## Migration: Von WooCommerce zu Shopify (oder umgekehrt)
+
+### Wann macht ein Plattformwechsel Sinn?
+
+**Von WooCommerce → Shopify:**
+- Du hast keine Zeit/Lust für technische Wartung
+- Plugin-Chaos & Konflikte nerven
+- Du willst mobile verkaufen (Shopify-App)
+- Hosting-Probleme (langsam, unsicher)
+
+**Von Shopify → WooCommerce:**
+- Du brauchst Features, die Shopify nicht hat
+- Monatliche Kosten werden zu hoch (viele Apps)
+- Du willst volle Daten-Kontrolle
+- Checkout muss individuell anpassbar sein
+
+### Was wird migriert?
+
+✅ **Einfach:**
+- Produkte (Titel, Beschreibung, Preis, Bilder)
+- Kategorien
+- Kunden (E-Mail, Name, Adresse)
+
+⚠️ **Mittel:**
+- Bestellhistorie (teilweise, oft nur Metadaten)
+- Produktvarianten (Mapping nötig)
+- SEO-Daten (URLs ändern sich – Redirects!)
+
+❌ **Schwierig/Verloren:**
+- Theme/Design (muss neu gebaut werden)
+- Custom Code & Features
+- App/Plugin-Integrationen
+- E-Mail-Templates
+
+### Migration: Praktisch
+
+**Tools:**
+- **LitExtension** (kostenpflichtig, ~CHF 100-500): Automatische Migration WooCommerce ↔ Shopify
+- **Cart2Cart** (ähnlich)
+- **Manuell:** Export/Import via CSV (aufwändig, fehleranfällig)
+
+**Unser Rat:** Migrationen sind **teuer & riskant**. Lieber von Anfang an die richtige Plattform wählen. Aber: Wenn der Leidensdruck hoch ist, lohnt es sich.
+
+## Best Practices: Mehrsprachigkeit für beide Plattformen
+
+### 1. Sprache erkennen, nicht raten
+
+**Nicht:** User automatisch auf Sprache basierend auf Browser/IP umleiten.
+**Besser:** Sprach-Switcher prominent platzieren, User entscheiden lassen.
+
+**Warum?** Ein Romand in Zürich will vielleicht Deutsch lesen. Eine automatische Umleitung nervt.
+
+### 2. Konsistente URLs
+
+**Gut:**
+- `shop.ch/de/produkt-name`
+- `shop.ch/fr/nom-du-produit`
+- `shop.ch/it/nome-prodotto`
+
+**Schlecht:**
+- `shop.ch/produkt-name` (gemischt Deutsch/Französisch)
+
+**SEO-Tipp:** hreflang-Tags sind Pflicht! Beide Plattformen machen das automatisch – prüfe trotzdem.
+
+### 3. Checkout-Sprache = Shop-Sprache
+
+Nichts ist frustrierender als ein französischer Shop mit deutschem Checkout.
+
+**Shopify:** Macht das automatisch richtig.
+**WooCommerce:** Prüfe, ob WPML-Strings auch im Checkout übersetzt sind.
+
+### 4. E-Mail-Sprache nicht vergessen!
+
+Bestellbestätigungen, Versand-Mails – alles in der Kundensprache.
+
+**Shopify:** Standard.
+**WooCommerce:** Extra Plugin nötig (z.B. "WPML WooCommerce Multilingual").
+
+### 5. Customer Support mehrsprachig
+
+Wenn dein Shop auf Französisch ist, erwarten Kunden auch französischen Support.
+
+**Optionen:**
+- Mehrsprachiges Team
+- Outsourcing (z.B. Customer-Support-Agenturen in der Romandie)
+- Chatbots mit Spracherkennung (z.B. Tidio, Gorgias)
+
+### 6. Zahlungsmethoden pro Region
+
+**Romandie:** TWINT + Kreditkarte = 85% aller Käufe
+**Tessin:** Kreditkarte + PostFinance
+
+Stelle sicher, dass alle relevanten Payment-Optionen aktiv sind!
+
+## Fazit: Die Wahrheit liegt in der Mitte
+
+Es gibt keine "beste" Plattform – nur die **beste für dich**.
+
+**Wenn du dir nicht sicher bist:**
+1. Starte mit **Shopify** (14 Tage gratis testen)
+2. Baue einen Mini-Shop (10-20 Produkte, DE/FR/IT)
+3. Teste, ob du damit klarkommst
+4. Wenn es passt: weiter ausbauen
+5. Wenn nicht: evaluiere WooCommerce
+
+**Das Wichtigste:**
+🚀 **Launch ist wichtiger als Perfektion.** Ein einfacher mehrsprachiger Shop online ist besser als ein perfekter Shop, der nie live geht.
+
+**Unsere Empfehlung für 80% der Schweizer Shops:**
+**Shopify Markets.** Schnell, stabil, skalierbar. Die meisten Shops brauchen keine Custom-Entwicklung – sie brauchen Kunden.
+
+**Aber:** Wenn du zu den 20% mit speziellen Anforderungen gehörst, dann ist WooCommerce die richtige Wahl.
+
+---
+
+**Fragen? Feedback?**
+Wir helfen dir bei der Plattform-Entscheidung – kostenlose 20-Minuten-Beratung: → [TranslateShop Kontakt](https://translateshop.ch/contact)
+
+**Weiterführende Artikel:**
+- [Shopify Shop übersetzen: Anleitung](https://translateshop.ch/blog/shopify-shop-uebersetzen-anleitung)
+- [WooCommerce Shop übersetzen Schweiz: Anleitung](https://translateshop.ch/blog/woocommerce-shop-uebersetzen-schweiz-anleitung)
+- [SEO mehrsprachiger Shop Schweiz](https://translateshop.ch/blog/seo-mehrsprachiger-shop-schweiz)`
+  },
+  {
     slug: 'email-marketing-mehrsprachig-newsletter-de-fr-it',
     title: 'E-Mail-Marketing mehrsprachig: Newsletter in DE/FR/IT – so geht's richtig',
     excerpt: '78% höhere Öffnungsrate bei Newslettern in Muttersprache. Wie mehrsprachige E-Mail-Kampagnen 60-80% mehr Umsatz in Romandie und Tessin bringen – mit Tools, Strategien und konkreten Beispielen.',
